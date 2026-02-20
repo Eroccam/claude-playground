@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Suspense } from 'react';
+import './App.css';
+import { GlobeScene } from './components/Globe/GlobeScene.tsx';
+import { SidePanel } from './components/Panel/SidePanel.tsx';
+import { MobileDrawer } from './components/Panel/MobileDrawer.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
+import { GlobeProvider } from './context/GlobeContext.tsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ErrorBoundary>
+      <GlobeProvider>
+        <div className="app-layout">
+          <img
+            src="/safran-logo.png"
+            alt="Safran"
+            className="top-logo"
+          />
+          <div className="globe-container">
+            <Suspense fallback={
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#8b8fad' }}>
+                Loading...
+              </div>
+            }>
+              <GlobeScene />
+            </Suspense>
+          </div>
+          <div className="side-panel">
+            <SidePanel />
+          </div>
+          <MobileDrawer />
+        </div>
+      </GlobeProvider>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
