@@ -1,0 +1,91 @@
+{
+  "anthropicApiKey": "",
+  "agentSettings": {
+    "deadlineThresholds": {
+      "sponsorship": [60, 30, 14, 7],
+      "booth": [90, 60, 30, 14],
+      "housing": [60, 30, 14, 7],
+      "earlyBird": [30, 14, 7],
+      "eventOpen": [90, 60, 30, 7]
+    }
+  },
+  "researchAgent": {
+    "staleDays": 14,
+    "batchEnabled": true,
+    "dryRunDefault": false,
+    "confidenceDecayDays": 60
+  },
+  "userProfile": {
+    "name": "Americas Tradeshow Manager",
+    "title": "US Tradeshow Manager",
+    "primaryRegion": "US & Canada",
+    "primaryTopRegion": "Americas",
+    "secondaryRegions": [
+      "Latin America & Caribbean"
+    ],
+    "defaultView": "my-region"
+  },
+  "showCaptains": [
+    {
+      "name": "CAMERON",
+      "color": "#2E6DAD",
+      "initials": "CM"
+    },
+    {
+      "name": "ALYSSA",
+      "color": "#9B59B6",
+      "initials": "AL"
+    },
+    {
+      "name": "AWA",
+      "color": "#1E7A4A",
+      "initials": "AW"
+    }
+  ],
+  "sharepointFieldMap": {
+    "show.startDate": "Start Date",
+    "show.endDate": "End Date",
+    "venue.street": "Event Location: Street",
+    "venue.city": "Event Location: City",
+    "venue.state": "Event Location: State",
+    "venue.country": "Event Location: Country/Region",
+    "venue.name": "Venue",
+    "booth.size": "Booth Size",
+    "booth.number": "Booth#",
+    "booth.registrationDeadline": "Registration Deadline"
+  },
+  "regionalStructure": {
+    "Americas": [
+      "US & Canada",
+      "Latin America & Caribbean"
+    ],
+    "EMEA": [
+      "Western Europe",
+      "Eastern Europe",
+      "Middle East",
+      "Africa"
+    ],
+    "APAC": [
+      "Asia Pacific",
+      "Australia & New Zealand"
+    ],
+    "Global": [
+      "Global"
+    ]
+  },
+  "deadlineAlertWindows": {
+    "critical": 7,
+    "urgent": 14,
+    "warning": 30,
+    "upcoming": 90
+  },
+  "researchSettings": {
+    "maxSubpageDepth": 3,
+    "fetchTimeoutSeconds": 15,
+    "queuePauseBetweenEventsSeconds": 5,
+    "apiRetryOnRateLimit": true,
+    "apiRetryWaitSeconds": 10,
+    "statusPollingIntervalSeconds": 2,
+    "urlVerificationEnabled": true
+  }
+}

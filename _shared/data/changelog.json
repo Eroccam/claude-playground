@@ -1,0 +1,5072 @@
+[
+  {
+    "changeSetId": "clog-20260222-015141",
+    "timestamp": "2026-02-22T06:51:41.330Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.powerxchange-and-techadvantage.com/2026",
+      "https://www.powerxchange-and-techadvantage.com/2026/exhibit",
+      "https://www.powerxchange-and-techadvantage.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.powerxchange-and-techadvantage.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#powerxchangeandtechadvantage2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-03-06",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-03-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "Music City Center, Nashville, TN",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2025-12-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-07",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-01-22",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-15",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.powerxchange-and-techadvantage.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-11-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.powerxchange-and-techadvantage.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-01-22",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "PowerXchange and TechAdvantage 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Utility timing & synchronization, Grid resilience / GNSS-resilient PNT",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@powerxchangeandtechadvantage.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@powerxchangeandtechadvantage.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-015258",
+    "timestamp": "2026-02-22T06:52:58.422Z",
+    "eventId": "IFCS26",
+    "eventName": "IEEE International Frequency Control Symposium",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.ieee-international-frequency-control-symposium.com/2026",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/exhibit",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.ieee-international-frequency-control-symposium.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "STT",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#ieeeinternationalfrequencycontrolsymposium2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-05-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-05-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "Tampa Convention Center, Tampa, FL",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-09",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-11",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-03-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-19",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.ieee-international-frequency-control-symposium.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2026-01-10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.ieee-international-frequency-control-symposium.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-03-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "IEEE International Frequency Control Symposium 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "precision timing, frequency control(Atomic clocks\nQuartz & MEMS oscillators)",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@ieeeinternationalfrequencycontrolsymposium.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@ieeeinternationalfrequencycontrolsymposium.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-015300",
+    "timestamp": "2026-02-22T06:53:00.020Z",
+    "eventId": "IFCS26",
+    "eventName": "IEEE International Frequency Control Symposium",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.ieee-international-frequency-control-symposium.com/2026",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/exhibit",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-015807",
+    "timestamp": "2026-02-22T06:58:07.143Z",
+    "eventId": "VERT26",
+    "eventName": "VERTICON 2026\n(Former HAI)",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.verticon-2026-(former-hai"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.verticon-2026-(former-hai).com/2026",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "SHE",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#verticon2026(formerhai)2026"
+        ],
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-03-08",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-03-13",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "Georgia World \nCongress Center, Atlanta, GA",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2025-12-10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-09",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-01-24",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-17",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.verticon-2026-(former-hai).com/2026/exhibitor-prospectus.pdf",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-11-10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.verticon-2026-(former-hai).com/2026/sponsorship-prospectus.pdf",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-01-24",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "VERTICON 2026\n(Former HAI) 2026 Official Hotel Block",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Vertical aviation solutions & rotorcraft systems",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@verticon2026(formerhai).com",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@verticon2026(formerhai).com",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-015848",
+    "timestamp": "2026-02-22T06:58:48.905Z",
+    "eventId": "ELEK26",
+    "eventName": "ELEKTRONIK",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.elektronik.com/2026",
+      "https://www.elektronik.com/2026/exhibit",
+      "https://www.elektronik.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.elektronik.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "PNT Partner <br>(Testhouse)",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#elektronik2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-04-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-04-16",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-13",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-02-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-24",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.elektronik.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-12-15",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.elektronik.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-02-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "ELEKTRONIK 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "electronics—from groundbreaking technology to thousands of products",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@elektronik.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@elektronik.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-015850",
+    "timestamp": "2026-02-22T06:58:50.939Z",
+    "eventId": "ELEK26",
+    "eventName": "ELEKTRONIK",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.elektronik.com/2026",
+      "https://www.elektronik.com/2026/exhibit",
+      "https://www.elektronik.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-015852",
+    "timestamp": "2026-02-22T06:58:52.566Z",
+    "eventId": "ELEK26",
+    "eventName": "ELEKTRONIK",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.elektronik.com/2026",
+      "https://www.elektronik.com/2026/exhibit",
+      "https://www.elektronik.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-015914",
+    "timestamp": "2026-02-22T06:59:14.566Z",
+    "eventId": "ELEK26",
+    "eventName": "ELEKTRONIK",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.elektronik.com/2026",
+      "https://www.elektronik.com/2026/exhibit",
+      "https://www.elektronik.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-020057",
+    "timestamp": "2026-02-22T07:00:57.631Z",
+    "eventId": "APNT26",
+    "eventName": "A-PNT Summit 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.a-pnt-summit.com/2026",
+      "https://www.a-pnt-summit.com/2026/exhibit",
+      "https://www.a-pnt-summit.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.a-pnt-summit.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "SFS",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#apntsummit2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-04-05",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-04-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "National Housing Center, Washington, DC",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-07",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-06",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-02-21",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-17",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.a-pnt-summit.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-12-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.a-pnt-summit.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-02-21",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "A-PNT Summit 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@apntsummit.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@apntsummit.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-020107",
+    "timestamp": "2026-02-22T07:01:07.662Z",
+    "eventId": "APNT26",
+    "eventName": "A-PNT Summit 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.a-pnt-summit.com/2026",
+      "https://www.a-pnt-summit.com/2026/exhibit",
+      "https://www.a-pnt-summit.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-020153",
+    "timestamp": "2026-02-22T07:01:53.027Z",
+    "eventId": "APNT26",
+    "eventName": "A-PNT Summit 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.a-pnt-summit.com/2026",
+      "https://www.a-pnt-summit.com/2026/exhibit",
+      "https://www.a-pnt-summit.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-020155",
+    "timestamp": "2026-02-22T07:01:55.556Z",
+    "eventId": "APNT26",
+    "eventName": "A-PNT Summit 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.a-pnt-summit.com/2026",
+      "https://www.a-pnt-summit.com/2026/exhibit",
+      "https://www.a-pnt-summit.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-020504",
+    "timestamp": "2026-02-22T07:05:04.159Z",
+    "eventId": "SPACE26",
+    "eventName": "SPACE SYMPOSIUM 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.space-symposium.com/2026",
+      "https://www.space-symposium.com/2026/exhibit",
+      "https://www.space-symposium.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.space-symposium.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "SED Space",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#spacesymposium2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-04-11",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-04-17",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-13",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-02-27",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-23",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.space-symposium.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-12-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.space-symposium.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-02-27",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "SPACE SYMPOSIUM 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Space event",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@spacesymposium.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@spacesymposium.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-020538",
+    "timestamp": "2026-02-22T07:05:38.503Z",
+    "eventId": "NASPI26",
+    "eventName": "NEW:NASPI Work Group Meeting",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.naspi-work-group-meeting.com/2026",
+      "https://www.naspi-work-group-meeting.com/2026/exhibit",
+      "https://www.naspi-work-group-meeting.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.naspi-work-group-meeting.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#naspiworkgroupmeeting2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-04-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-04-16",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-13",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-02-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-24",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.naspi-work-group-meeting.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-12-15",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.naspi-work-group-meeting.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-02-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "NASPI Work Group Meeting 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "PMU & time-synchronized. Quantum backup & trusted PNT for utilities",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@naspiworkgroupmeeting.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@naspiworkgroupmeeting.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-020554",
+    "timestamp": "2026-02-22T07:05:54.129Z",
+    "eventId": "XPO26",
+    "eventName": "XPONENTIAL 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.xponential.com/2026",
+      "https://www.xponential.com/2026/exhibit",
+      "https://www.xponential.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.xponential.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#xponential2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-05-17",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-05-22",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "HuntingtonPlace, Detroit, MI",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-18",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-20",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-04-04",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.xponential.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2026-01-19",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.xponential.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-04-04",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "XPONENTIAL 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "UAV/UAS navigation, sensors, PNT resilience",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@xponential.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@xponential.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-020616",
+    "timestamp": "2026-02-22T07:06:16.650Z",
+    "eventId": "STACNYS26",
+    "eventName": "STAC NY SPRING 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.stac-ny-spring.com/2026",
+      "https://www.stac-ny-spring.com/2026/exhibit",
+      "https://www.stac-ny-spring.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-spring.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#stacnyspring2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-05-18",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-05-21",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-19",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-21",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-04-05",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-29",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-spring.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2026-01-20",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-spring.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-04-05",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "STAC NY SPRING 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Timing for financial markets & high-precision trading, Sychronization.",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@stacnyspring.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@stacnyspring.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-020625",
+    "timestamp": "2026-02-22T07:06:25.772Z",
+    "eventId": "STACNYS26",
+    "eventName": "STAC NY SPRING 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.stac-ny-spring.com/2026",
+      "https://www.stac-ny-spring.com/2026/exhibit",
+      "https://www.stac-ny-spring.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-182947",
+    "timestamp": "2026-02-22T23:29:47.870Z",
+    "eventId": "NASPI26",
+    "eventName": "NEW:NASPI Work Group Meeting",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.naspi-work-group-meeting.com/2026",
+      "https://www.naspi-work-group-meeting.com/2026/exhibit",
+      "https://www.naspi-work-group-meeting.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-182949",
+    "timestamp": "2026-02-22T23:29:49.382Z",
+    "eventId": "NASPI26",
+    "eventName": "NEW:NASPI Work Group Meeting",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.naspi-work-group-meeting.com/2026",
+      "https://www.naspi-work-group-meeting.com/2026/exhibit",
+      "https://www.naspi-work-group-meeting.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-183303",
+    "timestamp": "2026-02-22T23:33:03.864Z",
+    "eventId": "IFCS26",
+    "eventName": "IEEE International Frequency Control Symposium",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.ieee-international-frequency-control-symposium.com/2026",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/exhibit",
+      "https://www.ieee-international-frequency-control-symposium.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-183908",
+    "timestamp": "2026-02-22T23:39:08.618Z",
+    "eventId": "INOP26",
+    "eventName": "INTEROP",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.interop.com/2026",
+      "https://www.interop.com/2026/exhibit",
+      "https://www.interop.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.interop.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "PNT",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#interop2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-06-08",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-06-13",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-11",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-04-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-05-20",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.interop.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2026-02-10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.interop.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-04-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "INTEROP 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "ICT solutions",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@interop.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@interop.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-183910",
+    "timestamp": "2026-02-22T23:39:10.564Z",
+    "eventId": "INOP26",
+    "eventName": "INTEROP",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.interop.com/2026",
+      "https://www.interop.com/2026/exhibit",
+      "https://www.interop.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260222-184036",
+    "timestamp": "2026-02-22T23:40:36.773Z",
+    "eventId": "TSN26",
+    "eventName": "NEW : Aerospace and Defense TSN Summit",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026",
+      "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/exhibit",
+      "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#new:aerospaceanddefensetsnsummit2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "NEW : Aerospace and Defense TSN Summit 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Time-Sensitive Networking for aerospace & defense",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@new:aerospaceanddefensetsnsummit.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@new:aerospaceanddefensetsnsummit.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-184117",
+    "timestamp": "2026-02-22T23:41:17.659Z",
+    "eventId": "STACNYF26",
+    "eventName": "STAC NY FALL 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.stac-ny-fall.com/2026",
+      "https://www.stac-ny-fall.com/2026/exhibit",
+      "https://www.stac-ny-fall.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-fall.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "ST4D",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#stacnyfall2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-fall.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.stac-ny-fall.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "STAC NY FALL 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "attendance.targetAudience",
+        "previousValue": null,
+        "newValue": "Timing for financial markets & high-precision trading, Sychronization.",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@stacnyfall.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@stacnyfall.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260222-184141",
+    "timestamp": "2026-02-22T23:41:41.099Z",
+    "eventId": "STACNYS26",
+    "eventName": "STAC NY SPRING 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.stac-ny-spring.com/2026",
+      "https://www.stac-ny-spring.com/2026/exhibit",
+      "https://www.stac-ny-spring.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260223-161944",
+    "timestamp": "2026-02-23T21:19:44.985Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.powerxchange-and-techadvantage.com/2026",
+      "https://www.powerxchange-and-techadvantage.com/2026/exhibit",
+      "https://www.powerxchange-and-techadvantage.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260223-172233",
+    "timestamp": "2026-02-23T22:22:33.049Z",
+    "eventId": "MDM26",
+    "eventName": "Modern Day Marine 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.modern-day-marine.com/2026",
+      "https://www.modern-day-marine.com/2026/exhibit",
+      "https://www.modern-day-marine.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.modern-day-marine.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.organizerName",
+        "previousValue": null,
+        "newValue": "SFS",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#moderndaymarine2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.setupStart",
+        "previousValue": null,
+        "newValue": "2026-04-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.teardownEnd",
+        "previousValue": null,
+        "newValue": "2026-05-01",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "dates.fullAddress",
+        "previousValue": null,
+        "newValue": "Walter E. Washington Convention Center, Washington, DC",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.earlyBirdDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.standardDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-27",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.paymentDue",
+        "previousValue": null,
+        "newValue": "2026-03-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.designDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-07",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.modern-day-marine.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.deadline",
+        "previousValue": null,
+        "newValue": "2025-12-29",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.modern-day-marine.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.deadline",
+        "previousValue": null,
+        "newValue": "2026-03-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "Modern Day Marine 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@moderndaymarine.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@moderndaymarine.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.606Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-03-08",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-03-11",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Nashville",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "TN",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "Music City Center",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-07",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.610Z",
+    "eventId": "VERT26",
+    "eventName": "VERTICON 2026\n(Former HAI)",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-03-10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-03-12",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Atlanta",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "GA",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "Georgia World \nCongress Center",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-01-09",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.617Z",
+    "eventId": "SPACE26",
+    "eventName": "SPACE SYMPOSIUM 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-04-13",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-04-16",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Colorado Springs",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "CO",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-12",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.619Z",
+    "eventId": "IFCS26",
+    "eventName": "IEEE International Frequency Control Symposium",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-05-10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-05-13",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Tampa",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "FL",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "Tampa Convention Center",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-11",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.621Z",
+    "eventId": "XPO26",
+    "eventName": "XPONENTIAL 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-05-19",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-05-21",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Detroit",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "MI",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "HuntingtonPlace",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-20",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.625Z",
+    "eventId": "STACNYS26",
+    "eventName": "STAC NY SPRING 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-05-20",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-05-20",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-03-21",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.627Z",
+    "eventId": "NASPI26",
+    "eventName": "NEW:NASPI Work Group Meeting",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-04-14",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-04-15",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Charlotte",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "NC",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-13",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.629Z",
+    "eventId": "STACNYF26",
+    "eventName": "STAC NY FALL 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.631Z",
+    "eventId": "TSN26",
+    "eventName": "NEW : Aerospace and Defense TSN Summit",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.632Z",
+    "eventId": "MDM26",
+    "eventName": "Modern Day Marine 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-04-28",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-04-30",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Washington",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "DC",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "Walter E. Washington Convention Center",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-27",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.634Z",
+    "eventId": "APNT26",
+    "eventName": "A-PNT Summit 2026",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-04-07",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-04-07",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.city",
+        "previousValue": null,
+        "newValue": "Washington",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.state",
+        "previousValue": null,
+        "newValue": "DC",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "venue.name",
+        "previousValue": null,
+        "newValue": "National Housing Center",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-06",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.636Z",
+    "eventId": "ELEK26",
+    "eventName": "ELEKTRONIK",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-04-14",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-04-15",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-02-13",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260224-093820",
+    "timestamp": "2026-02-24T14:38:20.637Z",
+    "eventId": "INOP26",
+    "eventName": "INTEROP",
+    "triggeredBy": "cat9-backfill",
+    "agentVersion": "1.0.0-backfill",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "show.startDate",
+        "previousValue": null,
+        "newValue": "2026-06-10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "show.endDate",
+        "previousValue": null,
+        "newValue": "2026-06-12",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "low",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-04-11",
+        "confidence": "low",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260225-090716",
+    "timestamp": "2026-02-25T14:07:16.108Z",
+    "eventId": "XPO26",
+    "eventName": "XPONENTIAL 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.xponential.com/2026",
+      "https://www.xponential.com/2026/exhibit",
+      "https://www.xponential.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260225-093957",
+    "timestamp": "2026-02-25T14:39:57.978Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.powerxchange-and-techadvantage.com/2026",
+      "https://www.powerxchange-and-techadvantage.com/2026/exhibit",
+      "https://www.powerxchange-and-techadvantage.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260225-094222",
+    "timestamp": "2026-02-25T14:42:22.444Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.powerxchange-and-techadvantage.com/2026",
+      "https://www.powerxchange-and-techadvantage.com/2026/exhibit",
+      "https://www.powerxchange-and-techadvantage.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260225-094226",
+    "timestamp": "2026-02-25T14:42:26.406Z",
+    "eventId": "PXT26",
+    "eventName": "NEW: PowerXchange and TechAdvantage",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.powerxchange-and-techadvantage.com/2026",
+      "https://www.powerxchange-and-techadvantage.com/2026/exhibit",
+      "https://www.powerxchange-and-techadvantage.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260225-094849",
+    "timestamp": "2026-02-25T14:48:49.901Z",
+    "eventId": "SMSE26",
+    "eventName": "SMALLSAT EUROPE 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.smallsat-europe.com/2026",
+      "https://www.smallsat-europe.com/2026/exhibit",
+      "https://www.smallsat-europe.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.smallsat-europe.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#smallsateurope2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.smallsat-europe.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.smallsat-europe.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "SMALLSAT EUROPE 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@smallsateurope.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@smallsateurope.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260225-103022",
+    "timestamp": "2026-02-25T15:30:22.415Z",
+    "eventId": "ITSN26",
+    "eventName": "ITSNT 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.itsnt.com/2026",
+      "https://www.itsnt.com/2026/exhibit",
+      "https://www.itsnt.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.itsnt.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#itsnt2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.itsnt.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.itsnt.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "ITSNT 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@itsnt.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@itsnt.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260226-102004",
+    "timestamp": "2026-02-26T15:20:04.011Z",
+    "eventId": "ITSN26",
+    "eventName": "ITSNT 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.itsnt.com/2026",
+      "https://www.itsnt.com/2026/exhibit",
+      "https://www.itsnt.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260226-102022",
+    "timestamp": "2026-02-26T15:20:22.439Z",
+    "eventId": "IAV26",
+    "eventName": "International Armoured Vehicles",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.international-armoured-vehicles.com/2026",
+      "https://www.international-armoured-vehicles.com/2026/exhibit",
+      "https://www.international-armoured-vehicles.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.international-armoured-vehicles.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#internationalarmouredvehicles2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.international-armoured-vehicles.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.international-armoured-vehicles.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "International Armoured Vehicles 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@internationalarmouredvehicles.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@internationalarmouredvehicles.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260226-102025",
+    "timestamp": "2026-02-26T15:20:25.599Z",
+    "eventId": "IAV26",
+    "eventName": "International Armoured Vehicles",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.international-armoured-vehicles.com/2026",
+      "https://www.international-armoured-vehicles.com/2026/exhibit",
+      "https://www.international-armoured-vehicles.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260226-102026",
+    "timestamp": "2026-02-26T15:20:26.675Z",
+    "eventId": "IAV26",
+    "eventName": "International Armoured Vehicles",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.international-armoured-vehicles.com/2026",
+      "https://www.international-armoured-vehicles.com/2026/exhibit",
+      "https://www.international-armoured-vehicles.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260226-102331",
+    "timestamp": "2026-02-26T15:23:31.390Z",
+    "eventId": "EISD26",
+    "eventName": "ESA Industry Space Day 2026 ESA ISD",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.esa-industry-space-day-2026-esa-isd.com/2026",
+      "https://www.esa-industry-space-day-2026-esa-isd.com/2026/exhibit",
+      "https://www.esa-industry-space-day-2026-esa-isd.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.esa-industry-space-day-2026-esa-isd.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#esaindustryspaceday2026esaisd2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.esa-industry-space-day-2026-esa-isd.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.esa-industry-space-day-2026-esa-isd.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "ESA Industry Space Day 2026 ESA ISD 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@esaindustryspaceday2026esaisd.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@esaindustryspaceday2026esaisd.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260226-102405",
+    "timestamp": "2026-02-26T15:24:05.806Z",
+    "eventId": "FDT26",
+    "eventName": "FORO DEL TOLEDO",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.foro-del-toledo.com/2026",
+      "https://www.foro-del-toledo.com/2026/exhibit",
+      "https://www.foro-del-toledo.com/2026/sponsor"
+    ],
+    "changes": [
+      {
+        "field": "booth.size",
+        "previousValue": null,
+        "newValue": "10 x 10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.officialWebsite",
+        "previousValue": null,
+        "newValue": "https://www.foro-del-toledo.com/2026",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "identity.hashtags",
+        "previousValue": null,
+        "newValue": [
+          "#forodeltoledo2026"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.cancellationPolicy",
+        "previousValue": null,
+        "newValue": "50% refund if cancelled 60+ days before show; no refund within 60 days [MOCK]",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.boothSizes",
+        "previousValue": null,
+        "newValue": [
+          {
+            "size": "10x10",
+            "price": 2500,
+            "currency": "USD"
+          },
+          {
+            "size": "10x20",
+            "price": 4800,
+            "currency": "USD"
+          },
+          {
+            "size": "20x20",
+            "price": 9000,
+            "currency": "USD"
+          }
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "booth.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.foro-del-toledo.com/2026/exhibitor-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierNames",
+        "previousValue": null,
+        "newValue": [
+          "Platinum",
+          "Gold",
+          "Silver"
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierPricing",
+        "previousValue": null,
+        "newValue": [
+          25000,
+          15000,
+          8000
+        ],
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.tierBenefits",
+        "previousValue": null,
+        "newValue": {
+          "Platinum": [
+            "Logo on all materials",
+            "Keynote speaking slot",
+            "20x20 booth included"
+          ],
+          "Gold": [
+            "Logo on signage",
+            "Panel speaking slot",
+            "10x20 booth included"
+          ],
+          "Silver": [
+            "Logo on website",
+            "10x10 booth included"
+          ]
+        },
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "sponsorship.prospectusPdfUrl",
+        "previousValue": null,
+        "newValue": "https://www.foro-del-toledo.com/2026/sponsorship-prospectus.pdf",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "housing.blockName",
+        "previousValue": null,
+        "newValue": "FORO DEL TOLEDO 2026 Official Hotel Block",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.exhibitsManagerEmail",
+        "previousValue": null,
+        "newValue": "exhibits@forodeltoledo.com",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "contacts.sponsorshipContactEmail",
+        "previousValue": null,
+        "newValue": "sponsors@forodeltoledo.com",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260226-102430",
+    "timestamp": "2026-02-26T15:24:30.546Z",
+    "eventId": "FDT26",
+    "eventName": "FORO DEL TOLEDO",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.foro-del-toledo.com/2026",
+      "https://www.foro-del-toledo.com/2026/exhibit",
+      "https://www.foro-del-toledo.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260226-102431",
+    "timestamp": "2026-02-26T15:24:31.087Z",
+    "eventId": "FDT26",
+    "eventName": "FORO DEL TOLEDO",
+    "triggeredBy": "research-agent",
+    "agentVersion": "1.0.0",
+    "sourceUrls": [
+      "https://www.foro-del-toledo.com/2026",
+      "https://www.foro-del-toledo.com/2026/exhibit",
+      "https://www.foro-del-toledo.com/2026/sponsor"
+    ],
+    "changes": [],
+    "noOp": true
+  },
+  {
+    "changeSetId": "clog-20260227-121253",
+    "timestamp": "2026-02-27T17:12:53.241Z",
+    "eventId": "SMSE26",
+    "eventName": "SMALLSAT EUROPE 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://smallsateurope.com/",
+      "https://smallsateurope.com/sponsor-type/exhibitors/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": "2026-05-26",
+        "newValue": "2026-05-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": "2026-05-28",
+        "newValue": "2026-05-28",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Europaplein 24",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Amsterdam",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Netherlands",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "RAI Amsterdam Convention Centre",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "boothNumber",
+        "previousValue": null,
+        "newValue": "410",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-121815",
+    "timestamp": "2026-02-27T17:18:15.540Z",
+    "eventId": "SOFEX26",
+    "eventName": "SOFEX",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://www.nsalons.com/sofex/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-10-27",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-10-29",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Aqaba",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Jordan",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-121854",
+    "timestamp": "2026-02-27T17:18:54.891Z",
+    "eventId": "TSNA26",
+    "eventName": "TSN/A",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://tsnaconference.de/frontend/index.php",
+      "https://tsnaconference.de/frontend/index.php?folder_id=11359&page_id=",
+      "https://tsnaconference.de/frontend/index.php?folder_id=11362&page_id="
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-09-30",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-10-01",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Flughafenstrasse 43",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Stuttgart",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Germany",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "Mövenpick Hotel Stuttgart Messe & Congress",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "registrationDeadline",
+        "previousValue": null,
+        "newValue": "2026-09-01",
+        "confidence": "medium",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-121927",
+    "timestamp": "2026-02-27T17:19:27.110Z",
+    "eventId": "NAVI26",
+    "eventName": "NAVISP",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://navisp.esa.int/calendar"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-03-03",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-03-03",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122323",
+    "timestamp": "2026-02-27T17:23:23.830Z",
+    "eventId": "DALO26",
+    "eventName": "DALO DAYS",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://defencetech.dk/events/dalo-days-2026"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-08-19",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-08-20",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Vardevej 1",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Herning",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Denmark",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "MCH Messecenter Herning",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122336",
+    "timestamp": "2026-02-27T17:23:36.781Z",
+    "eventId": "EUSP26",
+    "eventName": "EUSPA Industry Days",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://www.euspa.europa.eu/newsroom-events/events/euspa-industry-days"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2025-03-25",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2025-03-26",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Prague",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Czechia",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122419",
+    "timestamp": "2026-02-27T17:24:19.048Z",
+    "eventId": "TEKN26",
+    "eventName": "Teknologia 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://teknologia.messukeskus.com/en/",
+      "https://teknologia.messukeskus.com/en/for-companies/exhibitors-guide/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2027-11-09",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2027-11-11",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Messuaukio 1",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Helsinki",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Finland",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "Helsinki Expo and Convention Centre",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122454",
+    "timestamp": "2026-02-27T17:24:54.242Z",
+    "eventId": "CJUB26",
+    "eventName": "Chips JU BROKERAGE",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://ecs-brokerage-event.eu/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-02-04",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-02-05",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Rue Bara 175",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Brussels",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Belgium",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "The EGG",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122540",
+    "timestamp": "2026-02-27T17:25:40.395Z",
+    "eventId": "STLF26",
+    "eventName": "STAC LONDON FALL 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://stacresearch.com/events/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-04-29",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "200 Aldersgate",
+        "confidence": "medium",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "London",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "United Kingdom",
+        "confidence": "medium",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "Convene 200 Aldersgate",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122615",
+    "timestamp": "2026-02-27T17:26:15.452Z",
+    "eventId": "EROT26",
+    "eventName": "EUROPEAN ROTORS 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://europeanrotors.eu/future-years/",
+      "https://europeanrotors.eu/exhibit/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2027-11-29",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2027-12-02",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Boulevard de l'Europe",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Milan",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Italy",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "Fiera Milano",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260227-122933",
+    "timestamp": "2026-02-27T17:29:33.577Z",
+    "eventId": "JAMT26",
+    "eventName": "JAMMERTEST 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://jammertest.no/",
+      "https://jammertest.no/about/"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": null,
+        "newValue": "2026-09-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": null,
+        "newValue": "2026-09-18",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Andøya",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Norway",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260305-102527",
+    "timestamp": "2026-03-05T15:25:27.552Z",
+    "eventId": "AUSA26",
+    "eventName": "AUSA 2026 ",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://www.ausa.org/future-annual-meeting-dates"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": "10/1/2026",
+        "newValue": "2026-10-12",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": "10/1/2026",
+        "newValue": "2026-10-14",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": "801AllenY.LewPlaceNW",
+        "newValue": "801 Mount Vernon Place NW",
+        "confidence": "medium",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260305-103113",
+    "timestamp": "2026-03-05T15:31:13.619Z",
+    "eventId": "AUSA26",
+    "eventName": "AUSA 2026 ",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "street",
+        "previousValue": "801AllenY.LewPlaceNW",
+        "newValue": "801 Mount Vernon Place NW",
+        "confidence": "medium",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260305-103116",
+    "timestamp": "2026-03-05T15:31:16.306Z",
+    "eventId": "AUSA26",
+    "eventName": "AUSA 2026 ",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [],
+    "changes": [
+      {
+        "field": "street",
+        "previousValue": "801AllenY.LewPlaceNW",
+        "newValue": "801 Mount Vernon Place NW",
+        "confidence": "medium",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  },
+  {
+    "changeSetId": "clog-20260305-103317",
+    "timestamp": "2026-03-05T15:33:17.781Z",
+    "eventId": "NATD26",
+    "eventName": "NATO Days 2026",
+    "triggeredBy": "research-agent",
+    "agentVersion": "2.0.0",
+    "sourceUrls": [
+      "https://www.natodays.cz/programme",
+      "https://www.natodays.cz/contacts"
+    ],
+    "changes": [
+      {
+        "field": "startDate",
+        "previousValue": "9/19/2026",
+        "newValue": "2026-09-19",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "endDate",
+        "previousValue": "9/20/2026",
+        "newValue": "2026-09-20",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "street",
+        "previousValue": null,
+        "newValue": "Mariánské náměstí 2116/10",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "city",
+        "previousValue": null,
+        "newValue": "Ostrava",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "state",
+        "previousValue": null,
+        "newValue": "Moravian-Silesian Region",
+        "confidence": "medium",
+        "humanVerified": false
+      },
+      {
+        "field": "country",
+        "previousValue": null,
+        "newValue": "Czech Republic",
+        "confidence": "high",
+        "humanVerified": false
+      },
+      {
+        "field": "venueName",
+        "previousValue": null,
+        "newValue": "Leoš Janáček Ostrava Airport",
+        "confidence": "high",
+        "humanVerified": false
+      }
+    ],
+    "noOp": false
+  }
+]

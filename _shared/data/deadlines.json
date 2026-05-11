@@ -1,0 +1,6 @@
+[
+  {
+    "_comment": "Standalone deadline registry — deadlines can also be embedded per-event in events.json",
+    "_note": "This file is reserved for global deadline tracking. Populate after events are created."
+  }
+]

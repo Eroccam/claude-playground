@@ -1,0 +1,215 @@
+/* Region Tabs */
+.region-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.region-tab {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(180, 180, 210, 0.5);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.region-tab:hover {
+  color: rgba(200, 200, 230, 0.75);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.region-tab.active {
+  color: #e0e0e0;
+  border-bottom-color: var(--tab-color, #e63946);
+}
+
+/* Event List */
+.event-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.event-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.event-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.event-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+.event-list-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+
+.event-list-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.event-list-item.selected {
+  background: rgba(1, 68, 145, 0.18);
+  border-left-color: #3388ff;
+}
+
+.event-list-item.past {
+  opacity: 0.45;
+}
+
+.event-list-item__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.event-list-item__left {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-list-item__right {
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.event-list-item__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(230, 230, 245, 0.92);
+  margin-bottom: 2px;
+}
+
+.event-list-item__date {
+  font-size: 11px;
+  color: rgba(160, 165, 195, 0.6);
+  margin-bottom: 2px;
+}
+
+.event-list-item__location {
+  font-size: 11px;
+  color: rgba(160, 165, 195, 0.45);
+}
+
+.event-list-item__badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.event-list-item__badge--exhibition {
+  background: rgba(1, 68, 145, 0.25);
+  color: rgba(100, 170, 240, 0.85);
+}
+
+.event-list-item__badge--walking {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(160, 165, 195, 0.6);
+}
+
+/* Event Detail */
+.event-detail {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.event-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.event-detail__close {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(180, 180, 210, 0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  padding: 0;
+  transition: all 0.15s;
+}
+
+.event-detail__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0e0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.event-detail__name {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(230, 230, 245, 0.95);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.event-detail__dates {
+  font-size: 13px;
+  color: #5b9bd5;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.event-detail__location {
+  font-size: 12px;
+  color: rgba(160, 165, 195, 0.6);
+  margin-bottom: 14px;
+}
+
+.event-detail__image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.event-detail__description {
+  font-size: 12px;
+  color: rgba(190, 195, 220, 0.75);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.event-detail__link {
+  display: inline-block;
+  padding: 7px 14px;
+  background: rgba(1, 68, 145, 0.5);
+  color: rgba(230, 235, 255, 0.9);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(1, 68, 145, 0.3);
+  transition: all 0.15s;
+}
+
+.event-detail__link:hover {
+  background: rgba(1, 68, 145, 0.7);
+}
