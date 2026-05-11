@@ -1,0 +1,29 @@
+[
+  {
+    "id": "c1a2b3c4-d5e6-7f89-ab01-cd23ef456789",
+    "name": "Marie Dupont",
+    "role": "Events Manager",
+    "company": "Safran",
+    "email": "marie.dupont@safran.com",
+    "phone": "+33 1 40 60 80 00",
+    "linkedEvents": []
+  },
+  {
+    "id": "d2e3f4a5-b6c7-8d90-bc12-de34fa567890",
+    "name": "James Harrison",
+    "role": "Booth Manager",
+    "company": "Safran Aircraft Engines",
+    "email": "james.harrison@safrangroup.com",
+    "phone": "+44 20 7946 0300",
+    "linkedEvents": []
+  },
+  {
+    "id": "e3f4a5b6-c7d8-9e01-cd23-ef45ab678901",
+    "name": "Sophie Martin",
+    "role": "Marketing Director",
+    "company": "Safran",
+    "email": "sophie.martin@safran.com",
+    "phone": "+33 1 40 60 80 01",
+    "linkedEvents": []
+  }
+]

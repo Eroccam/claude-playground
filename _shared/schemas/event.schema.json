@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://safran.internal/schemas/event.schema.json",
+  "title": "Safran Event",
+  "description": "Schema for a Safran tradeshow or internal event",
+  "type": "object",
+  "required": ["id", "name", "type", "status", "startDate", "endDate", "location", "lastUpdated"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique event identifier (UUID v4)"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full event name"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["tradeshow", "conference", "internal", "exhibition"],
+      "description": "Event type"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["upcoming", "active", "completed", "cancelled"],
+      "description": "Current event status"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Event start date (ISO 8601: YYYY-MM-DD)"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Event end date (ISO 8601: YYYY-MM-DD)"
+    },
+    "location": {
+      "type": "object",
+      "required": ["city", "country", "lat", "lng"],
+      "additionalProperties": false,
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "Host city"
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2 country code"
+        },
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Latitude for map pin"
+        },
+        "lng": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Longitude for map pin"
+        },
+        "venue": {
+          "type": "string",
+          "description": "Venue name (optional)"
+        }
+      }
+    },
+    "deadlines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "date", "description"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["registration", "booth-setup", "materials", "payment", "internal-prep", "other"]
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "reminderDays": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "description": "Days before deadline to send reminders e.g. [30, 7, 1]"
+          },
+          "completed": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "Array of contact IDs from contacts.json"
+    },
+    "boothNumber": {
+      "type": "string",
+      "description": "Safran booth assignment"
+    },
+    "budget": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Allocated budget in EUR"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free text notes"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Searchable tags"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime — auto-set on every write"
+    }
+  }
+}

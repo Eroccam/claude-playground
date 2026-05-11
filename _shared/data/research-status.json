@@ -1,0 +1,13 @@
+{
+  "isComplete": true,
+  "currentAction": "Research complete",
+  "eventName": "NATO Days 2026",
+  "eventId": "NATD26",
+  "summary": {
+    "fieldsFound": 7,
+    "fieldsNull": 3,
+    "fieldsInferred": 1,
+    "proposalsWritten": 7
+  },
+  "updatedAt": "2026-03-05T15:33:17.801Z"
+}
