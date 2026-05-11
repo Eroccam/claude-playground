@@ -45,6 +45,25 @@ claude-playground/
     └── README.md               ← This file
 ```
 
+## Production Deployment (Render)
+
+The app is hosted on **Render** (render.com), deployed automatically from GitHub.
+
+**How it works:**
+1. Code changes are made locally and committed to git
+2. `git push origin main` pushes to GitHub (`Eroccam/claude-playground`)
+3. Render detects the push and automatically redeploys the live site
+4. No manual deploy steps needed — every push to `main` updates production
+
+**Entry point:** `package.json` at the repo root defines `"start": "node event-dashboard/serve.js"` — this is what Render runs.
+
+**Environment variables** (set in Render's dashboard, not in the repo):
+- `ANTHROPIC_API_KEY` — required for the research agent (`/api/research/stream`)
+
+**Data persistence note:** `_shared/data/master-events.json` is served from the deployed repo snapshot. Writes made through the live app (edits, approvals, CSV uploads) do not persist across redeploys — commit updated data files to git before deploying if you want changes preserved.
+
+To find the live URL: log in to render.com → your service → the URL is shown at the top of the service page.
+
 ## Agent Integration
 
 Future agents (research, deadline tracking) can write directly to `_shared/data/events.json`.
