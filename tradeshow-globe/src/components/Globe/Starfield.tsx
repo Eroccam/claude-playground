@@ -10,7 +10,6 @@ export function Starfield() {
       saturation={0}
       fade
       speed={0.5}
-      renderOrder={4}
     />
   );
 }

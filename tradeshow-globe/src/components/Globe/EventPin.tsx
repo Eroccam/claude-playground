@@ -21,6 +21,7 @@ interface EventPinProps {
 
 export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClick }: EventPinProps) {
   const groupRef = useRef<THREE.Group>(null);
+  const visibleRef = useRef(true);
   const [hovered, setHovered] = useState(false);
 
   const past = isPastEvent(event.endDate);
@@ -39,8 +40,12 @@ export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClic
   quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
 
   // CR-013: 1.5x scale + pulse for selected pin
-  useFrame(({ clock }) => {
+  // Back-face culling: hide pins on the far side of the globe
+  useFrame(({ camera, clock }) => {
     if (!groupRef.current) return;
+    visibleRef.current = camera.position.dot(normal) > 0;
+    groupRef.current.visible = visibleRef.current;
+    if (!visibleRef.current) return;
     if (isSelected) {
       const pulse = 1.5 + 0.08 * Math.sin(clock.elapsedTime * 3);
       groupRef.current.scale.setScalar(pulse);
