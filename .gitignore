@@ -12,6 +12,7 @@ node_modules
 dist-ssr
 # tradeshow-globe/dist is intentionally committed (pre-built static output served by serve.js)
 *.local
+.env
 
 # Editor directories and files
 .vscode/*

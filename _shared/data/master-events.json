@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-05T15:38:57.290Z",
-  "totalEvents": 168,
+  "lastUpdated": "2026-05-12T16:00:00.000Z",
+  "totalEvents": 169,
   "events": [
     {
       "code": "ITM26",
@@ -76,7 +76,7 @@
         "Event Website": "https://next.touchstoneenergy.com/sponsorships",
         "Booth Size": "10 x 10",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -100,11 +100,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -129,7 +130,7 @@
         "Event Website": "https://utc.org/event/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -153,11 +154,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -182,7 +184,7 @@
         "Event Website": "https://www.cooperative.com/conferences-education/meetings/techadvantage/Pages/default.aspx",
         "Booth Size": "10 x 10",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -247,11 +249,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "critical",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.606Z",
         "researchVersion": 3,
-        "intelligenceScore": 59
+        "intelligenceScore": 59,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -434,7 +437,7 @@
         "Event Website": "https://verticon.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SHE",
         "Business Lines": "[\"SDSI\",\"SHE\"]",
@@ -473,11 +476,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "critical",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.610Z",
         "researchVersion": 2,
-        "intelligenceScore": 59
+        "intelligenceScore": 59,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -655,7 +659,7 @@
         "Event Website": "https://www.satshow.com/",
         "Booth Size": "20 x 10",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -679,11 +683,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -708,7 +713,7 @@
         "Event Website": "Space Symposium - April 13th - 16th, 2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED Space  ",
         "Business Lines": "[\"SED Space\",\"ST4D\"]",
@@ -747,11 +752,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.617Z",
         "researchVersion": 2,
-        "intelligenceScore": 56.4
+        "intelligenceScore": 56.4,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -929,7 +935,7 @@
         "Event Website": "https://seaairspace.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SDSI",
         "Business Lines": "[\"SDSI\"]",
@@ -953,11 +959,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -982,7 +989,7 @@
         "Event Website": "https://www.fbcconferences.com/event.aspx/Q6UJ9A020MM5",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "SSTS",
         "Business Lines": "",
@@ -1006,11 +1013,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -1035,7 +1043,7 @@
         "Event Website": "https://www.fbcconferences.com/event.aspx/Q6UJ9A020MM5",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -1059,11 +1067,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -1088,7 +1097,7 @@
         "Event Website": "https://wsts.atis.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -1112,11 +1121,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -1133,11 +1143,11 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "333 S Franklin St",
+        "Event Location: Street": "211 N Tampa St",
         "Event Location: City": "Tampa",
         "Event Location: State": "FL",
         "Event Location: Country/Region": "USA",
-        "Venue": "Tampa Convention Center",
+        "Venue": "Hilton Tampa Downtown",
         "Event Website": "https://2026.ieee-ifcs.org/",
         "Booth Size": "",
         "Booth%23": "",
@@ -1178,9 +1188,9 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
-        "lastResearchedAt": "2026-02-24T14:38:20.619Z",
+        "statusGroup": "active",
+        "urgency": "active",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
         "researchVersion": 4,
         "intelligenceScore": 59
       },
@@ -1224,7 +1234,8 @@
             "prospectusPdfUrl": "https://www.ieee-international-frequency-control-symposium.com/2026/exhibitor-prospectus.pdf",
             "size": "10 x 10",
             "number": null,
-            "registrationDeadline": "2026-03-11"
+            "registrationDeadline": "2026-03-11",
+            "latestAvailabilityAndPricing": "Exhibitor/sponsor support published; exhibitor support minimum $2,600 after March 12. Sponsor deadline April 12, 2026. Lanyard and welcome reception sold out."
           },
           "sponsorship": {
             "deadline": "2026-01-10",
@@ -1261,7 +1272,8 @@
             "blockName": "IEEE International Frequency Control Symposium 2026 Official Hotel Block"
           },
           "attendance": {
-            "targetAudience": "precision timing, frequency control(Atomic clocks\nQuartz & MEMS oscillators)"
+            "targetAudience": "precision timing, frequency control(Atomic clocks\nQuartz & MEMS oscillators)",
+            "latestEstimate": "400+ attendees, 24 exhibitors, 30 countries, based on published prior-year data."
           },
           "contacts": {
             "exhibitsManagerEmail": "exhibits@ieeeinternationalfrequencycontrolsymposium.com",
@@ -1272,11 +1284,11 @@
             "endDate": "2026-05-13"
           },
           "venue": {
-            "street": null,
+            "street": "211 N Tampa St",
             "city": "Tampa",
             "state": "FL",
-            "country": null,
-            "name": "Tampa Convention Center"
+            "country": "USA",
+            "name": "Hilton Tampa Downtown"
           }
         },
         "confidence": {
@@ -1338,6 +1350,21 @@
             "https://www.ieee-international-frequency-control-symposium.com/2026/sponsor"
           ],
           "agentVersion": "1.0.0"
+        },
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "active",
+          "registration": "Open; post-deadline registration rates apply after March 3, 2026. Full registration: IEEE $800, non-member $995, student/life $380.",
+          "boothSponsorship": "Exhibitor/sponsor support published; exhibitor support minimum $2,600 after March 12. Sponsor deadline April 12, 2026. Lanyard and welcome reception sold out.",
+          "attendance": "400+ attendees, 24 exhibitors, 30 countries, based on published prior-year data.",
+          "notableChanges": [
+            "Venue/city corrected from Long Beach-area data to Hilton Tampa Downtown, Tampa, FL."
+          ],
+          "sourceUrls": [
+            "https://2026.ieee-ifcs.org/",
+            "https://2026.ieee-ifcs.org/registration",
+            "https://2026.ieee-ifcs.org/sponsors-and-exhibitors/become-a-sponsor"
+          ]
         }
       }
     },
@@ -1345,21 +1372,21 @@
       "code": "STE26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW : USA SPACE TECH EXPO ",
+        "Title": "Space Tech Expo USA 2026",
         "Event Code": "STE26",
         "Event Rank": "",
         "Attendance Record": "NEW",
-        "Start Date": "5/13/2026",
-        "End Date": "5/15/2026",
+        "Start Date": "6/2/2026",
+        "End Date": "6/4/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "300 E Ocean Blvd",
-        "Event Location: City": "LongBeach",
+        "Event Location: Street": "800 W Katella Ave",
+        "Event Location: City": "Anaheim",
         "Event Location: State": "CA",
         "Event Location: Country/Region": "USA",
-        "Venue": "Long Beach Convention Center",
-        "Event Website": "",
+        "Venue": "Anaheim Convention Center, Hall A",
+        "Event Website": "https://www.spacetechexpo.com/",
         "Booth Size": "",
         "Booth%23": "",
         "Status": "Planning",
@@ -1388,11 +1415,48 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; technical, engineering, and manufacturing attendees free. Commercial/sales/business development attendees free through June 2, then $79 plus VAT onsite.",
+          "boothSponsorship": "Exhibit inquiries open; 2026 floor plan and exhibitor portal live. Public booth pricing not found.",
+          "attendance": "350+ exhibiting companies; attendees from 30+ countries.",
+          "notableChanges": [
+            "Date corrected from May 13-15 to June 2-4.",
+            "Venue corrected from Long Beach Convention Center to Anaheim Convention Center."
+          ],
+          "sourceUrls": [
+            "https://www.spacetechexpo.com/",
+            "https://www.spacetechexpo.com/plan-your-visit",
+            "https://www.spacetechexpo.com/exhibit/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-02",
+            "endDate": "2026-06-04"
+          },
+          "venue": {
+            "street": "800 W Katella Ave",
+            "city": "Anaheim",
+            "state": "CA",
+            "country": "USA",
+            "name": "Anaheim Convention Center, Hall A"
+          },
+          "attendance": {
+            "latestEstimate": "350+ exhibiting companies; attendees from 30+ countries."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit inquiries open; 2026 floor plan and exhibitor portal live. Public booth pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "XPO26",
@@ -1402,8 +1466,8 @@
         "Event Code": "XPO26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "5/19/2026",
-        "End Date": "5/21/2026",
+        "Start Date": "5/12/2026",
+        "End Date": "5/14/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
@@ -1411,7 +1475,7 @@
         "Event Location: City": "Detroit",
         "Event Location: State": "MI",
         "Event Location: Country/Region": "USA",
-        "Venue": "HuntingtonPlace",
+        "Venue": "Huntington Place",
         "Event Website": "https://www.auvsi.org/event/xponential-2026/",
         "Booth Size": "",
         "Booth%23": "",
@@ -1473,10 +1537,10 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
-        "lastResearchedAt": "2026-02-24T14:38:20.621Z",
-        "researchVersion": 2,
+        "statusGroup": "active",
+        "urgency": "active",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 59
       },
       "research": {
@@ -1519,7 +1583,8 @@
             "prospectusPdfUrl": "https://www.xponential.com/2026/exhibitor-prospectus.pdf",
             "size": "10 x 10",
             "number": null,
-            "registrationDeadline": "2026-03-20"
+            "registrationDeadline": "2026-03-20",
+            "latestAvailabilityAndPricing": "Exhibit pricing published: raw space $39/sq ft member, $45.50/sq ft standard; 10x10 raw $3,900 member / $4,550 standard; 10x10 shell $6,900 / $7,850. Many sponsorships sold out; select remaining items such as Networking Area Sponsorship at $28,000."
           },
           "sponsorship": {
             "deadline": "2026-01-19",
@@ -1556,22 +1621,23 @@
             "blockName": "XPONENTIAL 2026 Official Hotel Block"
           },
           "attendance": {
-            "targetAudience": "UAV/UAS navigation, sensors, PNT resilience"
+            "targetAudience": "UAV/UAS navigation, sensors, PNT resilience",
+            "latestEstimate": "7,500+ attendees, 550+ exhibitors, 100,000+ sq ft exhibit space, 150+ sessions; MDEX co-location adds 3,000+ defense attendees."
           },
           "contacts": {
             "exhibitsManagerEmail": "exhibits@xponential.com",
             "sponsorshipContactEmail": "sponsors@xponential.com"
           },
           "show": {
-            "startDate": "2026-05-19",
-            "endDate": "2026-05-21"
+            "startDate": "2026-05-12",
+            "endDate": "2026-05-14"
           },
           "venue": {
-            "street": null,
+            "street": "1 Washington Blvd",
             "city": "Detroit",
             "state": "MI",
-            "country": null,
-            "name": "HuntingtonPlace"
+            "country": "USA",
+            "name": "Huntington Place"
           }
         },
         "confidence": {
@@ -1636,6 +1702,22 @@
             "https://www.xponential.com/2026/sponsor"
           ],
           "agentVersion": "1.0.0"
+        },
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "active",
+          "registration": "Registration links live.",
+          "boothSponsorship": "Exhibit pricing published: raw space $39/sq ft member, $45.50/sq ft standard; 10x10 raw $3,900 member / $4,550 standard; 10x10 shell $6,900 / $7,850. Many sponsorships sold out; select remaining items such as Networking Area Sponsorship at $28,000.",
+          "attendance": "7,500+ attendees, 550+ exhibitors, 100,000+ sq ft exhibit space, 150+ sessions; MDEX co-location adds 3,000+ defense attendees.",
+          "notableChanges": [
+            "Dates corrected from May 19-21 to May 12-14."
+          ],
+          "sourceUrls": [
+            "https://www.auvsi.org/event/xponential-2026/",
+            "https://xponential.org/",
+            "https://xponential.org/2026/documents/Exhibit_Space_Pricing_XPONENTIAL_2026.pdf",
+            "https://xponential.org/sponsor_opportunities.cfm"
+          ]
         }
       }
     },
@@ -1643,7 +1725,7 @@
       "code": "SOFIC26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "SOFIC\n(Special Operations Forces Industry Conference)",
+        "Title": "SOF Week 2026",
         "Event Code": "SOFIC26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -1656,7 +1738,7 @@
         "Event Location: City": "Tampa",
         "Event Location: State": "FL",
         "Event Location: Country/Region": "USA",
-        "Venue": "Tampa Convention Center",
+        "Venue": "Tampa Convention Center and SOF Week campus",
         "Event Website": "https://sofweek.org/",
         "Booth Size": "",
         "Booth%23": "",
@@ -1686,17 +1768,54 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Industry full conference $695 regular through May 17, $800 last-chance May 18-21. Industry exhibit-only $195 regular, $250 last-chance.",
+          "boothSponsorship": "Sponsorship opportunities still presented; logo show-guide deadline was March 28. Pricing handled via prospectus/contact flow.",
+          "attendance": "Not clearly published in accessible primary pages.",
+          "notableChanges": [
+            "Brand normalized from SOFIC to SOF Week; exhibition dates are May 19-21 within the May 18-21 event."
+          ],
+          "sourceUrls": [
+            "https://sofweek.org/",
+            "https://sofweek.org/2026-registration/",
+            "https://sofweek.org/sof-week-campus/",
+            "https://sofweek.org/sponsorship-opportunities/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-05-18",
+            "endDate": "2026-05-21"
+          },
+          "venue": {
+            "street": "333 S Franklin St",
+            "city": "Tampa",
+            "state": "FL",
+            "country": "USA",
+            "name": "Tampa Convention Center and SOF Week campus"
+          },
+          "attendance": {
+            "latestEstimate": "Not clearly published in accessible primary pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsorship opportunities still presented; logo show-guide deadline was March 28. Pricing handled via prospectus/contact flow.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "STACNYS26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "STAC NY SPRING 2026",
+        "Title": "STAC Summit New York Spring 2026",
         "Event Code": "STACNYS26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -1705,11 +1824,11 @@
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "",
-        "Event Location: City": "",
-        "Event Location: State": "",
-        "Event Location: Country/Region": "",
-        "Venue": "",
+        "Event Location: Street": "1535 Broadway",
+        "Event Location: City": "New York",
+        "Event Location: State": "NY",
+        "Event Location: Country/Region": "USA",
+        "Venue": "New York Marriott Marquis",
         "Event Website": "https://stacresearch.com/events/",
         "Booth Size": "",
         "Booth%23": "",
@@ -1779,7 +1898,7 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": "2026-02-24T00:00:00.000Z",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
         "researchVersion": 4,
         "intelligenceScore": 56.4
       },
@@ -1822,7 +1941,8 @@
             "prospectusPdfUrl": "https://www.stac-ny-spring.com/2026/exhibitor-prospectus.pdf",
             "size": "10 x 10",
             "number": null,
-            "registrationDeadline": "2026-03-21"
+            "registrationDeadline": "2026-03-21",
+            "latestAvailabilityAndPricing": "Sponsor and exhibitor categories shown; public pricing not found."
           },
           "sponsorship": {
             "deadline": "2026-01-20",
@@ -1859,7 +1979,8 @@
             "blockName": "STAC NY SPRING 2026 Official Hotel Block"
           },
           "attendance": {
-            "targetAudience": "Timing for financial markets & high-precision trading, Sychronization."
+            "targetAudience": "Timing for financial markets & high-precision trading, Sychronization.",
+            "latestEstimate": "Not published."
           },
           "contacts": {
             "exhibitsManagerEmail": "exhibits@stacnyspring.com",
@@ -1873,7 +1994,7 @@
             "street": "1535 Broadway",
             "city": "New York",
             "state": "NY",
-            "country": "United States",
+            "country": "USA",
             "name": "New York Marriott Marquis"
           }
         },
@@ -1938,6 +2059,19 @@
             "https://www.stac-ny-spring.com/2026/sponsor"
           ],
           "agentVersion": "1.0.0"
+        },
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; financial-firm technologists attend at no charge. Vendors/sponsors register with code.",
+          "boothSponsorship": "Sponsor and exhibitor categories shown; public pricing not found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Venue confirmed."
+          ],
+          "sourceUrls": [
+            "https://stacresearch.com/events/spring2026nyc/"
+          ]
         }
       }
     },
@@ -1945,7 +2079,7 @@
       "code": "CAN26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "CANSEC  2026",
+        "Title": "CANSEC 2026",
         "Event Code": "CAN26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -1958,7 +2092,7 @@
         "Event Location: City": "Ottawa",
         "Event Location: State": "ON",
         "Event Location: Country/Region": "Canada",
-        "Venue": "EYCentre",
+        "Venue": "Cohere Centre",
         "Event Website": "https://www.defenceandsecurity.ca/CANSEC/",
         "Booth Size": "",
         "Booth%23": "",
@@ -1988,17 +2122,53 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Registration link live.",
+          "boothSponsorship": "2026 exhibit space fully sold out; waitlist open. Sponsorship page currently promotes 2027 sponsor inquiries while listing 2026 sponsors.",
+          "attendance": "Published figures include 150,000 sq ft exhibitor space, 280+ exhibitors, 1,300+ B2B/B2G meetings, and 50+ international delegations.",
+          "notableChanges": [
+            "Venue name updated to Cohere Centre."
+          ],
+          "sourceUrls": [
+            "https://www.defenceandsecurity.ca/CANSEC/",
+            "https://www.defenceandsecurity.ca/CANSEC/cansec/Exhibit",
+            "https://www.defenceandsecurity.ca/CANSEC/cansec/Sponsor"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-05-27",
+            "endDate": "2026-05-28"
+          },
+          "venue": {
+            "street": "4899 Uplands Dr",
+            "city": "Ottawa",
+            "state": "ON",
+            "country": "Canada",
+            "name": "Cohere Centre"
+          },
+          "attendance": {
+            "latestEstimate": "Published figures include 150,000 sq ft exhibitor space, 280+ exhibitors, 1,300+ B2B/B2G meetings, and 50+ international delegations."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "2026 exhibit space fully sold out; waitlist open. Sponsorship page currently promotes 2027 sponsor inquiries while listing 2026 sponsors.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "STACCHIS26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "STAC CHICAGO SPRING 2026",
+        "Title": "STAC Summit Chicago Spring 2026",
         "Event Code": "STACCHIS26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -2007,11 +2177,11 @@
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "",
-        "Event Location: City": "",
-        "Event Location: State": "",
-        "Event Location: Country/Region": "",
-        "Venue": "",
+        "Event Location: Street": "233 S Wacker Dr",
+        "Event Location: City": "Chicago",
+        "Event Location: State": "IL",
+        "Event Location: Country/Region": "USA",
+        "Venue": "The Metropolitan Club, 66th Floor",
         "Event Website": "https://stacresearch.com/events/",
         "Booth Size": "",
         "Booth%23": "",
@@ -2040,31 +2210,65 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; financial-firm technologists attend at no charge. Vendors/sponsors register with code.",
+          "boothSponsorship": "Sponsor and exhibitor categories shown; public pricing not found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Venue confirmed."
+          ],
+          "sourceUrls": [
+            "https://stacresearch.com/events/spring2026chi/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-04"
+          },
+          "venue": {
+            "street": "233 S Wacker Dr",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "name": "The Metropolitan Club, 66th Floor"
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsor and exhibitor categories shown; public pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "QTECH26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "Quantum World (previously Quantum Tech USA)",
+        "Title": "Quantum.Tech World / Quantum.Tech USA 2026",
         "Event Code": "QTECH26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "6/24/2026",
+        "Start Date": "6/25/2026",
         "End Date": "6/26/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "415 Summer St",
-        "Event Location: City": "Boston",
+        "Event Location: Street": "1 Broadway",
+        "Event Location: City": "Everett",
         "Event Location: State": "MA",
         "Event Location: Country/Region": "USA",
-        "Venue": "Boston Convention and Exhibition Center",
+        "Venue": "Encore Boston Harbor",
         "Event Website": "https://www.alphaevents.com/events-quantumtechus",
         "Booth Size": "",
         "Booth%23": "",
@@ -2093,12 +2297,48 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Book Your Pass flow live; public price schedule not found in accessible official text.",
+          "boothSponsorship": "Sponsor/exhibit inquiry open; public pricing not found. Sponsor page notes opportunities sell out quickly.",
+          "attendance": "1,000+ industry attendees, 150+ speakers, 40+ countries, 50+ partners/labs/associations.",
+          "notableChanges": [
+            "Dates normalized to June 25-26 from dashboard June 24-26 based on current official listing; older pages still show June 24-26."
+          ],
+          "sourceUrls": [
+            "https://www.alphaevents.com/events-quantumtechus/",
+            "https://www.alphaevents.com/events-quantumtechus/sponsorship-opportunities",
+            "https://www.alphaevents.com/events-quantumtechus/sponsors"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-26"
+          },
+          "venue": {
+            "street": "1 Broadway",
+            "city": "Everett",
+            "state": "MA",
+            "country": "USA",
+            "name": "Encore Boston Harbor"
+          },
+          "attendance": {
+            "latestEstimate": "1,000+ industry attendees, 150+ speakers, 40+ countries, 50+ partners/labs/associations."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsor/exhibit inquiry open; public pricing not found. Sponsor page notes opportunities sell out quickly.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "APCO26",
@@ -2114,10 +2354,10 @@
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
         "Event Location: Street": "900 E Market St",
-        "Event Location: City": "SanAntonio",
+        "Event Location: City": "San Antonio",
         "Event Location: State": "TX",
         "Event Location: Country/Region": "USA",
-        "Venue": "Henry B. Gonzlez Convention Center",
+        "Venue": "Henry B. Gonzalez Convention Center",
         "Event Website": "https://apco2026.org/",
         "Booth Size": "",
         "Booth%23": "",
@@ -2146,32 +2386,68 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Early registration through May 31: member full $525, non-member full $750. Regular June 1-July 31; onsite August 1-5. Exhibitor registration opened May 1.",
+          "boothSponsorship": "Prospectus published. Booth pricing $31/sq ft January-July 2026; island +$400, open corner +$100/corner.",
+          "attendance": "More than 200 vendors; 132 sessions, 11 tracks, up to 20 CEUs.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://apco2026.org/",
+            "https://apco2026.org/registration/",
+            "https://media.apco2026.org/uploads/2026-exhibitor-prospectus.pdf"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-08-02",
+            "endDate": "2026-08-05"
+          },
+          "venue": {
+            "street": "900 E Market St",
+            "city": "San Antonio",
+            "state": "TX",
+            "country": "USA",
+            "name": "Henry B. Gonzalez Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "More than 200 vendors; 132 sessions, 11 tracks, up to 20 CEUs."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Prospectus published. Booth pricing $31/sq ft January-July 2026; island +$400, open corner +$100/corner.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "FEL26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "FEL 2026 - Free Electron Laser Conference",
+        "Title": "Free Electron Laser Conference 2026",
         "Event Code": "FEL26",
         "Event Rank": "",
         "Attendance Record": "Existing",
         "Start Date": "8/23/2026",
-        "End Date": "8/29/2026",
+        "End Date": "8/28/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "2575 Sand Hill Rd",
+        "Event Location: Street": "291 Campus Dr",
         "Event Location: City": "Stanford",
         "Event Location: State": "CA",
         "Event Location: Country/Region": "USA",
-        "Venue": "SLAC National Accelerator Laboratory",
-        "Event Website": "",
+        "Venue": "Li Ka Shing Center, Stanford University",
+        "Event Website": "https://indico.jacow.org/event/107/",
         "Booth Size": "",
         "Booth%23": "",
         "Status": "Planning",
@@ -2199,35 +2475,70 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Official registration is directed to fel2026.org; accessible JACoW registration is restricted. Abstracts open March 2-May 15, 2026.",
+          "boothSponsorship": "No public exhibitor/sponsor pricing found in accessible official pages.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "End date corrected from August 29 to August 28."
+          ],
+          "sourceUrls": [
+            "https://indico.jacow.org/event/107/",
+            "https://indico.jacow.org/event/107/abstracts/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-08-23",
+            "endDate": "2026-08-28"
+          },
+          "venue": {
+            "street": "291 Campus Dr",
+            "city": "Stanford",
+            "state": "CA",
+            "country": "USA",
+            "name": "Li Ka Shing Center, Stanford University"
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "No public exhibitor/sponsor pricing found in accessible official pages.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "SMALL26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "SMALLSAT SYMPOSIUM 2026",
+        "Title": "SmallSat Symposium 2026",
         "Event Code": "SMALL26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "8/1/2026",
-        "End Date": "8/1/2026",
+        "Start Date": "2/10/2026",
+        "End Date": "2/12/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "100 S W Temple St",
-        "Event Location: City": "SaltLakeCity",
-        "Event Location: State": "UT",
+        "Event Location: Street": "1401 N Shoreline Blvd",
+        "Event Location: City": "Mountain View",
+        "Event Location: State": "CA",
         "Event Location: Country/Region": "USA",
-        "Venue": "Salt Palace Convention Center",
-        "Event Website": "",
+        "Venue": "Computer History Museum",
+        "Event Website": "https://smallsatshow.com/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED Space",
         "Business Lines": "[\"SED Space\"]",
@@ -2251,31 +2562,68 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
-        "intelligenceScore": 0
+        "statusGroup": "completed",
+        "urgency": "past",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "completed",
+          "registration": "Completed; official site now points toward future activity/2027 save-the-date language.",
+          "boothSponsorship": "FAQ directs expo/sponsorship sales by phone; no current 2026 price page found.",
+          "attendance": "900+ attendees, 125+ presenters, 100+ exhibitors.",
+          "notableChanges": [
+            "Dashboard August 1 date corrected to February 10-12; event is completed."
+          ],
+          "sourceUrls": [
+            "https://smallsatshow.com/",
+            "https://smallsatshow.com/faq/",
+            "https://news.satnews.com/event/smallsat-symposium-2026/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-02-10",
+            "endDate": "2026-02-12"
+          },
+          "venue": {
+            "street": "1401 N Shoreline Blvd",
+            "city": "Mountain View",
+            "state": "CA",
+            "country": "USA",
+            "name": "Computer History Museum"
+          },
+          "attendance": {
+            "latestEstimate": "900+ attendees, 125+ presenters, 100+ exhibitors."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "FAQ directs expo/sponsorship sales by phone; no current 2026 price page found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "GETCI26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW: GET-CI  ",
+        "Title": "GPS Equipment Testing for Critical Infrastructure",
         "Event Code": "GETCI26",
         "Event Rank": "",
         "Attendance Record": "NEW",
-        "Start Date": "8/1/2026",
-        "End Date": "8/1/2026",
+        "Start Date": "",
+        "End Date": "",
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Walking\"]",
         "Event Location: Street": "",
         "Event Location: City": "",
         "Event Location: State": "",
-        "Event Location: Country/Region": "",
+        "Event Location: Country/Region": "USA",
         "Venue": "",
         "Event Website": "https://www.dhs.gov/group/13025/publication/gps-equipment-testing-critical-infrastructure-fact-sheet",
         "Booth Size": "",
@@ -2306,31 +2654,66 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "No 2026 public show/event found; DHS page describes GET-CI as a test series, not a trade-show event.",
+          "boothSponsorship": "Not applicable/publicly posted.",
+          "attendance": "Not applicable.",
+          "notableChanges": [
+            "Dashboard August 1 event appears unsupported and should be reviewed or removed from show calendar."
+          ],
+          "sourceUrls": [
+            "https://www.dhs.gov/science-and-technology/publication/gps-equipment-testing-critical-infrastructure-fact-sheet",
+            "https://www.ion.org/jnc/abstracts.cfm?paperID=16765"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": null,
+            "endDate": null
+          },
+          "venue": {
+            "street": null,
+            "city": null,
+            "state": null,
+            "country": "USA",
+            "name": null
+          },
+          "attendance": {
+            "latestEstimate": "Not applicable."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Not applicable/publicly posted.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "IBIC26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "IBIC'26 - 15th International Beam Instrumentation Conference",
+        "Title": "IBIC 2026",
         "Event Code": "IBIC26",
         "Event Rank": "",
         "Attendance Record": "Existing",
         "Start Date": "8/30/2026",
-        "End Date": "9/4/2026",
+        "End Date": "9/3/2026",
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "",
-        "Event Location: City": "",
-        "Event Location: State": "",
-        "Event Location: Country/Region": "",
-        "Venue": "",
-        "Event Website": "",
+        "Event Location: Street": "4010 Whistler Way",
+        "Event Location: City": "Whistler",
+        "Event Location: State": "BC",
+        "Event Location: Country/Region": "Canada",
+        "Venue": "Whistler Conference Centre",
+        "Event Website": "https://indico.jacow.org/event/113/",
         "Booth Size": "",
         "Booth%23": "",
         "Status": "Planning",
@@ -2358,18 +2741,54 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; hotel conference rate until July 27, 2026; external listing gives registration deadline July 3, 2026.",
+          "boothSponsorship": "Sponsors shown; no public booth pricing found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "End date corrected from September 4 to September 3."
+          ],
+          "sourceUrls": [
+            "https://indico.jacow.org/event/113/",
+            "https://indico.jacow.org/event/113/page/408-conference-location",
+            "https://cerncourier.com/event/ibic-2026/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-08-30",
+            "endDate": "2026-09-03"
+          },
+          "venue": {
+            "street": "4010 Whistler Way",
+            "city": "Whistler",
+            "state": "BC",
+            "country": "Canada",
+            "name": "Whistler Conference Centre"
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsors shown; no public booth pricing found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "ASC26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "Applied Superconductivity",
+        "Title": "Applied Superconductivity Conference 2026",
         "Event Code": "ASC26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -2411,12 +2830,49 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; early fee deadline June 30, regular deadline August 21.",
+          "boothSponsorship": "Booth deadline July 7; 10x10 $3,600, 10x20 $6,700. Sponsorships from $500; Silver $5K+, Gold $10K+, Platinum $25K+.",
+          "attendance": "1,200+ expected attendees.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://www.appliedsuperconductivity.org/asc2026/",
+            "https://www.appliedsuperconductivity.org/asc2026/registration/",
+            "https://www.appliedsuperconductivity.org/asc2026/exhibit-information/",
+            "https://www.appliedsuperconductivity.org/asc2026/sponsorship-advertising/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-06",
+            "endDate": "2026-09-11"
+          },
+          "venue": {
+            "street": "1000 Fort Duquesne Blvd",
+            "city": "Pittsburgh",
+            "state": "PA",
+            "country": "USA",
+            "name": "David L. Lawrence Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "1,200+ expected attendees."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Booth deadline July 7; 10x10 $3,600, 10x20 $6,700. Sponsorships from $500; Silver $5K+, Gold $10K+, Platinum $25K+.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "GNSS26",
@@ -2431,11 +2887,11 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "9801 International Dr",
+        "Event Location: Street": "1 Grand Cypress Blvd",
         "Event Location: City": "Orlando",
         "Event Location: State": "FL",
         "Event Location: Country/Region": "USA",
-        "Venue": "Hyatt Regency Orlando",
+        "Venue": "Hyatt Regency Grand Cypress",
         "Event Website": "https://www.ion.org/gnss/future-meetings.cfm",
         "Booth Size": "",
         "Booth%23": "",
@@ -2464,31 +2920,68 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Registration opens Spring/Summer 2026; posted rates include full member $1,100 early / $1,300 after August 14, non-member $1,180 / $1,380, exhibit hall pass $775.",
+          "boothSponsorship": "Exhibit floor has available booths; exhibit space starts at $3,300 per 10x10. Safran Electronics & Defense listed at booth 401.",
+          "attendance": "Official positioning as the largest GNSS technical meeting and showcase; numeric attendance not captured from accessible pages.",
+          "notableChanges": [
+            "Dates confirmed; Safran booth 401 found."
+          ],
+          "sourceUrls": [
+            "https://www.ion.org/gnss/",
+            "https://www.ion.org/gnss/registration.cfm",
+            "https://www2.ion.org/gnss/exhibits.cfm",
+            "https://www.ion.org/gnss/exhibitor-resource-center.cfm"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-14",
+            "endDate": "2026-09-18"
+          },
+          "venue": {
+            "street": "1 Grand Cypress Blvd",
+            "city": "Orlando",
+            "state": "FL",
+            "country": "USA",
+            "name": "Hyatt Regency Grand Cypress"
+          },
+          "attendance": {
+            "latestEstimate": "Official positioning as the largest GNSS technical meeting and showcase; numeric attendance not captured from accessible pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit floor has available booths; exhibit space starts at $3,300 per 10x10. Safran Electronics & Defense listed at booth 401.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "QWC26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW: Quantum World Congress",
+        "Title": "Quantum World Congress 2026",
         "Event Code": "QWC26",
         "Event Rank": "",
         "Attendance Record": "NEW",
-        "Start Date": "9/22/2026",
-        "End Date": "9/24/2026",
+        "Start Date": "9/23/2026",
+        "End Date": "9/25/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "1300 Pennsylvania Ave NW",
-        "Event Location: City": "Washington",
-        "Event Location: State": "DC",
+        "Event Location: Street": "7777 Baltimore Ave",
+        "Event Location: City": "College Park",
+        "Event Location: State": "MD",
         "Event Location: Country/Region": "USA",
-        "Venue": "Ronald Reagan Building and International Trade Center",
+        "Venue": "The Hotel at the University of Maryland",
         "Event Website": "https://www.quantumworldcongress.com/",
         "Booth Size": "",
         "Booth%23": "",
@@ -2517,12 +3010,47 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Not fully open; official site offers early-access signup for announcements and registration.",
+          "boothSponsorship": "Exhibit tiers $7,250-$11,500; sponsorships include Gold $55,000, pavilions $40K-$50K, and other options $10K-$55K.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Dates corrected from September 22-24 to September 23-25."
+          ],
+          "sourceUrls": [
+            "https://www.quantumworldcongress.com/2026",
+            "https://www.quantumworldcongress.com/2026/sponsor"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-23",
+            "endDate": "2026-09-25"
+          },
+          "venue": {
+            "street": "7777 Baltimore Ave",
+            "city": "College Park",
+            "state": "MD",
+            "country": "USA",
+            "name": "The Hotel at the University of Maryland"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit tiers $7,250-$11,500; sponsorships include Gold $55,000, pavilions $40K-$50K, and other options $10K-$55K.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "NASPI26",
@@ -2545,7 +3073,7 @@
         "Event Website": "https://www.naspi.org/events/naspi-work-group-hybrid-meeting-and-vendor-show-1",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -2582,11 +3110,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.627Z",
         "researchVersion": 4,
-        "intelligenceScore": 56.4
+        "intelligenceScore": 56.4,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -2747,20 +3276,20 @@
       "code": "AUSA26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "AUSA 2026 ",
+        "Title": "AUSA Annual Meeting & Exposition 2026",
         "Event Code": "AUSA26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "10/1/2026",
-        "End Date": "10/1/2026",
+        "Start Date": "10/12/2026",
+        "End Date": "10/14/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "801AllenY.LewPlaceNW",
+        "Event Location: Street": "801 Mt Vernon Pl NW",
         "Event Location: City": "Washington",
         "Event Location: State": "DC",
         "Event Location: Country/Region": "USA",
-        "Venue": "WalterE.Washington Convention Center",
+        "Venue": "Walter E. Washington Convention Center",
         "Event Website": "https://www.ausa.org/meet",
         "Booth Size": "",
         "Booth%23": "",
@@ -2834,18 +3363,55 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": "2026-03-05T15:31:16.296Z",
-        "researchVersion": 2,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 70
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Opens July 2026.",
+          "boothSponsorship": "2026 exhibit space draft shows $58 per sq ft, or $5,800 per 10x10, with 10% non-refundable deposit.",
+          "attendance": "44,000+ attendees, 750+ exhibits, 92 countries.",
+          "notableChanges": [
+            "Dashboard single-day October 1 date corrected to October 12-14."
+          ],
+          "sourceUrls": [
+            "https://meetings.ausa.org/annual/2026/",
+            "https://meetings.ausa.org/annual/2026/Badge_Registration_ticket_sales_2026.cfm",
+            "https://meetings.ausa.org/annual/2025/space_draft.cfm",
+            "https://www.ausa.org/future-annual-meeting-dates"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-10-12",
+            "endDate": "2026-10-14"
+          },
+          "venue": {
+            "street": "801 Mt Vernon Pl NW",
+            "city": "Washington",
+            "state": "DC",
+            "country": "USA",
+            "name": "Walter E. Washington Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "44,000+ attendees, 750+ exhibits, 92 countries."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "2026 exhibit space draft shows $58 per sq ft, or $5,800 per 10x10, with 10% non-refundable deposit.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "EXPO26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW : EXPONAVAL",
+        "Title": "Exponaval 2026",
         "Event Code": "EXPO26",
         "Event Rank": "",
         "Attendance Record": "NEW",
@@ -2854,12 +3420,12 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "Av. Jorge Montt S/N",
-        "Event Location: City": "Santiago deChile",
+        "Event Location: Street": "Av. El Salto 5000",
+        "Event Location: City": "Santiago",
         "Event Location: State": "",
         "Event Location: Country/Region": "Chile",
-        "Venue": "Base Naval Talcahuano",
-        "Event Website": "",
+        "Venue": "Espacio Riesco",
+        "Event Website": "https://www.exponaval.cl/en/",
         "Booth Size": "",
         "Booth%23": "",
         "Status": "Planning",
@@ -2884,34 +3450,69 @@
       "dismissed": {},
       "meta": {
         "region": "Americas",
-        "subRegion": "US & Canada",
+        "subRegion": "Latin America",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Official site has exhibit/brochure lead forms; no public registration pricing found.",
+          "boothSponsorship": "I want to exhibit and brochure lead forms live; no public booth pricing found.",
+          "attendance": "4,939 professional visitors, 110 companies, 1,462 conference attendees, 43 countries, 16,200 sqm.",
+          "notableChanges": [
+            "Location corrected from US/Canada bucket to Santiago, Chile."
+          ],
+          "sourceUrls": [
+            "https://www.exponaval.cl/en/",
+            "https://www.exponaval.cl/en/download-brochure/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-12-01",
+            "endDate": "2026-12-03"
+          },
+          "venue": {
+            "street": "Av. El Salto 5000",
+            "city": "Santiago",
+            "state": null,
+            "country": "Chile",
+            "name": "Espacio Riesco"
+          },
+          "attendance": {
+            "latestEstimate": "4,939 professional visitors, 110 companies, 1,462 conference attendees, 43 countries, 16,200 sqm."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "I want to exhibit and brochure lead forms live; no public booth pricing found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "MBB26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW : MOSTRA BID BRAZIL",
+        "Title": "Mostra BID Brasil 2026",
         "Event Code": "MBB26",
         "Event Rank": "",
         "Attendance Record": "NEW",
-        "Start Date": "12/1/2026",
-        "End Date": "12/3/2026",
+        "Start Date": "11/24/2026",
+        "End Date": "11/26/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "Eixo Monumental",
-        "Event Location: City": "Braslia",
-        "Event Location: State": "",
+        "Event Location: Street": "",
+        "Event Location: City": "Brasilia",
+        "Event Location: State": "DF",
         "Event Location: Country/Region": "Brazil",
-        "Venue": "Centro de Convenes Ulysses Guimares",
+        "Venue": "Centro de Convencoes Ulysses Guimaraes",
         "Event Website": "https://mostrabidbrasil.com/",
         "Booth Size": "",
         "Booth%23": "",
@@ -2937,21 +3538,57 @@
       "dismissed": {},
       "meta": {
         "region": "Americas",
-        "subRegion": "US & Canada",
+        "subRegion": "Latin America",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Visitor accreditation pages appear under construction.",
+          "boothSponsorship": "Exhibitor/sponsor interest handled through commercial contacts; no public pricing found.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Dates corrected from December 1-3 to November 24-26.",
+            "Location corrected from US/Canada bucket to Brasilia, Brazil."
+          ],
+          "sourceUrls": [
+            "https://mostrabidbrasil.com/",
+            "https://mostrabidbrasil.com/porqueexpor"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-11-24",
+            "endDate": "2026-11-26"
+          },
+          "venue": {
+            "street": null,
+            "city": "Brasilia",
+            "state": "DF",
+            "country": "Brazil",
+            "name": "Centro de Convencoes Ulysses Guimaraes"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibitor/sponsor interest handled through commercial contacts; no public pricing found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "STACCHIF26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "STAC CHICAGO  FALL 2026",
+        "Title": "STAC Chicago Fall 2026",
         "Event Code": "STACCHIF26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -2960,9 +3597,9 @@
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "",
-        "Event Location: City": "",
-        "Event Location: State": "",
+        "Event Location: Street": "6700 N Gaylord Rockies Blvd",
+        "Event Location: City": "Aurora",
+        "Event Location: State": "CO",
         "Event Location: Country/Region": "",
         "Venue": "",
         "Event Website": "https://stacresearch.com/events/\n\n\n\n\n",
@@ -2994,17 +3631,45 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "no-date",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Fall 2026 date not yet published on official STAC events page.",
+          "boothSponsorship": "Sponsor/exhibit details by contact/code; public pricing not found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Blank date remains unresolved; official page only confirms Spring Chicago on June 4, 2026."
+          ],
+          "sourceUrls": [
+            "https://stacresearch.com/events/",
+            "https://stacresearch.com/events/spring2026chi/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": null,
+            "endDate": null
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsor/exhibit details by contact/code; public pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "STACNYF26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "STAC NY FALL 2026",
+        "Title": "STAC New York Fall 2026",
         "Event Code": "STACNYF26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -3056,8 +3721,8 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "no-date",
-        "lastResearchedAt": "2026-02-24T14:38:20.629Z",
-        "researchVersion": 2,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 35.9
       },
       "research": {
@@ -3091,7 +3756,8 @@
             "prospectusPdfUrl": "https://www.stac-ny-fall.com/2026/exhibitor-prospectus.pdf",
             "size": "10 x 10",
             "number": null,
-            "registrationDeadline": null
+            "registrationDeadline": null,
+            "latestAvailabilityAndPricing": "Sponsor/exhibit details by contact/code; public pricing not found."
           },
           "sponsorship": {
             "tierNames": [
@@ -3126,7 +3792,8 @@
             "blockName": "STAC NY FALL 2026 Official Hotel Block"
           },
           "attendance": {
-            "targetAudience": "Timing for financial markets & high-precision trading, Sychronization."
+            "targetAudience": "Timing for financial markets & high-precision trading, Sychronization.",
+            "latestEstimate": "Not published."
           },
           "contacts": {
             "exhibitsManagerEmail": "exhibits@stacnyfall.com",
@@ -3197,6 +3864,20 @@
             "https://www.stac-ny-fall.com/2026/sponsor"
           ],
           "agentVersion": "1.0.0"
+        },
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Fall 2026 date not yet published on official STAC events page.",
+          "boothSponsorship": "Sponsor/exhibit details by contact/code; public pricing not found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Blank date remains unresolved; official page only confirms Spring New York on May 20, 2026."
+          ],
+          "sourceUrls": [
+            "https://stacresearch.com/events/",
+            "https://stacresearch.com/events/spring2026nyc/"
+          ]
         }
       }
     },
@@ -3204,7 +3885,7 @@
       "code": "NBAA26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NBAA/BACE",
+        "Title": "NBAA-BACE 2026",
         "Event Code": "NBAA26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -3213,7 +3894,7 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "300 Convention Center Dr",
+        "Event Location: Street": "3150 Paradise Rd",
         "Event Location: City": "Las Vegas",
         "Event Location: State": "NV",
         "Event Location: Country/Region": "USA",
@@ -3246,12 +3927,47 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Badge registration available by July 2026.",
+          "boothSponsorship": "Exhibit application open; priority placement deadline January 30, 2026 has passed. Indoor pricing: premium $58/sq ft, standard regular $43.35/sq ft, SkyPod $11,000, first-time kiosk $3,585, SkyLounge $11,000.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://nbaa.org/events/2026-nbaa-business-aviation-convention-exhibition-nbaa-bace/",
+            "https://nbaa.org/events/2026-nbaa-business-aviation-convention-exhibition-nbaa-bace/exhibitor-information-2026-nbaa-bace/exhibit-pricing-2026-nbaa-bace/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-10-20",
+            "endDate": "2026-10-22"
+          },
+          "venue": {
+            "street": "3150 Paradise Rd",
+            "city": "Las Vegas",
+            "state": "NV",
+            "country": "USA",
+            "name": "Las Vegas Convention Center West Hall"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit application open; priority placement deadline January 30, 2026 has passed. Indoor pricing: premium $58/sq ft, standard regular $43.35/sq ft, SkyPod $11,000, first-time kiosk $3,585, SkyLounge $11,000.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "CAF26",
@@ -3274,7 +3990,7 @@
         "Event Website": "https://www.defenceandsecurity.ca/CAF/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "ST4D ",
         "Business Lines": "[\"ST4D\"]",
@@ -3298,11 +4014,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -3310,19 +4027,19 @@
       "code": "TSN26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "NEW : Aerospace and Defense TSN Summit",
+        "Title": "Aerospace and Defense TSN Summit 2026",
         "Event Code": "TSN26",
         "Event Rank": "",
         "Attendance Record": "NEW",
-        "Start Date": "",
-        "End Date": "",
+        "Start Date": "10/20/2026",
+        "End Date": "10/23/2026",
         "Region": "USA",
         "Location": "Unknown",
         "Event Type": "[\"Exhibition\"]",
         "Event Location: Street": "",
-        "Event Location: City": "",
-        "Event Location: State": "",
-        "Event Location: Country/Region": "",
+        "Event Location: City": "Novi",
+        "Event Location: State": "MI",
+        "Event Location: Country/Region": "USA",
         "Venue": "",
         "Event Website": "https://adtsummit.com/",
         "Booth Size": "",
@@ -3361,9 +4078,9 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "no-date",
-        "lastResearchedAt": "2026-02-24T14:38:20.631Z",
-        "researchVersion": 2,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 35.9
       },
       "research": {
@@ -3397,7 +4114,8 @@
             "prospectusPdfUrl": "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/exhibitor-prospectus.pdf",
             "size": "10 x 10",
             "number": null,
-            "registrationDeadline": null
+            "registrationDeadline": null,
+            "latestAvailabilityAndPricing": "Exhibit flow live; public pricing not published. 2026 edition adds Conference, Exhibit and Plugfest."
           },
           "sponsorship": {
             "tierNames": [
@@ -3432,21 +4150,22 @@
             "blockName": "NEW : Aerospace and Defense TSN Summit 2026 Official Hotel Block"
           },
           "attendance": {
-            "targetAudience": "Time-Sensitive Networking for aerospace & defense"
+            "targetAudience": "Time-Sensitive Networking for aerospace & defense",
+            "latestEstimate": "Not published."
           },
           "contacts": {
             "exhibitsManagerEmail": "exhibits@new:aerospaceanddefensetsnsummit.com",
             "sponsorshipContactEmail": "sponsors@new:aerospaceanddefensetsnsummit.com"
           },
           "show": {
-            "startDate": null,
-            "endDate": null
+            "startDate": "2026-10-20",
+            "endDate": "2026-10-23"
           },
           "venue": {
             "street": null,
-            "city": null,
-            "state": null,
-            "country": null,
+            "city": "Novi",
+            "state": "MI",
+            "country": "USA",
             "name": null
           }
         },
@@ -3503,6 +4222,19 @@
             "https://www.new-:-aerospace-and-defense-tsn-summit.com/2026/sponsor"
           ],
           "agentVersion": "1.0.0"
+        },
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Registration/exhibit link live via Cvent; public pricing not published.",
+          "boothSponsorship": "Exhibit flow live; public pricing not published. 2026 edition adds Conference, Exhibit and Plugfest.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Blank dashboard dates filled as October 20-23."
+          ],
+          "sourceUrls": [
+            "https://adtsummit.com/"
+          ]
         }
       }
     },
@@ -3527,7 +4259,7 @@
         "Event Website": "https://meetings.ausa.org/globalforce/2025/attend.cfm",
         "Booth Size": "10x20",
         "Booth%23": "NA",
-        "Status": "Up to Date",
+        "Status": "Completed",
         "Sector": "Defense",
         "Organizing Company": "SED Space",
         "Business Lines": "[\"SED Space\"]",
@@ -3551,11 +4283,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -3580,7 +4313,7 @@
         "Event Website": "https://smallsatshow.com/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -3604,11 +4337,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -3739,7 +4473,7 @@
         "Event Website": "https://www.afa.org/afa-warfare-symposium/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SFS",
         "Business Lines": "[]",
@@ -3763,11 +4497,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "critical",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -3792,7 +4527,7 @@
         "Event Website": "https://www.mca-marines.org/modern-day-marine-2/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SFS",
         "Business Lines": "",
@@ -3829,11 +4564,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.632Z",
         "researchVersion": 2,
-        "intelligenceScore": 56.4
+        "intelligenceScore": 56.4,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -4010,7 +4746,7 @@
         "Event Website": "https://pnt.dsigroup.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SFS",
         "Business Lines": "[\"ST4D\"]",
@@ -4049,11 +4785,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.634Z",
         "researchVersion": 5,
-        "intelligenceScore": 56.4
+        "intelligenceScore": 56.4,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -4213,7 +4950,7 @@
       "code": "PXRE26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "Pax River Expo 2026",
+        "Title": "Pax River Expo / NAS Pax River Air Show 2026",
         "Event Code": "PXRE26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -4222,11 +4959,11 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "22268 Cedar Point Rd",
+        "Event Location: Street": "",
         "Event Location: City": "Patuxent River",
         "Event Location: State": "MD",
         "Event Location: Country/Region": "USA",
-        "Venue": "naval air station patuxent river",
+        "Venue": "NAS Patuxent River",
         "Event Website": "https://www.paxriverairshow.com/",
         "Booth Size": "",
         "Booth%23": "",
@@ -4255,12 +4992,48 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "General admission free; premium seating is on sale.",
+          "boothSponsorship": "Sponsors and exhibitors listed; public pricing not found.",
+          "attendance": "Blue Angels scheduled; numeric estimates not published.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://www.paxriverairshow.com/",
+            "https://www.paxriverairshow.com/premiere-seating",
+            "https://www.paxriverairshow.com/sponsors"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-20",
+            "endDate": "2026-06-21"
+          },
+          "venue": {
+            "street": null,
+            "city": "Patuxent River",
+            "state": "MD",
+            "country": "USA",
+            "name": "NAS Patuxent River"
+          },
+          "attendance": {
+            "latestEstimate": "Blue Angels scheduled; numeric estimates not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsors and exhibitors listed; public pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "AAAA26",
@@ -4283,7 +5056,7 @@
         "Event Website": "https://s7.goeshow.com/aaaa/missionsolutions/2026/index.cfm",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "Planning",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SFS",
         "Business Lines": "",
@@ -4307,11 +5080,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "planning",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -4362,11 +5136,46 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; no public fee found.",
+          "boothSponsorship": "Agenda includes partner exhibition/receptions; public pricing not found.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Venue confirmed as Hilton La Jolla Torrey Pines."
+          ],
+          "sourceUrls": [
+            "https://www.geospatialexploitationproducts.com/gxp360/",
+            "https://gxp.evareg.com/2026-gxp360"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-05-18",
+            "endDate": "2026-05-20"
+          },
+          "venue": {
+            "street": "10950 N Torrey Pines Rd",
+            "city": "La Jolla",
+            "state": "CA",
+            "country": "USA",
+            "name": "Hilton La Jolla Torrey Pines"
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Agenda includes partner exhibition/receptions; public pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "JNC26",
@@ -4388,7 +5197,7 @@
         "Venue": "Northern Kentucky Convention Center",
         "Event Website": "https://www.ion.org/jnc/exhibits.cfm",
         "Booth Size": "",
-        "Booth%23": "",
+        "Booth%23": "301",
         "Status": "Planning",
         "Sector": "ADG",
         "Organizing Company": "SFS",
@@ -4415,17 +5224,53 @@
         "regionalTags": [],
         "statusGroup": "planning",
         "urgency": "upcoming",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; visit requests due May 12, 2026. After April 30 rates: member $1,600, nonmember $1,690, single day $1,000, exhibit hall pass $1,100, with $300 hotel discount available.",
+          "boothSponsorship": "Booths available on floor plan; exhibit space starts at $3,300 per 10x10. Safran Federal Systems listed at booth 301.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Safran booth 301 found."
+          ],
+          "sourceUrls": [
+            "https://www.ion.org/jnc/exhibits.cfm",
+            "https://www.ion.org/jnc/registration.cfm",
+            "https://www.ion.org/jnc/exhibitor-resource-center.cfm"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-04"
+          },
+          "venue": {
+            "street": "1 W Rivercenter Blvd",
+            "city": "Covington",
+            "state": "KY",
+            "country": "USA",
+            "name": "Northern Kentucky Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Booths available on floor plan; exhibit space starts at $3,300 per 10x10. Safran Federal Systems listed at booth 301.",
+            "number": "301"
+          }
+        }
+      }
     },
     {
       "code": "ARVE26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "Armored Vehicles Conference 2026",
+        "Title": "Armored Vehicles USA 2026",
         "Event Code": "ARVE26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -4434,11 +5279,11 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "1275 S. Huron Street",
-        "Event Location: City": " Ypsilanti",
+        "Event Location: Street": "",
+        "Event Location: City": "Detroit",
         "Event Location: State": "MI",
         "Event Location: Country/Region": "USA",
-        "Venue": "Ann Arbor Marriott Ypsilanti at Eagle Crest",
+        "Venue": "",
         "Event Website": "https://www.idga.org/events-armoredvehiclesusa",
         "Booth Size": "",
         "Booth%23": "",
@@ -4467,31 +5312,67 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Industry pass $1,695 standard / $1,495 early by April 3; foreign military/government/academia/FFRDC/nonprofit $1,195 / $795 early; U.S. military/government $0.",
+          "boothSponsorship": "Sponsorship/exhibit opportunities available by inquiry; public booth pricing not found.",
+          "attendance": "400+ professionals and 20+ speakers.",
+          "notableChanges": [
+            "Dates confirmed; venue details still pending from organizer."
+          ],
+          "sourceUrls": [
+            "https://www.idga.org/events-armoredvehiclesusa",
+            "https://www.idga.org/events-armoredvehiclesusa/srspricing",
+            "https://www.idga.org/events-armoredvehiclesusa/venue"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-06-23",
+            "endDate": "2026-06-24"
+          },
+          "venue": {
+            "street": null,
+            "city": "Detroit",
+            "state": "MI",
+            "country": "USA",
+            "name": null
+          },
+          "attendance": {
+            "latestEstimate": "400+ professionals and 20+ speakers."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsorship/exhibit opportunities available by inquiry; public booth pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "AOCEW26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "AOC EW Capability Gaps and Enabling Technologies 2026",
+        "Title": "AOC EW Capabilities & Gaps 2026",
         "Event Code": "AOCEW26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "6/8/2026",
-        "End Date": "6/10/2026",
+        "Start Date": "7/28/2026",
+        "End Date": "7/30/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "27582 SGM Gene Shaw Technology Drive, Suite B",
+        "Event Location: Street": "",
         "Event Location: City": "Crane",
         "Event Location: State": "IN",
         "Event Location: Country/Region": "USA",
-        "Venue": "SAIC",
+        "Venue": "NWS Crane Lakeview Conference Center",
         "Event Website": "https://crows.org/event/crane2026/#agenda",
         "Booth Size": "",
         "Booth%23": "",
@@ -4520,18 +5401,52 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open; AOC member industry/contractor $775, nonmember $875, active military/government civilian free; no onsite registration. CFP closes May 22; clearance visit requests due July 10.",
+          "boothSponsorship": "Sponsorship/exhibits available by inquiry; pricing not public.",
+          "attendance": "Not published.",
+          "notableChanges": [
+            "Dates corrected from June 8-10 to July 28-30."
+          ],
+          "sourceUrls": [
+            "https://crows.org/event/crane2026/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-07-28",
+            "endDate": "2026-07-30"
+          },
+          "venue": {
+            "street": null,
+            "city": "Crane",
+            "state": "IN",
+            "country": "USA",
+            "name": "NWS Crane Lakeview Conference Center"
+          },
+          "attendance": {
+            "latestEstimate": "Not published."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsorship/exhibits available by inquiry; pricing not public.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "ESRI26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "ESRI User Conference 2026",
+        "Title": "Esri User Conference 2026",
         "Event Code": "ESRI26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -4540,7 +5455,7 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "111 Harbor Dr",
+        "Event Location: Street": "111 W Harbor Dr",
         "Event Location: City": "San Diego",
         "Event Location: State": "CA",
         "Event Location: Country/Region": "USA",
@@ -4573,23 +5488,59 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Standard in-person $2,600 until May 29; late/on-site $2,900 after May 29; digital $99; U.S. federal government $1,095.",
+          "boothSponsorship": "Sponsor/exhibitor applications linked; public pricing not found. Expo is July 14-16 in Halls A-D.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://www.esri.com/en-us/about/events/uc/overview",
+            "https://www.esri.com/en-us/about/events/uc/registration",
+            "https://www.esri.com/en-us/about/events/uc/agenda/expo"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-07-13",
+            "endDate": "2026-07-17"
+          },
+          "venue": {
+            "street": "111 W Harbor Dr",
+            "city": "San Diego",
+            "state": "CA",
+            "country": "USA",
+            "name": "San Diego Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsor/exhibitor applications linked; public pricing not found. Expo is July 14-16 in Halls A-D.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "SMD26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "SMD Symposium 2026",
+        "Title": "Space & Missile Defense Symposium 2026",
         "Event Code": "SMD26",
         "Event Rank": "",
         "Attendance Record": "Existing",
-        "Start Date": "9/11/2026",
-        "End Date": "9/13/2026",
+        "Start Date": "8/11/2026",
+        "End Date": "8/13/2026",
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
@@ -4626,18 +5577,54 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open.",
+          "boothSponsorship": "Exhibit hall sold out; waitlist/request forms available. Booth pricing includes 10x10 $1,800 South Hall / $1,700 East Hall/Saturn / $500 government-academic. Payment deadline April 30 has passed.",
+          "attendance": "2025 stats: 300+ exhibiting organizations and 9,250 attendees.",
+          "notableChanges": [
+            "Dates corrected from September 11-13 to August 11-13."
+          ],
+          "sourceUrls": [
+            "https://smdsymposium.org/",
+            "https://smdsymposium.org/exhibitor/",
+            "https://smdsymposium.org/registration/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-08-11",
+            "endDate": "2026-08-13"
+          },
+          "venue": {
+            "street": "700 Monroe St SW",
+            "city": "Huntsville",
+            "state": "AL",
+            "country": "USA",
+            "name": "Von Braun Center"
+          },
+          "attendance": {
+            "latestEstimate": "2025 stats: 300+ exhibiting organizations and 9,250 attendees."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit hall sold out; waitlist/request forms available. Booth pricing includes 10x10 $1,800 South Hall / $1,700 East Hall/Saturn / $500 government-academic. Payment deadline April 30 has passed.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "AFCEA26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "AFCEA Technet 2026",
+        "Title": "TechNet Augusta 2026",
         "Event Code": "AFCEA26",
         "Event Rank": "",
         "Attendance Record": "NEW",
@@ -4679,18 +5666,54 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Available per homepage.",
+          "boothSponsorship": "Exhibit opportunities open; live floor plan indicates availability. Reynolds Street Pavilion 8x10: member $6,300, nonmember $7,400, small business $5,400, military/government $2,500. Olmstead hall sold out at $66/sq ft member, $77 nonmember, $57 small business, $27 military/government.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Dates confirmed."
+          ],
+          "sourceUrls": [
+            "https://events.afcea.org/Augusta26/Public/enter.aspx",
+            "https://events.afcea.org/Augusta26/Public/Content.aspx?ID=120965&sortMenu=101001",
+            "https://events.afcea.org/Augusta26/Public/Content.aspx?ID=121014&sortMenu=107001"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-08-17",
+            "endDate": "2026-08-20"
+          },
+          "venue": {
+            "street": "2 10th St",
+            "city": "Augusta",
+            "state": "GA",
+            "country": "USA",
+            "name": "Augusta Marriott at the Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibit opportunities open; live floor plan indicates availability. Reynolds Street Pavilion 8x10: member $6,300, nonmember $7,400, small business $5,400, military/government $2,500. Olmstead hall sold out at $66/sq ft member, $77 nonmember, $57 small business, $27 military/government.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "AFA26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "AFA 2026",
+        "Title": "Air, Space & Cyber Conference 2026",
         "Event Code": "AFA26",
         "Event Rank": "",
         "Attendance Record": "NEW",
@@ -4699,11 +5722,11 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "201 Waterfront Street",
+        "Event Location: Street": "201 Waterfront St",
         "Event Location: City": "National Harbor",
         "Event Location: State": "MD",
         "Event Location: Country/Region": "USA",
-        "Venue": "Gaylord National Resort and Convention Center",
+        "Venue": "Gaylord National Resort & Convention Center",
         "Event Website": "https://www.afa.org/air-space-cyber-conference/",
         "Booth Size": "10 x 20",
         "Booth%23": "",
@@ -4732,18 +5755,53 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Registration will open soon.",
+          "boothSponsorship": "AFA corporate membership required. Booth rates $63/sq ft for corporate members and $40/sq ft for government/military, sold in 10x10 increments; four exhibitor badges per 100 sq ft.",
+          "attendance": "20,000+ industry professionals and nearly 300 booths.",
+          "notableChanges": [
+            "Venue and exhibitor pricing refreshed."
+          ],
+          "sourceUrls": [
+            "https://www.afa.org/air-space-cyber-conference/",
+            "https://www.afa.org/air-space-cyber-conference/exhibitor-information/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-14",
+            "endDate": "2026-09-16"
+          },
+          "venue": {
+            "street": "201 Waterfront St",
+            "city": "National Harbor",
+            "state": "MD",
+            "country": "USA",
+            "name": "Gaylord National Resort & Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "20,000+ industry professionals and nearly 300 booths."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "AFA corporate membership required. Booth rates $63/sq ft for corporate members and $40/sq ft for government/military, sold in 10x10 increments; four exhibitor badges per 100 sq ft.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "AOCS26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "AOC Symposium",
+        "Title": "AOC Annual Convention 2026",
         "Event Code": "AOCS26",
         "Event Rank": "",
         "Attendance Record": "NEW",
@@ -4752,7 +5810,7 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "201 Waterfront Street",
+        "Event Location: Street": "201 Waterfront St",
         "Event Location: City": "National Harbor",
         "Event Location: State": "MD",
         "Event Location: Country/Region": "USA",
@@ -4785,18 +5843,53 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Official 2026 site live.",
+          "boothSponsorship": "Booth booking/floor plan links active; public booth pricing not found.",
+          "attendance": "Nearly/over 2,500 professionals from 40+ countries; 100+ exhibiting companies.",
+          "notableChanges": [
+            "Venue confirmed."
+          ],
+          "sourceUrls": [
+            "https://crows.org/events/annual-convention-symposium/",
+            "https://aoc2026.org/"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-12-08",
+            "endDate": "2026-12-10"
+          },
+          "venue": {
+            "street": "201 Waterfront St",
+            "city": "National Harbor",
+            "state": "MD",
+            "country": "USA",
+            "name": "Gaylord National Resort & Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "Nearly/over 2,500 professionals from 40+ countries; 100+ exhibiting companies."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Booth booking/floor plan links active; public booth pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "SIBO26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "SIBOS 2026",
+        "Title": "Sibos 2026",
         "Event Code": "SIBO26",
         "Event Rank": "",
         "Attendance Record": "Existing",
@@ -4805,7 +5898,7 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Walking\"]",
-        "Event Location: Street": "1901 Convention Cent Dr",
+        "Event Location: Street": "1901 Convention Center Dr",
         "Event Location: City": "Miami Beach",
         "Event Location: State": "FL",
         "Event Location: Country/Region": "USA",
@@ -4838,18 +5931,54 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Week-long participant EUR 3,400; two-day EUR 2,900; one-day EUR 1,450; Discover EUR 1,000; digital EUR 275, plus 7% tax.",
+          "boothSponsorship": "Exhibitor applications/sales open by contact; public pricing not found.",
+          "attendance": "Not published in reviewed pages.",
+          "notableChanges": [
+            "Venue confirmed; first Sibos in Miami."
+          ],
+          "sourceUrls": [
+            "https://www.sibos.com/",
+            "https://www.sibos.com/attend/pass-information",
+            "https://www.sibos.com/exhibition/exhibitors-media-partners-sponsors"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-28",
+            "endDate": "2026-10-01"
+          },
+          "venue": {
+            "street": "1901 Convention Center Dr",
+            "city": "Miami Beach",
+            "state": "FL",
+            "country": "USA",
+            "name": "Miami Beach Convention Center"
+          },
+          "attendance": {
+            "latestEstimate": "Not published in reviewed pages."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Exhibitor applications/sales open by contact; public pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "ITC26",
       "sharepoint": {
         "_uploadedAt": "2026-03-05T15:23:49.898Z",
-        "Title": "ITC 2026",
+        "Title": "InsureTech Connect Vegas 2026",
         "Event Code": "ITC26",
         "Event Rank": "",
         "Attendance Record": "NEW",
@@ -4858,7 +5987,7 @@
         "Region": "USA",
         "Location": "Known",
         "Event Type": "[\"Exhibition\"]",
-        "Event Location: Street": "3950 Las Vegas Blvd S",
+        "Event Location: Street": "3950 S Las Vegas Blvd",
         "Event Location: City": "Las Vegas",
         "Event Location: State": "NV",
         "Event Location: Country/Region": "USA",
@@ -4891,12 +6020,48 @@
         "subRegion": "US & Canada",
         "regionalTags": [],
         "statusGroup": "planning",
-        "urgency": "future",
-        "lastResearchedAt": null,
-        "researchVersion": 0,
+        "urgency": "upcoming",
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
         "intelligenceScore": 0
       },
-      "research": {}
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "planning",
+          "registration": "Open. Separate ITC Agents pass is $995 standard, with price increase June 10.",
+          "boothSponsorship": "Sponsor link active; public sponsor pricing not found.",
+          "attendance": "9,000+ participants, 500+ speakers, 600+ sponsors, two expo floors.",
+          "notableChanges": [
+            "Dates confirmed; Safran relevance is weak unless fintech/insurance adjacency is intentional."
+          ],
+          "sourceUrls": [
+            "https://vegas.insuretechconnect.com/",
+            "https://forms.reg.buzz/itc-vegas-2026",
+            "https://www.itcagents.com/registration-options"
+          ]
+        },
+        "intelligence": {
+          "show": {
+            "startDate": "2026-09-29",
+            "endDate": "2026-10-01"
+          },
+          "venue": {
+            "street": "3950 S Las Vegas Blvd",
+            "city": "Las Vegas",
+            "state": "NV",
+            "country": "USA",
+            "name": "Mandalay Bay"
+          },
+          "attendance": {
+            "latestEstimate": "9,000+ participants, 500+ speakers, 600+ sponsors, two expo floors."
+          },
+          "booth": {
+            "latestAvailabilityAndPricing": "Sponsor link active; public sponsor pricing not found.",
+            "number": null
+          }
+        }
+      }
     },
     {
       "code": "NABE26",
@@ -4919,7 +6084,7 @@
         "Event Website": "https://www.nabshow.com/las-vegas/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "",
+        "Status": "Completed",
         "Sector": "PNT",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -4943,11 +6108,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "other",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -4972,7 +6138,7 @@
         "Event Website": "https://pdac.ca/convention-2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "",
+        "Status": "Completed",
         "Sector": "Mining",
         "Organizing Company": "ST4D",
         "Business Lines": "[\"ST4D\"]",
@@ -4996,11 +6162,12 @@
         "region": "Americas",
         "subRegion": "US & Canada",
         "regionalTags": [],
-        "statusGroup": "other",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5323,7 +6490,7 @@
         "Event Website": "",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5347,11 +6514,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5376,7 +6544,7 @@
         "Event Website": "https://www.singaporeairshow.com/exhibit/participation-options",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SAFRAN <br>GROUP",
         "Business Lines": "",
@@ -5400,11 +6568,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5429,7 +6598,7 @@
         "Event Website": "https://www.ain.org.au/events/pnt-2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "DIVISION INTEREST ? ",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED Australia",
         "Business Lines": "",
@@ -5453,11 +6622,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "pending",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5482,7 +6652,7 @@
         "Event Website": "https://www.iseurope.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "PARTCIPATION CANCELED",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5506,11 +6676,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "cancelled",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5535,7 +6706,7 @@
         "Event Website": "https://www.danskindustri.dk/medlemsforeninger/foreningssites/fos/arrangementer/events/2026/februar/information-about-ddac-2026/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "PARTCIPATION CANCELED",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED DEF",
         "Business Lines": "",
@@ -5559,11 +6730,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "cancelled",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5588,7 +6760,7 @@
         "Event Website": "https://www.worlddefenseshow.com/en",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SAFRAN <br>GROUP",
         "Business Lines": "",
@@ -5612,11 +6784,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5641,7 +6814,7 @@
         "Event Website": "https://www.unoosa.org/oosa/en/ourwork/icg/working-groups/b/CislunarPNT2025.html",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "PARTCIPATION CANCELED",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5665,11 +6838,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "cancelled",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5694,7 +6868,7 @@
         "Event Website": "SSSIF2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "SALES",
+        "Status": "Completed",
         "Sector": "CGI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5718,11 +6892,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5747,7 +6922,7 @@
         "Event Website": "Data Centre World Paris | L’événement data centres en France",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "SALES",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5771,11 +6946,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5800,7 +6976,7 @@
         "Event Website": "Future Indirect Fires",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED DEF",
         "Business Lines": "",
@@ -5824,11 +7000,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5853,7 +7030,7 @@
         "Event Website": "https://www.enforcetac.com/en",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED DEF",
         "Business Lines": "",
@@ -5877,11 +7054,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5906,7 +7084,7 @@
         "Event Website": "https://itdcindia.com/defsat-2025-defence-space-aspirations/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -5930,11 +7108,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
+        "statusGroup": "completed",
         "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -5959,7 +7138,7 @@
         "Event Website": "https://ejerciciobacsi.com/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -5983,11 +7162,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "critical",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6012,7 +7192,7 @@
         "Event Website": "https://en.cippe.com.cn/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6036,11 +7216,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6065,7 +7246,7 @@
         "Event Website": "https://www.xponential-europe.com/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6089,11 +7270,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6118,7 +7300,7 @@
         "Event Website": "https://www.munich-satellite-navigation-summit.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6142,11 +7324,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6171,7 +7354,7 @@
         "Event Website": "https://www.uppersideconferences.com/quantum-networks/2026/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6195,11 +7378,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6224,7 +7408,7 @@
         "Event Website": "https://epics-controls.org/tag/collaboration-meeting/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6248,11 +7432,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "soon",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6277,7 +7462,7 @@
         "Event Website": "https://stacresearch.com/events/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "PENDING",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "[]",
@@ -6301,11 +7486,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "pending",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6330,7 +7516,7 @@
         "Event Website": "https://www.elektronikmassan.se/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT Partner <br>(Testhouse)",
         "Business Lines": "[]",
@@ -6367,11 +7553,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": "2026-02-24T14:38:20.636Z",
         "researchVersion": 5,
-        "intelligenceScore": 56.4
+        "intelligenceScore": 56.4,
+        "completedSinceFeb2026": true
       },
       "research": {
         "intelligence": {
@@ -6547,7 +7734,7 @@
         "Event Website": "",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6571,11 +7758,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6600,7 +7788,7 @@
         "Event Website": "https://ishw2026.com/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -6624,11 +7812,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6653,7 +7842,7 @@
         "Event Website": "https://www.dsaexhibition.com/about-dsa-2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "SED DEF",
         "Business Lines": "",
@@ -6677,11 +7866,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6706,7 +7896,7 @@
         "Event Website": "https://atpi.eventsair.com/eftf-2026",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -6730,11 +7920,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6759,7 +7950,7 @@
         "Event Website": "",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -6783,11 +7974,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6812,7 +8004,7 @@
         "Event Website": "https://enc-series.org/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -6836,11 +8028,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6865,7 +8058,7 @@
         "Event Website": "https://stacresearch.com/events/\n\n\n\n\n",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "PENDING",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -6889,11 +8082,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "pending",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -6971,7 +8165,7 @@
         "Event Website": "https://sahaexpo.com/en/home/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "TBC SAFRAN GROUP",
+        "Status": "Completed",
         "Sector": "ADG",
         "Organizing Company": "PNT ",
         "Business Lines": "",
@@ -6995,11 +8189,12 @@
         "region": "EMEA",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "tbc",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -7024,7 +8219,7 @@
         "Event Website": "https://rotortech.com.au/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "SALES",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "SED DEF",
         "Business Lines": "",
@@ -7048,11 +8243,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -7077,7 +8273,7 @@
         "Event Website": "https://www.iafastro.org/events/global-series-conferences/global-conference-on-space-exploration-2025/",
         "Booth Size": "",
         "Booth%23": "",
-        "Status": "GO",
+        "Status": "Completed",
         "Sector": "GCI",
         "Organizing Company": "PNT",
         "Business Lines": "",
@@ -7101,11 +8297,12 @@
         "region": "APAC",
         "subRegion": null,
         "regionalTags": [],
-        "statusGroup": "go",
-        "urgency": "upcoming",
+        "statusGroup": "completed",
+        "urgency": "past",
         "lastResearchedAt": null,
         "researchVersion": 0,
-        "intelligenceScore": 0
+        "intelligenceScore": 0,
+        "completedSinceFeb2026": true
       },
       "research": {}
     },
@@ -12687,6 +13884,76 @@
         "intelligenceScore": 0
       },
       "research": {}
+    },
+    {
+      "code": "GEOINT26",
+      "sharepoint": {
+        "_uploadedAt": "2026-05-12T16:00:00.000Z",
+        "Title": "GEOINT Symposium 2026",
+        "Event Code": "GEOINT26",
+        "Event Rank": "",
+        "Attendance Record": "NEW",
+        "Start Date": "5/3/2026",
+        "End Date": "5/6/2026",
+        "Region": "USA",
+        "Location": "Known",
+        "Event Type": "[\"Exhibition\"]",
+        "Event Location: Street": "6700 N Gaylord Rockies Blvd",
+        "Event Location: City": "Aurora",
+        "Event Location: State": "CO",
+        "Event Location: Country/Region": "USA",
+        "Venue": "Gaylord Rockies Resort & Convention Center",
+        "Event Website": "https://usgif.org/geoint-symposium-2026/",
+        "Booth Size": "",
+        "Booth%23": "",
+        "Status": "Completed",
+        "Sector": "ADG",
+        "Organizing Company": "",
+        "Business Lines": "[\"SDS\",\"SFS\",\"ST4D\"]",
+        "Show Captain": "CAMERON",
+        "Ship By Date": "",
+        "Registration Deadline": "",
+        "Mockups/Models": "",
+        "Action Status": "Added during May 2026 refresh as recommended geospatial/intelligence event.",
+        "Main Event Subject": "Geospatial intelligence, defense, space positioning customers",
+        "Notes": "New show worth adding for Safran geospatial/defense/space positioning audiences. Registration pricing published: industry full symposium $2,299 member / $2,499 nonmember; U.S. government $0; exhibitor booth staff included, additional booth staff $399/$449.",
+        "Days until Start": -9,
+        "Staff_Assigned": "",
+        "Related Documents": "",
+        "Email Header": ""
+      },
+      "proposals": {},
+      "approved": {},
+      "dashboardEdits": {},
+      "dismissed": {},
+      "meta": {
+        "region": "Americas",
+        "subRegion": "US & Canada",
+        "regionalTags": [
+          "new-2026-refresh"
+        ],
+        "statusGroup": "completed",
+        "urgency": "past",
+        "completedSinceFeb2026": true,
+        "lastResearchedAt": "2026-05-12T16:00:00.000Z",
+        "researchVersion": 3,
+        "intelligenceScore": 60
+      },
+      "research": {
+        "refresh2026_05_12": {
+          "researchedAt": "2026-05-12T16:00:00.000Z",
+          "status": "completed",
+          "registration": "Published pricing: industry full symposium $2,299 member / $2,499 nonmember; U.S. government $0; exhibitor booth staff included, additional booth staff $399/$449.",
+          "boothSponsorship": "Exhibitor booth staff included; additional booth staff published at $399/$449.",
+          "attendance": "Not captured in reviewed source.",
+          "notableChanges": [
+            "New event added; not previously present in master calendar."
+          ],
+          "sourceUrls": [
+            "https://usgif.org/symposium-2026-registration/"
+          ]
+        }
+      }
     }
   ]
 }

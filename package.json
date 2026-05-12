@@ -12,6 +12,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "mongoose": "^8.23.1"
   }
 }
