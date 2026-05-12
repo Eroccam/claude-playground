@@ -1,6 +1,6 @@
 /**
  * deadline-monitor.js  v1.0.0
- * Reads all events from master-events.json, calculates days remaining for every
+ * Reads all events from MongoDB, calculates days remaining for every
  * deadline field, classifies urgency, and writes deadline-alerts.json.
  *
  * Usage:
@@ -18,9 +18,9 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { getMasterData } = require('../event-dashboard/db');
 
 const SHARED_DATA = path.resolve(__dirname, '../_shared/data');
-const EVENTS_FILE = path.join(SHARED_DATA, 'master-events.json');
 const ALERTS_FILE = path.join(SHARED_DATA, 'deadline-alerts.json');
 const CONFIG_FILE = path.resolve(__dirname, '../_shared/config.json');
 
@@ -80,9 +80,8 @@ function normalizeEvent(ev) {
   };
 }
 
-function loadEvents() {
-  const raw  = fs.readFileSync(EVENTS_FILE, 'utf8');
-  const data = JSON.parse(raw);
+async function loadEvents() {
+  const data = await getMasterData();
   const events = data.events || data;
   return events.map(normalizeEvent);
 }
@@ -295,9 +294,8 @@ async function main() {
   const config   = loadConfig();
   const myRegion = regionArg || config.userProfile?.primaryRegion || 'US & Canada';
 
-  console.log('[deadline-monitor] Loading master-events.json...');
-  const eventsData = loadEvents();
-  const events = eventsData.events || [];
+  console.log('[deadline-monitor] Loading events from MongoDB...');
+  const events = await loadEvents();
   console.log(`[deadline-monitor] Checking ${events.length} events across ${DEADLINE_FIELDS.length} deadline field types...`);
 
   const alerts = buildAlerts(events);

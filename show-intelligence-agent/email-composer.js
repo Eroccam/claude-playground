@@ -17,9 +17,9 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { getMasterData } = require('../event-dashboard/db');
 
 const SHARED_DATA   = path.resolve(__dirname, '../_shared/data');
-const EVENTS_FILE   = path.join(SHARED_DATA, 'master-events.json');
 const DRAFTS_DIR    = path.join(SHARED_DATA, 'email-drafts');
 const TEMPLATES_DIR = path.join(__dirname, 'templates');
 
@@ -89,9 +89,8 @@ function loadTemplate(emailType) {
 // Find event by code, build a structured context for Claude.
 // ═══════════════════════════════════════════════════════════════════════════════
 
-function loadEventData(eventId, emailType) {
-  const raw      = fs.readFileSync(EVENTS_FILE, 'utf8');
-  const data     = JSON.parse(raw);
+async function loadEventData(eventId, emailType) {
+  const data     = await getMasterData();
   const events   = data.events || data;
   const rawEvent = events.find(e => (e.code || '').toUpperCase() === eventId.toUpperCase());
 
@@ -341,7 +340,7 @@ async function compose({ eventId, emailType, tone = null, dryRun = false }) {
   console.log(`[email-composer] Composing ${emailType} email for event: ${eventId}`);
 
   const template             = loadTemplate(emailType);
-  const { event, context }   = loadEventData(eventId, emailType);
+  const { event, context }   = await loadEventData(eventId, emailType);
   const { subject, body }    = await composeWithClaude(template, context, tone, dryRun);
   const draft                = writeDraft(eventId, emailType, subject, body, dryRun);
 

@@ -15,13 +15,13 @@ const http   = require('http');
 const fs     = require('fs');
 const path   = require('path');
 const { spawn } = require('child_process');
+const { connectToDatabase, getMasterData, saveMasterData } = require('./db');
 
 const PORT        = process.env.PORT || 3000;
 const HOST        = '0.0.0.0';
 const ROOT        = path.join(__dirname, '..');
 const AGENT_DIR   = path.join(ROOT, 'show-intelligence-agent');
 const SHARED_DATA = path.join(ROOT, '_shared', 'data');
-const MASTER_FILE = path.join(SHARED_DATA, 'master-events.json');
 
 const MIME = {
   '.html': 'text/html',
@@ -261,15 +261,12 @@ function handleEmailDraftsList(req, res) {
 
 // ─── Master Events: helpers ───────────────────────────────────────────────────
 
-function readMaster() {
-  return JSON.parse(fs.readFileSync(MASTER_FILE, 'utf8'));
+async function readMaster() {
+  return getMasterData();
 }
 
-function writeMaster(data) {
-  const tmp = MASTER_FILE + '.tmp';
-  fs.writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8');
-  try { fs.renameSync(tmp, MASTER_FILE); }
-  catch { fs.unlinkSync(MASTER_FILE); fs.renameSync(tmp, MASTER_FILE); }
+async function writeMaster(data) {
+  return saveMasterData(data);
 }
 
 function findMasterEvent(masterData, code) {
@@ -299,11 +296,11 @@ function deriveStatusGroup(status) {
 
 // ─── API: GET /api/master-events ──────────────────────────────────────────────
 
-function handleGetMasterEvents(req, res) {
+async function handleGetMasterEvents(req, res) {
   try {
-    const raw = fs.readFileSync(MASTER_FILE, 'utf8');
+    const masterData = await readMaster();
     res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-    res.end(raw);
+    res.end(JSON.stringify(masterData));
   } catch (err) {
     json(res, 500, { error: err.message });
   }
@@ -322,7 +319,7 @@ async function handleMergeCSV(req, res) {
       return;
     }
 
-    const masterData = readMaster();
+    const masterData = await readMaster();
     const masterMap  = new Map(masterData.events.map(e => [(e.code || '').toUpperCase(), e]));
     const uploadTs   = uploadedAt || new Date().toISOString();
     const uploadDate = new Date(uploadTs);
@@ -394,7 +391,7 @@ async function handleMergeCSV(req, res) {
     }
 
     masterData.lastUpdated = new Date().toISOString();
-    writeMaster(masterData);
+    await writeMaster(masterData);
     json(res, 200, { ok: true, added, updated, total: masterData.events.length });
   } catch (err) {
     console.error('[serve] merge-csv error:', err.message);
@@ -414,7 +411,7 @@ async function handleEditField(req, res) {
       return;
     }
 
-    const masterData = readMaster();
+    const masterData = await readMaster();
     const ev = findMasterEvent(masterData, code);
     if (!ev) { json(res, 404, { error: `Event ${code} not found` }); return; }
 
@@ -426,7 +423,7 @@ async function handleEditField(req, res) {
     };
 
     masterData.lastUpdated = new Date().toISOString();
-    writeMaster(masterData);
+    await writeMaster(masterData);
     json(res, 200, { ok: true, code, csvCol, value });
   } catch (err) {
     console.error('[serve] edit-field error:', err.message);
@@ -446,7 +443,7 @@ async function handleApproveProposal(req, res) {
       return;
     }
 
-    const masterData = readMaster();
+    const masterData = await readMaster();
     const ev = findMasterEvent(masterData, code);
     if (!ev) { json(res, 404, { error: `Event ${code} not found` }); return; }
 
@@ -462,7 +459,7 @@ async function handleApproveProposal(req, res) {
     delete ev.proposals[csvCol];
 
     masterData.lastUpdated = new Date().toISOString();
-    writeMaster(masterData);
+    await writeMaster(masterData);
     json(res, 200, { ok: true, code, csvCol, value: ev.approved[csvCol].value });
   } catch (err) {
     console.error('[serve] approve-proposal error:', err.message);
@@ -482,7 +479,7 @@ async function handleDismissProposal(req, res) {
       return;
     }
 
-    const masterData = readMaster();
+    const masterData = await readMaster();
     const ev = findMasterEvent(masterData, code);
     if (!ev) { json(res, 404, { error: `Event ${code} not found` }); return; }
 
@@ -497,7 +494,7 @@ async function handleDismissProposal(req, res) {
     delete ev.proposals[csvCol];
 
     masterData.lastUpdated = new Date().toISOString();
-    writeMaster(masterData);
+    await writeMaster(masterData);
     json(res, 200, { ok: true, code, csvCol });
   } catch (err) {
     console.error('[serve] dismiss-proposal error:', err.message);
@@ -520,7 +517,7 @@ function handleRunDeadlines(req, res) {
 
 // ─── Router ───────────────────────────────────────────────────────────────────
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   const { method, url } = req;
   const urlPath = url.split('?')[0];
 
@@ -582,7 +579,11 @@ http.createServer((req, res) => {
     res.end(data);
   });
 
-}).listen(PORT, HOST, () => {
+});
+
+connectToDatabase()
+  .then(() => {
+    server.listen(PORT, HOST, () => {
   console.log('');
   console.log('  Safran Event Dashboard  v2.0');
   console.log('  ─────────────────────────────────────');
@@ -602,4 +603,9 @@ http.createServer((req, res) => {
   console.log(`    POST /api/master-events/approve-proposal`);
   console.log(`    POST /api/master-events/dismiss-proposal`);
   console.log('');
-});
+    });
+  })
+  .catch(err => {
+    console.error('[serve] MongoDB connection failed:', err.message);
+    process.exit(1);
+  });

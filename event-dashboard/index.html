@@ -1641,16 +1641,9 @@ const SP_FIELD_GROUPS = [
 // ─── Data Loading ────────────────────────────────────────────────────────────
 async function loadEvents() {
   try {
-    // Try API first (serve.js), then static file fallback
-    let data = null;
-    const paths = ['/api/master-events', '../_shared/data/master-events.json'];
-    for (const p of paths) {
-      try {
-        const res = await fetch(p);
-        if (res.ok) { data = await res.json(); break; }
-      } catch(_) {}
-    }
-    if (!data) throw new Error('Could not load master-events.json');
+    const res = await fetch('/api/master-events');
+    if (!res.ok) throw new Error('Could not load events from MongoDB');
+    const data = await res.json();
 
     allEvents = (data.events || data).map(flattenEvent);
     const lu = data.lastUpdated ? new Date(data.lastUpdated).toLocaleString('en-GB', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '';
@@ -4195,7 +4188,7 @@ function parseLogForStatus(line) {
     const q = line.match(/Searching: "([^"]+)"/)?.[1];
     if (q) setRpStatus(`Searching web: ${q}`); return;
   }
-  if (line.includes('master-events.json written')) { setRpStatus('Writing proposals to master-events.json', 'green'); return; }
+  if (line.includes('MongoDB event record written')) { setRpStatus('Writing proposals to MongoDB', 'green'); return; }
   if (line.includes('Changelog updated'))           { setRpStatus('Updating changelog'); return; }
   if (line.includes('Could not fetch official website')) { setRpStatus('Website unreachable — falling back to web search', 'amber'); return; }
 }

@@ -2,7 +2,7 @@
  * research-agent.js  v2.0.0
  * Layer 3 — Orchestrating entry point.
  * Coordinates page fetching (fetcher.js) and Claude extraction (claude-engine.js)
- * across 5 research phases to populate event proposals in master-events.json.
+ * across 5 research phases to populate event proposals in MongoDB.
  *
  * Usage:
  *   node research-agent.js --eventId smse26
@@ -23,11 +23,11 @@ const fetcher      = require('./fetcher');
 const claudeEngine = require('./claude-engine');
 const changelog    = require('./changelog-engine');
 const spTodo       = require('./sharepoint-todo');
+const { getMasterData, saveMasterData } = require('../event-dashboard/db');
 
 // ─── Paths ────────────────────────────────────────────────────────────────────
 const SHARED_ROOT   = path.resolve(__dirname, '../_shared');
 const SHARED_DATA   = path.join(SHARED_ROOT, 'data');
-const MASTER_FILE   = path.join(SHARED_DATA, 'master-events.json');
 const CONFIG_FILE   = path.join(SHARED_ROOT, 'config.json');
 const STATUS_FILE   = path.join(SHARED_DATA, 'research-status.json');
 
@@ -87,21 +87,13 @@ function loadConfig() {
   return cfg;
 }
 
-function loadMasterEvents() {
-  const raw  = fs.readFileSync(MASTER_FILE, 'utf8');
-  const data = JSON.parse(raw);
+async function loadMasterEvents() {
+  const data = await getMasterData();
   return { data, events: data.events || data };
 }
 
-function saveMasterEvents(data) {
-  const tmp = MASTER_FILE + '.tmp';
-  fs.writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8');
-  try {
-    fs.renameSync(tmp, MASTER_FILE);
-  } catch {
-    fs.unlinkSync(MASTER_FILE);
-    fs.renameSync(tmp, MASTER_FILE);
-  }
+async function saveMasterEvents(data) {
+  await saveMasterData(data);
 }
 
 // ─── Status file ──────────────────────────────────────────────────────────────
@@ -463,13 +455,13 @@ async function researchEvent(master, opts = {}) {
     return { findings, pagesVisited, searchQueries, dryRun: true };
   }
 
-  // Write to master-events.json
-  writeStatus({ currentAction: 'Writing proposals to master-events.json', eventName: ctx.eventName, eventId });
-  log('Phase 5 — writing proposals to master-events.json');
+  // Write to MongoDB
+  writeStatus({ currentAction: 'Writing proposals to MongoDB', eventName: ctx.eventName, eventId });
+  log('Phase 5 — writing proposals to MongoDB');
 
-  const { data, events } = loadMasterEvents();
+  const { data, events } = await loadMasterEvents();
   const idx = events.findIndex(e => e.code === eventId);
-  if (idx === -1) throw new Error(`Event ${eventId} not found in master-events.json during write`);
+  if (idx === -1) throw new Error(`Event ${eventId} not found in MongoDB during write`);
 
   const ev = events[idx];
   if (!ev.proposals) ev.proposals = {};
@@ -496,9 +488,9 @@ async function researchEvent(master, opts = {}) {
   else Object.assign(writable, events); // flat array case
   writable.lastUpdated = new Date().toISOString();
 
-  saveMasterEvents(writable);
+  await saveMasterEvents(writable);
   writeStatus({ currentAction: 'Changelog updated', eventName: ctx.eventName, eventId });
-  log('master-events.json written');
+  log('MongoDB event record written');
 
   // Call changelog-engine
   if (changedFields.length > 0) {
@@ -624,7 +616,7 @@ async function main() {
   loadConfig();
   log(`Starting research agent v${AGENT_VERSION}${dryRun ? ' (DRY RUN)' : ''}${forceOverwrite ? ' (FORCE OVERWRITE)' : ''}`);
 
-  const { events } = loadMasterEvents();
+  const { events } = await loadMasterEvents();
 
   if (batch) {
     const stale = events.filter(e => isStaleEvent(e));
@@ -638,7 +630,7 @@ async function main() {
       }
       if (!dryRun) {
         // Reload events for next iteration (in case writes updated)
-        const fresh = loadMasterEvents();
+        const fresh = await loadMasterEvents();
         const idx   = fresh.events.findIndex(e => e.code === master.code);
         if (idx !== -1) Object.assign(master, fresh.events[idx]);
       }
