@@ -8,8 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+/dist
 dist-ssr
+# tradeshow-globe/dist is intentionally committed (pre-built static output served by serve.js)
 *.local
 
 # Editor directories and files

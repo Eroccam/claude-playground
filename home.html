@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safran Events Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Syne:wght@600;700&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0a0c10;
+      --bg2:       #10131a;
+      --bg3:       #161b26;
+      --bg4:       #1e2535;
+      --border:    #242c3d;
+      --border2:   #2d3748;
+      --text:      #e2e8f0;
+      --text2:     #94a3b8;
+      --text3:     #64748b;
+      --font-body: 'Instrument Sans', system-ui, sans-serif;
+      --font-head: 'Syne', system-ui, sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100vh; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+    /* ── Header ─────────────────────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; gap: 14px;
+      padding: 0 32px;
+      height: 58px;
+      background: rgba(10,12,16,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { height: 22px; opacity: 0.95; }
+    .hdr-divider { width: 1px; height: 20px; background: var(--border2); }
+    .hdr-title { font-size: 13px; font-weight: 600; color: var(--text2); letter-spacing: 0.02em; }
+    .hdr-spacer { flex: 1; }
+    .hdr-badge {
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.25);
+      color: #4f8ef7;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────────── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 32px 40px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 14px;
+      color: var(--text2);
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    /* ── Grid ────────────────────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px 72px;
+    }
+    @media (max-width: 920px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) {
+      .grid { grid-template-columns: 1fr; padding: 0 16px 48px; }
+      .hero { padding: 36px 16px 28px; }
+      header { padding: 0 16px; }
+    }
+
+    /* ── Card ────────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--c);
+      opacity: 0.9;
+    }
+    .card:hover {
+      border-color: var(--c);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .card-head {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .card-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+    }
+    .card-name {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      padding-top: 2px;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--text2);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex; flex-wrap: wrap; gap: 5px;
+      margin-top: 2px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--bg4);
+      color: var(--text3);
+      border: 1px solid var(--border);
+    }
+
+    .card-footer {
+      display: flex; justify-content: flex-end;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      margin-top: 2px;
+    }
+    .launch {
+      font-size: 12px; font-weight: 600;
+      color: var(--c);
+      display: flex; align-items: center; gap: 4px;
+      transition: gap 0.15s ease;
+    }
+    .card:hover .launch { gap: 8px; }
+    .launch-arrow { font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="/public/safran-logo.png" alt="Safran">
+  <div class="hdr-divider"></div>
+  <span class="hdr-title">Events Platform</span>
+  <div class="hdr-spacer"></div>
+  <span class="hdr-badge">Americas</span>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">Safran Electronics &amp; Defense</div>
+  <h1>Events Platform</h1>
+  <p>Internal tools for global tradeshow management — 168 events across Americas, EMEA, and APAC.</p>
+</div>
+
+<div class="grid">
+
+  <a class="card" href="/event-dashboard/" style="--c:#4f8ef7">
+    <div class="card-head">
+      <div class="card-icon">📊</div>
+      <div class="card-name">Safran Events —<br>2026 Dashboard</div>
+    </div>
+    <div class="card-desc">Master hub for 168 global tradeshows. Inline field editing, AI agent proposals, CSV sync from SharePoint, and deadline management.</div>
+    <div class="card-tags">
+      <span class="tag">Node.js</span>
+      <span class="tag">HTML</span>
+      <span class="tag">AI Agent</span>
+    </div>
+    <div class="card-footer">
+      <span class="launch">Launch <span class="launch-arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="card" href="/event-tracker/" style="--c:#22c55e">
+    <div class="card-head">
+      <div class="card-icon">📅</div>
+      <div class="card-name">Events Calendar</div>
+    </div>
+    <div class="card-desc">Month, week, and agenda calendar views across the full event schedule with SharePoint CSV sync and export.</div>
+    <div class="card-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSV Sync</span>
+    </div>
+    <div class="card-footer">
+      <span class="launch">Launch <span class="launch-arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="card" href="/forecast-pulse-app/" style="--c:#f59e0b">
+    <div class="card-head">
+      <div class="card-icon">📈</div>
+      <div class="card-name">Forecast Pulse</div>
+    </div>
+    <div class="card-desc">Participant forecasting and polling tool with admin and respondent views, localStorage persistence, and live result tracking.</div>
+    <div class="card-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">localStorage</span>
+    </div>
+    <div class="card-footer">
+      <span class="launch">Launch <span class="launch-arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="card" href="/project-dashboard/" style="--c:#6366f1">
+    <div class="card-head">
+      <div class="card-icon">🗂️</div>
+      <div class="card-name">Project Dashboard</div>
+    </div>
+    <div class="card-desc">Platform meta-view showing all tools with status badges, phase tracking, stack details, and quick links. Reads from projects.json.</div>
+    <div class="card-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">JSON</span>
+    </div>
+    <div class="card-footer">
+      <span class="launch">Launch <span class="launch-arrow">→</span></span>
+    </div>
+  </a>
+
+  <a class="card" href="/globe/" style="--c:#14b8a6">
+    <div class="card-head">
+      <div class="card-icon">🌍</div>
+      <div class="card-name">Global Tradeshow<br>Presence</div>
+    </div>
+    <div class="card-desc">Interactive 3D globe with event pins, region glow, coastlines, and orbit controls — visualizing the full global footprint.</div>
+    <div class="card-tags">
+      <span class="tag">React</span>
+      <span class="tag">Three.js</span>
+      <span class="tag">WebGL</span>
+    </div>
+    <div class="card-footer">
+      <span class="launch">Launch <span class="launch-arrow">→</span></span>
+    </div>
+  </a>
+
+</div>
+
+</body>
+</html>

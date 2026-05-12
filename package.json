@@ -5,6 +5,7 @@
   "private": true,
   "main": "event-dashboard/serve.js",
   "scripts": {
+    "build": "cd tradeshow-globe && npm install && npm run build",
     "start": "node event-dashboard/serve.js"
   },
   "engines": {

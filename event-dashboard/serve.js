@@ -538,8 +538,31 @@ http.createServer((req, res) => {
   if (urlPath === '/api/master-events/approve-proposal'   && method === 'POST') { handleApproveProposal(req, res);   return; }
   if (urlPath === '/api/master-events/dismiss-proposal'   && method === 'POST') { handleDismissProposal(req, res);   return; }
 
+  // ── Globe: serve tradeshow-globe/dist under /globe/* ──
+  if (urlPath === '/globe' || urlPath === '/globe/') {
+    const indexPath = path.join(ROOT, 'tradeshow-globe', 'dist', 'index.html');
+    fs.readFile(indexPath, (err, data) => {
+      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Globe not built'); return; }
+      res.writeHead(200, { 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*' });
+      res.end(data);
+    });
+    return;
+  }
+  if (urlPath.startsWith('/globe/')) {
+    const subPath  = urlPath.slice('/globe'.length); // e.g. /assets/foo.js
+    const fullPath = path.join(ROOT, 'tradeshow-globe', 'dist', subPath);
+    const ext      = path.extname(fullPath);
+    fs.readFile(fullPath, (err, data) => {
+      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found'); return; }
+      res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Access-Control-Allow-Origin': '*' });
+      res.end(data);
+    });
+    return;
+  }
+
   // ── Static file serving ──
-  const filePath = url === '/' ? '/event-dashboard/index.html' : url.split('?')[0];
+  let filePath = url === '/' ? '/home.html' : url.split('?')[0];
+  if (filePath.endsWith('/')) filePath += 'index.html';
   const fullPath = path.join(ROOT, filePath);
   const ext      = path.extname(fullPath);
 
