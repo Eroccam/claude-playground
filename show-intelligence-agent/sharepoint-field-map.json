@@ -1,0 +1,173 @@
+{
+  "version": "1.1",
+  "generated": "2026-02-23",
+  "description": "Maps SharePoint CSV column names to events.json field paths for the Safran Events Platform SharePoint Sync page.",
+  "notes": "Exact CSV column names as exported from SharePoint. Booth%23 = URL-encoded Booth #. Staff_Assigned uses underscore. v1.1: Updated field paths to use Category 9 research.intelligence.show / .venue / .booth schema.",
+
+  "humanOnlyColumns": [
+    "Show Captain",
+    "Staff_Assigned",
+    "Email Header",
+    "Mockups/Models",
+    "Action Status",
+    "Notes",
+    "Related Documents"
+  ],
+
+  "expectedColumns": [
+    "Title",
+    "Event Code",
+    "Event Rank",
+    "Attendance Record",
+    "Start Date",
+    "End Date",
+    "Region",
+    "Location",
+    "Event Type",
+    "Event Location: Street",
+    "Event Location: City",
+    "Event Location: State",
+    "Event Location: Country/Region",
+    "Venue",
+    "Event Website",
+    "Booth Size",
+    "Booth%23",
+    "Status",
+    "Sector",
+    "Organizing Company",
+    "Business Lines",
+    "Show Captain",
+    "Ship By Date",
+    "Registration Deadline",
+    "Mockups/Models",
+    "Action Status",
+    "Main Event Subject",
+    "Notes",
+    "Related Documents",
+    "Days until Start",
+    "Staff_Assigned",
+    "Email Header"
+  ],
+
+  "columnDisplayNames": {
+    "Booth%23": "Booth #",
+    "Staff_Assigned": "Staff Assigned",
+    "Event Location: Street": "Street",
+    "Event Location: City": "City",
+    "Event Location: State": "State",
+    "Event Location: Country/Region": "Country",
+    "Days until Start": "Days Until Start"
+  },
+
+  "fieldMappings": [
+    {
+      "csvColumn": "Title",
+      "jsonPath": "title",
+      "agentSource": null,
+      "notes": "Primary title — comes from SharePoint, not modified by agent"
+    },
+    {
+      "csvColumn": "Start Date",
+      "jsonPath": "startDate",
+      "agentSource": null,
+      "notes": "Canonical value managed by humans in SharePoint. Agent cross-verifies to research.intelligence.show.startDate (Category 9)."
+    },
+    {
+      "csvColumn": "End Date",
+      "jsonPath": "endDate",
+      "agentSource": null,
+      "notes": "Canonical value managed by humans in SharePoint. Agent cross-verifies to research.intelligence.show.endDate (Category 9)."
+    },
+    {
+      "csvColumn": "Region",
+      "jsonPath": "region",
+      "agentSource": null,
+      "notes": "Managed by humans"
+    },
+    {
+      "csvColumn": "Event Type",
+      "jsonPath": "type",
+      "agentSource": null,
+      "notes": "Managed by humans"
+    },
+    {
+      "csvColumn": "Status",
+      "jsonPath": "status",
+      "agentSource": null,
+      "notes": "Managed by humans"
+    },
+    {
+      "csvColumn": "Event Location: Street",
+      "jsonPath": "research.intelligence.venue.street",
+      "agentSource": "core",
+      "notes": "Category 9: agent extracts street + number only. No city/state in this field."
+    },
+    {
+      "csvColumn": "Event Location: City",
+      "jsonPath": "research.intelligence.venue.city",
+      "agentSource": "core",
+      "notes": "Category 9: agent verifies city from official event website"
+    },
+    {
+      "csvColumn": "Event Location: State",
+      "jsonPath": "research.intelligence.venue.state",
+      "agentSource": "core",
+      "notes": "Category 9: 2-letter abbreviation for US; province/region for non-US"
+    },
+    {
+      "csvColumn": "Event Location: Country/Region",
+      "jsonPath": "research.intelligence.venue.country",
+      "agentSource": "core",
+      "notes": "Category 9: full country name (e.g. 'United States', not 'US')"
+    },
+    {
+      "csvColumn": "Venue",
+      "jsonPath": "research.intelligence.venue.name",
+      "agentSource": "core",
+      "notes": "Category 9: facility name only — no address or city in this field"
+    },
+    {
+      "csvColumn": "Booth Size",
+      "jsonPath": "research.intelligence.booth.size",
+      "agentSource": "core",
+      "notes": "Category 9: dimensions only e.g. '10 x 10'. Smallest standard size first."
+    },
+    {
+      "csvColumn": "Booth%23",
+      "jsonPath": "research.intelligence.booth.number",
+      "agentSource": "core",
+      "notes": "Category 9: only populated if found on official published floor plan or exhibitor list"
+    },
+    {
+      "csvColumn": "Event Website",
+      "jsonPath": "research.intelligence.identity.officialWebsite",
+      "agentSource": "identity",
+      "notes": "Category 1 (first-party): agent finds official show URL from official show website"
+    },
+    {
+      "csvColumn": "Organizing Company",
+      "jsonPath": "research.intelligence.identity.organizerName",
+      "agentSource": "identity",
+      "notes": "Category 1 (first-party): agent finds official organizer name from show website"
+    },
+    {
+      "csvColumn": "Registration Deadline",
+      "jsonPath": "research.intelligence.booth.registrationDeadline",
+      "agentSource": "core",
+      "notes": "Category 9: final deadline for exhibitor application/booth registration. Distinct from earlyBirdDeadline (Category 3)."
+    },
+    {
+      "csvColumn": "Main Event Subject",
+      "jsonPath": "research.intelligence.identity.tagline",
+      "agentSource": "identity",
+      "notes": "Category 1 (first-party): agent finds official show tagline or subject focus from show website"
+    }
+  ],
+
+  "stateRules": {
+    "state1": "Original SharePoint data, unchanged. White background.",
+    "state2": "Agent populated a field that was empty in SharePoint. Light blue. NEW badge.",
+    "state3": "Agent corrected a field using a first-party source (official website or organizer doc). Amber. CORRECTED badge. Only identity agentSource fields or high/medium confidence.",
+    "state4": "Agent found conflicting data but source is not confirmed first-party. Red. REVIEW badge. Requires manual resolution."
+  }
+}

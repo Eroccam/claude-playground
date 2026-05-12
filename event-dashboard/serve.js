@@ -137,6 +137,12 @@ function handleResearchStream(req, res) {
     send('log', { line: chunk.toString().trim(), level: 'warn' });
   });
 
+  child.on('error', err => {
+    send('log', { line: `[serve] Failed to start research agent: ${err.message}`, level: 'error' });
+    send('done', { exitCode: 1, timestamp: new Date().toISOString() });
+    res.end();
+  });
+
   child.on('close', code => {
     send('done', { exitCode: code, timestamp: new Date().toISOString() });
     res.end();

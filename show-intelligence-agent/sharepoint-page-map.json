@@ -1,0 +1,46 @@
+{
+  "_description": "Maps research field categories to SharePoint page paths. Edit spPath values to match your SharePoint instance. Do not rename the top-level keys — they correspond to research intelligence category names.",
+  "_baseUrl": "https://your-tenant.sharepoint.com/sites/SafranEvents",
+  "_instructions": "Replace 'your-tenant' with your actual SharePoint tenant name. The spPath values are relative to _baseUrl.",
+
+  "identity": {
+    "spPath": "/sites/SafranEvents/SitePages/Event-Overview.aspx",
+    "section": "Show Identity",
+    "description": "Official website, organizer name, edition number, hashtags"
+  },
+  "dates": {
+    "spPath": "/sites/SafranEvents/SitePages/Event-Logistics.aspx",
+    "section": "Key Dates",
+    "description": "Setup/teardown dates, venue address, GPS coordinates"
+  },
+  "booth": {
+    "spPath": "/sites/SafranEvents/SitePages/Action-Items.aspx",
+    "section": "Booth & Exhibit",
+    "description": "Booth deadlines, pricing, cancellation policy, prospectus PDF"
+  },
+  "sponsorship": {
+    "spPath": "/sites/SafranEvents/SitePages/Sponsorship.aspx",
+    "section": "Packages & Pricing",
+    "description": "Sponsorship tiers, pricing, benefits, logo spec requirements"
+  },
+  "housing": {
+    "spPath": "/sites/SafranEvents/SitePages/Event-Logistics.aspx",
+    "section": "Housing & Hotels",
+    "description": "Hotel block name, housing deadline, booking portal, hotel options"
+  },
+  "attendance": {
+    "spPath": "/sites/SafranEvents/SitePages/Event-Overview.aspx",
+    "section": "Attendance & Audience",
+    "description": "Expected attendee/exhibitor counts, prior year figures, target audience"
+  },
+  "contacts": {
+    "spPath": "/sites/SafranEvents/SitePages/Contacts.aspx",
+    "section": "Organizer Contacts",
+    "description": "Exhibits manager, sponsorship contact, press contact"
+  },
+  "opportunities": {
+    "spPath": "/sites/SafranEvents/SitePages/Action-Items.aspx",
+    "section": "Speaking & Awards",
+    "description": "Speaking opportunities, deadlines, awards programs, co-located events"
+  }
+}

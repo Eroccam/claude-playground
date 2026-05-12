@@ -1,0 +1,20 @@
+{
+  "name": "safran-show-intelligence-agent",
+  "version": "1.0.0",
+  "description": "Safran Show Intelligence Agent Suite — automated tradeshow research, deadline monitoring, and email composition",
+  "private": true,
+  "scripts": {
+    "research": "node research-agent.js",
+    "deadlines": "node deadline-monitor.js",
+    "email": "node email-composer.js",
+    "orchestrate": "node orchestrator.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.38.0",
+    "cheerio": "^1.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
