@@ -515,6 +515,35 @@ function handleRunDeadlines(req, res) {
     });
 }
 
+// ─── API: GET /api/health ─────────────────────────────────────────────────────
+// Returns DB connection status and event count — useful for verifying MongoDB.
+
+async function handleHealth(req, res) {
+  const start = Date.now();
+  try {
+    const { Event, MasterMeta } = require('./db');
+    const [eventCount, meta] = await Promise.all([
+      Event.countDocuments(),
+      MasterMeta.findOne({ key: 'master-events' }).lean(),
+    ]);
+    json(res, 200, {
+      status:      'ok',
+      db:          'connected',
+      eventCount,
+      lastUpdated: meta?.lastUpdated || null,
+      latencyMs:   Date.now() - start,
+      uptime:      Math.floor(process.uptime()) + 's',
+    });
+  } catch (err) {
+    json(res, 500, {
+      status:    'error',
+      db:        'disconnected',
+      error:     err.message,
+      latencyMs: Date.now() - start,
+    });
+  }
+}
+
 // ─── Router ───────────────────────────────────────────────────────────────────
 
 const server = http.createServer((req, res) => {
@@ -529,6 +558,7 @@ const server = http.createServer((req, res) => {
   }
 
   // ── API routes ──
+  if (urlPath === '/api/health'                              && method === 'GET')  { handleHealth(req, res);           return; }
   if (urlPath === '/api/deadline-alerts'                  && method === 'GET')  { handleDeadlineAlerts(req, res);    return; }
   if (urlPath === '/api/research/stream'                  && method === 'GET')  { handleResearchStream(req, res);    return; }
   if (urlPath === '/api/email'                            && method === 'POST') { handleEmail(req, res);             return; }
