@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import * as THREE from 'three';
 import geojsonData from '../../data/ne_110m_admin_0_countries.json';
 import { parseGeoJson } from '../../utils/geoJsonParser.ts';
-import { REGION_COLORS, REGION_BASE_COLORS } from '../../utils/regions.ts';
+import { REGION_BASE_COLORS, REGION_COASTLINE_COLORS } from '../../utils/regions.ts';
 import type { Region } from '../../types.ts';
 
 interface CoastlinesProps {
@@ -23,7 +23,7 @@ export function Coastlines({ highlightedRegion }: CoastlinesProps) {
     for (let i = 0; i < parsed.regions.length; i++) {
       const region = parsed.regions[i];
       if (region === highlightedRegion) {
-        tmp.set(REGION_COLORS[region]);
+        tmp.set(REGION_COASTLINE_COLORS[region]);
       } else {
         tmp.set(REGION_BASE_COLORS[region]);
       }

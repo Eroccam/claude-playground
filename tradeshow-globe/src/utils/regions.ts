@@ -41,9 +41,16 @@ export const REGION_COLORS: Record<Region, string> = {
   APAC: '#06d6a0',
 };
 
-/** Base colors — always visible, tinted per region (CR-024: brighter) */
+/** Bright perimeter colors for the selected region coastline */
+export const REGION_COASTLINE_COLORS: Record<Region, string> = {
+  US: '#ff6f7f',
+  EMEA: '#f0b3ff',
+  APAC: '#9affea',
+};
+
+/** Base colors: always visible, but intentionally understated */
 export const REGION_BASE_COLORS: Record<Region, string> = {
   US: '#8c2a38',
-  EMEA: '#5e3890',
-  APAC: '#1a7a5a',
+  EMEA: '#201333',
+  APAC: '#0b2a22',
 };
