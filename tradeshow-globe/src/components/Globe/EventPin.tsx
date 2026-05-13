@@ -32,7 +32,7 @@ export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClic
   const pinColor = isSelected ? '#55aaff' : hovered ? '#55aaff' : isInSelectedRegion ? SAFRAN_BLUE : SAFRAN_BLUE_MID;
 
   // Position and orientation
-  const surfacePos = latLngToVector3(event.lat, event.lng, 1.002);
+  const surfacePos = latLngToVector3(event.lat, event.lng, 1.006);
   surfacePos.add(offset);
   const normal = surfacePos.clone().normalize();
 

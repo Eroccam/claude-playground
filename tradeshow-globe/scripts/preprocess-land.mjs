@@ -13,21 +13,14 @@ import earcut from 'earcut';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Switch to ne_110m_land: no internal country borders → no stacked wireframe edges,
-// no floating-point crack slivers at country borders in fill mode.
-const GEOJSON_PATH = resolve(__dirname, '../src/data/ne_110m_land.json');
+const GEOJSON_PATH = resolve(__dirname, '../src/data/ne_110m_admin_0_countries.json');
 const OUTPUT_PATH = resolve(__dirname, '../public/land/land-triangles.json');
 
-const RADIUS = 1.005;
+const RADIUS = 1.002;
 const MIN_TRI_AREA = 1e-8;
 const POINT_EPS = 1e-7;
 // Antarctica detection: skip any polygon whose outer-ring centroid latitude < this.
 const ANTARCTICA_LAT = -60;
-
-// Boundary epsilon snap: triangles whose 2-D centroid falls within this many degrees
-// of a region boundary (-25° or 65° lon) are assigned by centroid with a west-side
-// snap, bypassing majority vote. Eliminates ~0.15% wedge artifacts at region edges.
-const BOUNDARY_SNAP_DEG = 2.0;
 
 // Boundary densification: insert intermediate lat/lon points along ring edges so no
 // flat-space edge exceeds this length (degrees). Reduces earcut diagonal length.
@@ -42,10 +35,9 @@ const DENSIFY_MAX_DEG = 4.0;
 const BAND_STEP_LON = 10;
 const BAND_STEP_LAT = 10;
 
-// No chord-based seam discard: ne_110m_land normalizeRing prevents antimeridian jumps.
-// The Eurasian+Africa supercontinent produces legitimate earcut triangles with chords
-// up to ~1.7 (spanning 50-150° of arc). A 0.75 threshold incorrectly drops these,
-// creating huge holes. pushSubdivided handles any chord size safely.
+// No chord-based seam discard: normalizeRing prevents antimeridian jumps.
+// Large polygons can produce legitimate earcut triangles with long chords.
+// pushSubdivided handles any chord size safely.
 const DEBUG_TRIANGULATION = process.env.NODE_ENV !== 'production';
 
 function latLngToVector3(lat, lng, radius) {
@@ -59,48 +51,49 @@ function latLngToVector3(lat, lng, radius) {
 }
 
 /**
- * Assign a region to an earcut triangle based on its 2-D lon/lat centroid.
- * Called per-triangle so the Eurasia+Africa supercontinent polygon (a single
- * ring in ne_110m_land) is correctly split between EMEA and APAC.
- *
- * Longitude thresholds (tunable):
- *   < -25°          → US   (Americas — including Greenland, Caribbean)
- *   [-25°,  65°)    → EMEA (Europe, Africa, Middle East, W Russia)
- *   ≥  65°          → APAC (Asia, Pacific, Australia, E Russia / Siberia)
- *
- * Lon may be "unwrapped" beyond ±180 after normalizeRing; the thresholds
- * work correctly because unwrapping is monotone (e.g. 190 → Kamchatka → APAC ✓).
- * Returns null for triangles with centroid lat < ANTARCTICA_LAT (skipped).
+ * Assign land regions from the same GeoJSON CONTINENT metadata used by
+ * src/utils/geoJsonParser.ts for coastline colors.
  */
-/**
- * Normalize an unwrapped lon (e.g. 190° from normalizeRing) back to (-180, 180].
- * Uses the formula from the task spec: ((lon + 180) % 360 + 360) % 360 - 180.
- * Note: in JS, % can return negative values, so the +360 guard is essential.
- */
+function continentToRegion(continent) {
+  switch (continent) {
+    case 'North America':
+    case 'South America':
+    case 'Central America':
+      return 'US';
+    case 'Europe':
+    case 'Africa':
+      return 'EMEA';
+    case 'Asia':
+    case 'Oceania':
+    case 'Australia and New Zealand':
+      return 'APAC';
+    default:
+      return 'EMEA';
+  }
+}
+
+function polygonIsInAmericas(ring) {
+  if (ring.length < 3) return false;
+  let sumLng = 0;
+  let sumLat = 0;
+  const n = Math.min(ring.length, ring.length - 1);
+  for (let i = 0; i < n; i++) {
+    sumLng += ring[i][0];
+    sumLat += ring[i][1];
+  }
+  const avgLng = sumLng / n;
+  const avgLat = sumLat / n;
+  return avgLng < -30 && avgLng > -170 && avgLat > -60 && avgLat < 80;
+}
+
+function getPolygonRegion(continent, outerRing) {
+  const baseRegion = continentToRegion(continent);
+  if (baseRegion === 'EMEA' && polygonIsInAmericas(outerRing)) return 'US';
+  return baseRegion;
+}
+
 function normalizeLon(lon) {
   return ((lon % 360) + 540) % 360 - 180;
-}
-
-function centroidToRegion(lon, lat) {
-  if (lat < ANTARCTICA_LAT) return null;
-  // Normalize unwrapped lon → (-180, 180] before applying geographic thresholds.
-  // This makes classification deterministic regardless of ring traversal direction.
-  const nLon = normalizeLon(lon);
-  if (nLon < -25) return 'US';
-  if (nLon < 65)  return 'EMEA';
-  return 'APAC';
-}
-
-/**
- * Return true if a normalized longitude is within BOUNDARY_SNAP_DEG of a
- * region boundary (-25° or 65°). Triangles in this band are assigned by
- * centroid + west-side snap rather than majority vote.
- */
-function nearBoundary(nLon) {
-  return (
-    Math.abs(nLon - (-25)) <= BOUNDARY_SNAP_DEG ||
-    Math.abs(nLon - 65)    <= BOUNDARY_SNAP_DEG
-  );
 }
 
 function samePoint(a, b, eps = POINT_EPS) {
@@ -539,17 +532,13 @@ let topPreSubdivEdges = []; // top-20 max-chord per earcut triangle, pre-subdivi
 // Per-bucket centroid lon tracking for verification (normalized lon range per region)
 const bucketLonRange = { US: [Infinity, -Infinity], EMEA: [Infinity, -Infinity], APAC: [Infinity, -Infinity] };
 let unknownRegion = 0;
-let mixedVoteCount = 0;
-let centroidTieBreakCount = 0;
-const boundarySamples = [];
-const wedgeSamples = [];
-const WEDGE_SAMPLE_MAX = 30;
 
 // Spherical subdivision: flat earcut triangles sag below the sphere surface for large arcs,
 // causing the ocean sphere (radius ~1.0) to occlude them via depth test → phantom holes.
 // Fix: split any edge whose chord exceeds MAX_EDGE_CHORD, projecting the midpoint back to
-// the sphere surface. Chord 0.1 ≈ 5.7° arc; at RADIUS=1.005 the sag is ~0.00125
-// (effective min radius ≈ 1.0038, safely above ocean at 1.0). Worst-case recursion: ~4 levels.
+// the sphere surface. Chord 0.1 is about 5.7 degrees of arc; at RADIUS=1.002 the
+// sag is about 0.00125, keeping subdivided triangle interiors above the ocean.
+// Worst-case recursion: about 4 levels.
 const MAX_EDGE_CHORD_SQ = 0.01; // 0.1² — chord in 3-D Euclidean space
 
 function chordSq(a, b) {
@@ -575,19 +564,11 @@ function vector3ToLonLat(v) {
   return [lon, lat];
 }
 
-function classifyTriangleRegion(a, b, c) {
+function classifyTriangleRegion(a, b, c, polygonRegion) {
   const ll0 = vector3ToLonLat(a);
   const ll1 = vector3ToLonLat(b);
   const ll2 = vector3ToLonLat(c);
   if (!ll0 || !ll1 || !ll2) return null;
-
-  const vr0 = centroidToRegion(ll0[0], ll0[1]);
-  const vr1 = centroidToRegion(ll1[0], ll1[1]);
-  const vr2 = centroidToRegion(ll2[0], ll2[1]);
-  const vote = { US: 0, EMEA: 0, APAC: 0 };
-  if (vr0) vote[vr0]++;
-  if (vr1) vote[vr1]++;
-  if (vr2) vote[vr2]++;
 
   const cx = a.x + b.x + c.x;
   const cy = a.y + b.y + c.y;
@@ -599,41 +580,22 @@ function classifyTriangleRegion(a, b, c) {
   const cnz = cz / cLen;
   const sphLat = Math.asin(Math.max(-1, Math.min(1, cny))) * (180 / Math.PI);
   const sphLon = normalizeLon(Math.atan2(-cnz, cnx) * (180 / Math.PI));
-  const centroidRegion = centroidToRegion(sphLon, sphLat);
 
-  const maxVotes = Math.max(vote.US, vote.EMEA, vote.APAC);
-  const winners = ['US', 'EMEA', 'APAC'].filter((k) => vote[k] === maxVotes && maxVotes > 0);
-  const tie = winners.length !== 1;
-  const boundary = nearBoundary(sphLon);
-  const voteWinner = tie ? null : winners[0];
-  const region = centroidRegion;
-
-  if (!region) return null;
   return {
-    region,
+    region: polygonRegion,
     sphLon,
     sphLat,
-    vote: `${vr0 ?? 'N'}/${vr1 ?? 'N'}/${vr2 ?? 'N'}`,
-    v0: ll0,
-    v1: ll1,
-    v2: ll2,
-    voteWinner,
-    usedTieBreak: tie || boundary || (voteWinner !== null && voteWinner !== region),
-    tie,
-    boundary,
-    reason: tie ? 'tie->centroid' : (boundary ? 'boundary->centroid' : (voteWinner === region ? 'centroid' : 'vote!=centroid')),
+    vote: `${polygonRegion}/${polygonRegion}/${polygonRegion}`,
   };
 }
 
-function pushSubdivided(a, b, c, sourceCell) {
+function pushSubdivided(a, b, c, sourceCell, polygonRegion) {
   const ab = chordSq(a, b);
   const bc = chordSq(b, c);
   const ac = chordSq(a, c);
   if (ab <= MAX_EDGE_CHORD_SQ && bc <= MAX_EDGE_CHORD_SQ && ac <= MAX_EDGE_CHORD_SQ) {
-    const cls = classifyTriangleRegion(a, b, c);
+    const cls = classifyTriangleRegion(a, b, c, polygonRegion);
     if (!cls) { droppedAntarctica++; return; }
-    if (cls.tie || (cls.voteWinner !== null && cls.voteWinner !== cls.region)) mixedVoteCount++;
-    if (cls.usedTieBreak) centroidTieBreakCount++;
 
     const bucket = buckets[cls.region];
     bucket.push(a.x, a.y, a.z, b.x, b.y, b.z, c.x, c.y, c.z);
@@ -641,57 +603,25 @@ function pushSubdivided(a, b, c, sourceCell) {
     if (cls.sphLon < rng[0]) rng[0] = cls.sphLon;
     if (cls.sphLon > rng[1]) rng[1] = cls.sphLon;
 
-    if (nearBoundary(cls.sphLon) && boundarySamples.length < 8) {
-      boundarySamples.push({
-        v0: cls.v0,
-        v1: cls.v1,
-        v2: cls.v2,
-        centroid: [cls.sphLon, cls.sphLat],
-        vote: cls.vote,
-        reason: cls.reason,
-        region: cls.region,
-      });
-    }
-
-    if (
-      wedgeSamples.length < WEDGE_SAMPLE_MAX
-      && cls.sphLon >= 50 && cls.sphLon <= 80
-      && cls.sphLat >= 10 && cls.sphLat <= 50
-    ) {
-      wedgeSamples.push({
-        centroid: [cls.sphLon, cls.sphLat],
-        vLons: [cls.v0[0], cls.v1[0], cls.v2[0]],
-        vLats: [cls.v0[1], cls.v1[1], cls.v2[1]],
-        vote: cls.vote,
-        reason: cls.reason,
-        region: cls.region,
-        cell: [
-          +sourceCell.minLon.toFixed(2),
-          +sourceCell.maxLon.toFixed(2),
-          +sourceCell.minLat.toFixed(2),
-          +sourceCell.maxLat.toFixed(2),
-        ],
-      });
-    }
     emittedTriangles++;
     return;
   }
   if (ab >= bc && ab >= ac) {
     const m = sphereMidpoint(a, b);
-    pushSubdivided(a, m, c, sourceCell);
-    pushSubdivided(m, b, c, sourceCell);
+    pushSubdivided(a, m, c, sourceCell, polygonRegion);
+    pushSubdivided(m, b, c, sourceCell, polygonRegion);
   } else if (bc >= ac) {
     const m = sphereMidpoint(b, c);
-    pushSubdivided(a, b, m, sourceCell);
-    pushSubdivided(a, m, c, sourceCell);
+    pushSubdivided(a, b, m, sourceCell, polygonRegion);
+    pushSubdivided(a, m, c, sourceCell, polygonRegion);
   } else {
     const m = sphereMidpoint(a, c);
-    pushSubdivided(a, b, m, sourceCell);
-    pushSubdivided(m, b, c, sourceCell);
+    pushSubdivided(a, b, m, sourceCell, polygonRegion);
+    pushSubdivided(m, b, c, sourceCell, polygonRegion);
   }
 }
 
-function triangulateSinglePolygon({ polygon }) {
+function triangulateSinglePolygon({ polygon, region }) {
   totalPolygons++;
   const rawOuter = polygon[0];
 
@@ -823,20 +753,21 @@ function triangulateSinglePolygon({ polygon }) {
         if (topPreSubdivEdges.length > 20) topPreSubdivEdges.pop();
       }
 
-      pushSubdivided(va, vb, vc, bandBBox);
+      pushSubdivided(va, vb, vc, bandBBox, region);
     }
   }
 }
 
 for (const feature of geojson.features) {
   const { type, coordinates } = feature.geometry;
+  const continent = feature.properties?.CONTINENT;
   if (type === 'Polygon') {
-    triangulateSinglePolygon({ polygon: coordinates });
+    triangulateSinglePolygon({ polygon: coordinates, region: getPolygonRegion(continent, coordinates[0]) });
     continue;
   }
   if (type === 'MultiPolygon') {
     for (const polygon of coordinates) {
-      triangulateSinglePolygon({ polygon });
+      triangulateSinglePolygon({ polygon, region: getPolygonRegion(continent, polygon[0]) });
     }
     continue;
   }
@@ -848,7 +779,7 @@ const emeaCount = (buckets.EMEA.length / 9) | 0;
 const apacCount = (buckets.APAC.length / 9) | 0;
 const rndRng = (rng) => rng[0] === Infinity ? null : [+rng[0].toFixed(2), +rng[1].toFixed(2)];
 const meta = {
-  params: { RADIUS, DENSIFY_MAX_DEG, BAND_STEP_LON, BAND_STEP_LAT, MIN_TRI_AREA, BOUNDARY_SNAP_DEG },
+  params: { RADIUS, DENSIFY_MAX_DEG, BAND_STEP_LON, BAND_STEP_LAT, MIN_TRI_AREA, regionSource: 'ne_110m_admin_0_countries.properties.CONTINENT' },
   triangles: { US: usCount, EMEA: emeaCount, APAC: apacCount, total: usCount + emeaCount + apacCount },
   lonRange: { US: rndRng(bucketLonRange.US), EMEA: rndRng(bucketLonRange.EMEA), APAC: rndRng(bucketLonRange.APAC) },
 };
@@ -882,36 +813,10 @@ topPreSubdivEdges.forEach((chord, i) =>
   console.log(`  ${String(i + 1).padStart(2)}. chord=${chord.toFixed(4)}  arc=${arcDeg(chord)}°`)
 );
 const formatRng = (rng) => rng[0] === Infinity ? '(empty)' : `[${rng[0].toFixed(1)}, ${rng[1].toFixed(1)}]`;
-console.log(`--- Per region (triangles + centroid lon range — verify no overlap) ---`);
-console.log(`US   triangles: ${usCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.US)}  (expected [-180,-25])`);
-console.log(`EMEA triangles: ${emeaCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.EMEA)}  (expected [-25,65])`);
-console.log(`APAC triangles: ${apacCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.APAC)}  (expected [65,180])`);
-console.log(`Mixed-vote triangles      : ${mixedVoteCount}`);
-console.log(`Centroid tie-break used   : ${centroidTieBreakCount}`);
-if (boundarySamples.length > 0) {
-  console.log('--- Boundary samples (vertex lon/lat, spherical centroid lon/lat, assigned region) ---');
-  boundarySamples.forEach((s, i) => {
-    console.log(
-      `  #${i + 1} v0=${s.v0[0].toFixed(2)},${s.v0[1].toFixed(2)} `
-      + `v1=${s.v1[0].toFixed(2)},${s.v1[1].toFixed(2)} `
-      + `v2=${s.v2[0].toFixed(2)},${s.v2[1].toFixed(2)} `
-      + `cent=${s.centroid[0].toFixed(2)},${s.centroid[1].toFixed(2)} `
-      + `vote=${s.vote} (${s.reason}) -> ${s.region}`,
-    );
-  });
-}
-if (wedgeSamples.length > 0) {
-  console.log('--- Wedge samples (lon 50..80, lat 10..50) ---');
-  wedgeSamples.forEach((s, i) => {
-    console.log(
-      `  #${i + 1} cent=${s.centroid[0].toFixed(2)},${s.centroid[1].toFixed(2)} `
-      + `reg=${s.region} vote=${s.vote} (${s.reason}) `
-      + `vLon=[${s.vLons.map((v) => v.toFixed(2)).join(',')}] `
-      + `vLat=[${s.vLats.map((v) => v.toFixed(2)).join(',')}] `
-      + `cell=[${s.cell.join(',')}]`,
-    );
-  });
-}
+console.log(`--- Per region (triangles + centroid lon range) ---`);
+console.log(`US   triangles: ${usCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.US)}`);
+console.log(`EMEA triangles: ${emeaCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.EMEA)}`);
+console.log(`APAC triangles: ${apacCount.toString().padStart(5)}  lon ${formatRng(bucketLonRange.APAC)}`);
 if (unknownRegion > 0) console.warn(`⚠  unknownRegion: ${unknownRegion} (should be 0)`);
 // Alignment assertions: each bucket must have a whole number of triangles
 console.assert(buckets.US.length   % 9 === 0, 'US bucket misaligned (length % 9 !== 0)');

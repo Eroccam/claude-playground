@@ -40,9 +40,9 @@ export function BeaconGlow() {
     meshRef.current.scale.set(s, s, 1);
   });
 
-  if (!selectedEvent) return null;
+  if (!selectedEvent || selectedEvent.hasPin === false) return null;
 
-  const surfacePos = latLngToVector3(selectedEvent.lat, selectedEvent.lng, 1.0005);
+  const surfacePos = latLngToVector3(selectedEvent.lat, selectedEvent.lng, 1.008);
   const normal = surfacePos.clone().normalize();
   const quaternion = new THREE.Quaternion();
   quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);

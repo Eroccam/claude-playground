@@ -10,7 +10,7 @@ interface CoastlinesProps {
 }
 
 export function Coastlines({ highlightedRegion }: CoastlinesProps) {
-  const parsed = useMemo(() => parseGeoJson(geojsonData as never, 1.008), []);
+  const parsed = useMemo(() => parseGeoJson(geojsonData as never, 1.004), []);
 
   const geometry = useMemo(() => {
     const geo = new THREE.BufferGeometry();
