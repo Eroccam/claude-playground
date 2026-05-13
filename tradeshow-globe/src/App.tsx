@@ -12,7 +12,7 @@ function App() {
       <GlobeProvider>
         <div className="app-layout">
           <img
-            src="/safran-logo.png"
+            src={`${import.meta.env.BASE_URL}safran-logo.png`}
             alt="Safran"
             className="top-logo"
           />
