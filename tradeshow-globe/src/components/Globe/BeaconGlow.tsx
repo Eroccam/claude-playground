@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { latLngToVector3 } from '../../utils/coordinates.ts';
 
 const GLOW_RADIUS = 0.15;

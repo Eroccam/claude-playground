@@ -1,8 +1,24 @@
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { EventListItem } from './EventListItem.tsx';
 
 export function EventList() {
-  const { filteredEvents, selectedEventId, setSelectedEventId } = useGlobe();
+  const { filteredEvents, selectedEventId, setSelectedEventId, isLoading, error } = useGlobe();
+
+  if (isLoading) {
+    return (
+      <div className="event-list" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+        <p>Loading events...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="event-list" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b91c1c' }}>
+        <p>Unable to load events.</p>
+      </div>
+    );
+  }
 
   if (filteredEvents.length === 0) {
     return (

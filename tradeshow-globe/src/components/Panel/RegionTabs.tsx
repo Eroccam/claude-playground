@@ -1,4 +1,4 @@
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { REGION_COLORS } from '../../utils/regions.ts';
 import type { Region } from '../../types.ts';
 

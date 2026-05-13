@@ -37,8 +37,8 @@ export function Coastlines({ highlightedRegion }: CoastlinesProps) {
   }, [parsed, highlightedRegion]);
 
   return (
-    <lineSegments geometry={geometry} renderOrder={3}>
-      <lineBasicMaterial vertexColors transparent opacity={0.85} depthWrite={false} />
+    <lineSegments geometry={geometry} renderOrder={4}>
+      <lineBasicMaterial vertexColors transparent opacity={0.9} depthTest depthWrite={false} />
     </lineSegments>
   );
 }

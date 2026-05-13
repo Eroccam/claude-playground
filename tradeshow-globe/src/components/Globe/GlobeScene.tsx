@@ -5,13 +5,13 @@ import { Starfield } from './Starfield.tsx';
 import { GlobeControls } from './GlobeControls.tsx';
 import type { GlobeControlsHandle } from './GlobeControls.tsx';
 import { Coastlines } from './Coastlines.tsx';
-import { LandGlow } from './LandGlow.tsx';
+import { RegionRimGlow } from './RegionRimGlow.tsx';
 import { Atmosphere } from './Atmosphere.tsx';
 import { EventPins } from './EventPins.tsx';
 import { BeaconGlow } from './BeaconGlow.tsx';
 import { CameraAnimator } from './CameraAnimator.tsx';
 import { WebGLFallback } from '../WebGLFallback.tsx';
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { GLOBE_Y_OFFSET } from '../../utils/cameraTargets.ts';
 
 function Scene() {
@@ -22,7 +22,7 @@ function Scene() {
     <>
       <OceanSphere />
       <Atmosphere />
-      <LandGlow highlightedRegion={selectedRegion} />
+      <RegionRimGlow highlightedRegion={selectedRegion} />
       <Coastlines highlightedRegion={selectedRegion} />
       <Starfield />
       <EventPins />

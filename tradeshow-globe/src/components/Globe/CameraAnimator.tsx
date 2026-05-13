@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { getRegionCameraTarget, getEventCameraTarget, lerpSpherical, GLOBE_Y_OFFSET } from '../../utils/cameraTargets.ts';
 import type { GlobeControlsHandle } from './GlobeControls.tsx';
 

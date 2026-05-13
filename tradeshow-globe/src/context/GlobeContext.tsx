@@ -1,22 +1,10 @@
-import { createContext, useContext, useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { TradeshowEvent, Region } from '../types.ts';
-import eventsData from '../data/events.json';
+import { fetchMasterEvents } from '../api/masterEvents.ts';
+import { GlobeContext } from './globeContext.ts';
+import type { GlobeContextValue } from './globeContext.ts';
 import { detectRegionFromTimezone } from '../utils/regions.ts';
-
-interface GlobeContextValue {
-  events: TradeshowEvent[];
-  selectedRegion: Region;
-  selectedEventId: string | null;
-  selectedEvent: TradeshowEvent | null;
-  filteredEvents: TradeshowEvent[];
-  setSelectedRegion: (region: Region) => void;
-  setSelectedEventId: (id: string | null) => void;
-  /** Pin click: switches region if needed, then selects event (no race condition). */
-  selectEventFromPin: (eventId: string, eventRegion: Region) => void;
-}
-
-const GlobeContext = createContext<GlobeContextValue | null>(null);
 
 function isValidEvent(e: TradeshowEvent): boolean {
   return (
@@ -27,11 +15,31 @@ function isValidEvent(e: TradeshowEvent): boolean {
   );
 }
 
-const allEvents = (eventsData as TradeshowEvent[]).filter(isValidEvent);
-
 export function GlobeProvider({ children }: { children: ReactNode }) {
+  const [events, setEvents] = useState<TradeshowEvent[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedRegion, setSelectedRegionRaw] = useState<Region>(detectRegionFromTimezone);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetchMasterEvents(controller.signal)
+      .then((masterEvents) => {
+        setEvents(masterEvents.filter(isValidEvent));
+        setError(null);
+      })
+      .catch((err: unknown) => {
+        if (controller.signal.aborted) return;
+        setError(err instanceof Error ? err.message : 'Unable to load master events');
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setIsLoading(false);
+      });
+
+    return () => controller.abort();
+  }, []);
 
   const setSelectedRegion = useCallback((region: Region) => {
     setSelectedRegionRaw(region);
@@ -46,24 +54,26 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
 
   const filteredEvents = useMemo(
     () =>
-      allEvents
+      events
         .filter((e) => e.region === selectedRegion)
         .sort((a, b) => {
-          const dateCompare = a.startDate.localeCompare(b.startDate);
+          const dateCompare = (a.startDate || '9999-12-31').localeCompare(b.startDate || '9999-12-31');
           if (dateCompare !== 0) return dateCompare;
           return a.name.localeCompare(b.name);
         }),
-    [selectedRegion],
+    [events, selectedRegion],
   );
 
   const selectedEvent = useMemo(
-    () => allEvents.find((e) => e.id === selectedEventId) ?? null,
-    [selectedEventId],
+    () => events.find((e) => e.id === selectedEventId) ?? null,
+    [events, selectedEventId],
   );
 
   const value = useMemo<GlobeContextValue>(
     () => ({
-      events: allEvents,
+      events,
+      isLoading,
+      error,
       selectedRegion,
       selectedEventId,
       selectedEvent,
@@ -72,14 +82,8 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
       setSelectedEventId,
       selectEventFromPin,
     }),
-    [selectedRegion, selectedEventId, selectedEvent, filteredEvents, setSelectedRegion, selectEventFromPin],
+    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, filteredEvents, setSelectedRegion, selectEventFromPin],
   );
 
   return <GlobeContext value={value}>{children}</GlobeContext>;
-}
-
-export function useGlobe(): GlobeContextValue {
-  const ctx = useContext(GlobeContext);
-  if (!ctx) throw new Error('useGlobe must be used within GlobeProvider');
-  return ctx;
 }

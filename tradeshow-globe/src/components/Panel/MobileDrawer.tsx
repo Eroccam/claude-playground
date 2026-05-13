@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { RegionTabs } from './RegionTabs.tsx';
 import { EventList } from './EventList.tsx';
 import { EventDetail } from './EventDetail.tsx';
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import './MobileDrawer.css';
 
 export function MobileDrawer() {

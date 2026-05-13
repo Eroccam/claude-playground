@@ -1,4 +1,4 @@
-import { useGlobe } from '../../context/GlobeContext.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import { formatEventDateRange } from '../../utils/dates.ts';
 
 export function EventDetail() {
