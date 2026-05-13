@@ -100,16 +100,14 @@ export function LandGlow({ highlightedRegion }: LandGlowProps) {
         <mesh key={region} geometry={geometries[region]} renderOrder={1}>
           {/* Z-fighting guard:
               - Land triangles at radius 1.002, above the ocean sphere at 1.0.
-              - depthWrite={false}: land triangles don't fight each other (all 3 regions blend).
+              - solid material prevents antialiased earcut edges from blending with ocean.
               - depthTest={true}: land behind the globe is correctly occluded by ocean.
               - polygonOffset(-1,-1): additional forward bias in the depth buffer. */}
           <meshBasicMaterial
             color={proofMode ? '#ff1493' : (region === highlightedRegion ? REGION_COLORS[region] : REGION_BASE_COLORS[region])}
-            transparent
-            opacity={proofMode ? 1 : (region === highlightedRegion ? 0.72 : 0.22)}
             wireframe={proofMode}
             depthTest
-            depthWrite={false}
+            depthWrite
             side={THREE.FrontSide}
             polygonOffset
             polygonOffsetFactor={-1}

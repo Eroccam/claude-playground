@@ -13,6 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const GEOJSON_PATH = resolve(__dirname, '../src/data/ne_110m_admin_0_countries.json');
 const TRIANGLES_PATH = resolve(__dirname, '../public/land/land-triangles.json');
 const POINT_EPS = 1e-7;
+const MIN_TRI_AREA_3D = 1e-8;
 
 function samePoint(a, b, eps = POINT_EPS) {
   return Math.abs(a[0] - b[0]) <= eps && Math.abs(a[1] - b[1]) <= eps;
@@ -149,7 +150,7 @@ function triangleMetrics(flat) {
     const ny = (abz * acx) - (abx * acz);
     const nz = (abx * acy) - (aby * acx);
     const nLen = Math.sqrt(nx * nx + ny * ny + nz * nz);
-    if (!Number.isFinite(nLen) || nLen < 1e-10) {
+    if (!Number.isFinite(nLen) || nLen < MIN_TRI_AREA_3D * 2) {
       tinyCount++;
       continue;
     }

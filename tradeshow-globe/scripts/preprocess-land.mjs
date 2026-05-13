@@ -18,6 +18,7 @@ const OUTPUT_PATH = resolve(__dirname, '../public/land/land-triangles.json');
 
 const RADIUS = 1.002;
 const MIN_TRI_AREA = 1e-8;
+const MIN_TRI_AREA_3D = 1e-8;
 const POINT_EPS = 1e-7;
 // Antarctica detection: skip any polygon whose outer-ring centroid latitude < this.
 const ANTARCTICA_LAT = -60;
@@ -25,7 +26,7 @@ const ANTARCTICA_LAT = -60;
 // Boundary densification: insert intermediate lat/lon points along ring edges so no
 // flat-space edge exceeds this length (degrees). Reduces earcut diagonal length.
 // Reduce to 2.0 for a finer mesh; increase to 6.0 if preprocessing is slow.
-const DENSIFY_MAX_DEG = 4.0;
+const DENSIFY_MAX_DEG = 2.0;
 
 // 2-D grid cell splitting: slice each polygon into LON×LAT degree cells before
 // triangulation. Max earcut diagonal within a cell ≈ sqrt(LON²+LAT²) in flat space,
@@ -34,6 +35,9 @@ const DENSIFY_MAX_DEG = 4.0;
 // Reduce to 5 for finer mesh; increase to 15 if preprocessing is slow.
 const BAND_STEP_LON = 10;
 const BAND_STEP_LAT = 10;
+// Admin-country polygons are already small enough to triangulate directly. Grid
+// clipping creates artificial seams and skinny clipped remnants across countries.
+const ENABLE_GRID_SPLIT = false;
 
 // No chord-based seam discard: normalizeRing prevents antimeridian jumps.
 // Large polygons can produce legitimate earcut triangles with long chords.
@@ -539,13 +543,26 @@ let unknownRegion = 0;
 // the sphere surface. Chord 0.1 is about 5.7 degrees of arc; at RADIUS=1.002 the
 // sag is about 0.00125, keeping subdivided triangle interiors above the ocean.
 // Worst-case recursion: about 4 levels.
-const MAX_EDGE_CHORD_SQ = 0.01; // 0.1² — chord in 3-D Euclidean space
+const MAX_EDGE_CHORD_SQ = 0.0025; // 0.05 squared, chord in 3-D Euclidean space
 
 function chordSq(a, b) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
   const dz = a.z - b.z;
   return (dx * dx) + (dy * dy) + (dz * dz);
+}
+
+function triNormalLength3D(a, b, c) {
+  const abx = b.x - a.x;
+  const aby = b.y - a.y;
+  const abz = b.z - a.z;
+  const acx = c.x - a.x;
+  const acy = c.y - a.y;
+  const acz = c.z - a.z;
+  const nx = (aby * acz) - (abz * acy);
+  const ny = (abz * acx) - (abx * acz);
+  const nz = (abx * acy) - (aby * acx);
+  return Math.sqrt((nx * nx) + (ny * ny) + (nz * nz));
 }
 
 function sphereMidpoint(a, b) {
@@ -594,6 +611,9 @@ function pushSubdivided(a, b, c, sourceCell, polygonRegion) {
   const bc = chordSq(b, c);
   const ac = chordSq(a, c);
   if (ab <= MAX_EDGE_CHORD_SQ && bc <= MAX_EDGE_CHORD_SQ && ac <= MAX_EDGE_CHORD_SQ) {
+    const nLen = triNormalLength3D(a, b, c);
+    if (!Number.isFinite(nLen) || nLen < MIN_TRI_AREA_3D * 2) { droppedDegenerate3D++; return; }
+
     const cls = classifyTriangleRegion(a, b, c, polygonRegion);
     if (!cls) { droppedAntarctica++; return; }
 
@@ -681,7 +701,7 @@ function triangulateSinglePolygon({ polygon, region }) {
   // Split outer ring into BAND_STEP_LON × BAND_STEP_LAT degree grid cells.
   // Max earcut diagonal within a cell ≈ sqrt(LON²+LAT²) ≈ 14.1° → chord ≈ 0.25.
   // Bounds diagonal length in BOTH horizontal and vertical directions.
-  const cells = splitRingIntoCells(outerWound);
+  const cells = ENABLE_GRID_SPLIT ? splitRingIntoCells(outerWound) : [outerWound];
 
   for (const bandOuter of cells) {
     const bandBBox = ringBBox(bandOuter);
@@ -689,6 +709,10 @@ function triangulateSinglePolygon({ polygon, region }) {
     // Clip each validated hole to this cell (lon + lat bounds), then densify.
     const bandHoles = [];
     for (const hole of holesWound) {
+      if (!ENABLE_GRID_SPLIT) {
+        bandHoles.push(densifyRing(hole));
+        continue;
+      }
       let clipped = clipRingByLon(hole, bandBBox.maxLon, true);
       if (!clipped) continue;
       clipped = clipRingByLon(clipped, bandBBox.minLon, false);
@@ -733,17 +757,8 @@ function triangulateSinglePolygon({ polygon, region }) {
       const va = latLngToVector3(a[1], a[0], RADIUS);
       const vb = latLngToVector3(b[1], b[0], RADIUS);
       const vc = latLngToVector3(c[1], c[0], RADIUS);
-      const abx = vb.x - va.x;
-      const aby = vb.y - va.y;
-      const abz = vb.z - va.z;
-      const acx = vc.x - va.x;
-      const acy = vc.y - va.y;
-      const acz = vc.z - va.z;
-      const nx = (aby * acz) - (abz * acy);
-      const ny = (abz * acx) - (abx * acz);
-      const nz = (abx * acy) - (aby * acx);
-      const nLen = Math.sqrt((nx * nx) + (ny * ny) + (nz * nz));
-      if (!Number.isFinite(nLen) || nLen < 1e-10) { droppedDegenerate3D++; continue; }
+      const nLen = triNormalLength3D(va, vb, vc);
+      if (!Number.isFinite(nLen) || nLen < MIN_TRI_AREA_3D * 2) { droppedDegenerate3D++; continue; }
 
       // Track top-20 longest earcut edges (pre-subdivision) for quality diagnostics.
       const preMax = Math.sqrt(Math.max(chordSq(va, vb), chordSq(vb, vc), chordSq(va, vc)));
@@ -779,7 +794,7 @@ const emeaCount = (buckets.EMEA.length / 9) | 0;
 const apacCount = (buckets.APAC.length / 9) | 0;
 const rndRng = (rng) => rng[0] === Infinity ? null : [+rng[0].toFixed(2), +rng[1].toFixed(2)];
 const meta = {
-  params: { RADIUS, DENSIFY_MAX_DEG, BAND_STEP_LON, BAND_STEP_LAT, MIN_TRI_AREA, regionSource: 'ne_110m_admin_0_countries.properties.CONTINENT' },
+  params: { RADIUS, DENSIFY_MAX_DEG, BAND_STEP_LON, BAND_STEP_LAT, ENABLE_GRID_SPLIT, MIN_TRI_AREA, MIN_TRI_AREA_3D, regionSource: 'ne_110m_admin_0_countries.properties.CONTINENT' },
   triangles: { US: usCount, EMEA: emeaCount, APAC: apacCount, total: usCount + emeaCount + apacCount },
   lonRange: { US: rndRng(bucketLonRange.US), EMEA: rndRng(bucketLonRange.EMEA), APAC: rndRng(bucketLonRange.APAC) },
 };
