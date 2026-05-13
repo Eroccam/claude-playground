@@ -1,4 +1,5 @@
 import type { AttendanceType, Region, TradeshowEvent } from '../types.ts';
+import eventsData from '../data/events.json';
 
 type UnknownRecord = Record<string, unknown>;
 
@@ -6,6 +7,7 @@ interface MasterEventRecord {
   code?: string;
   sharepoint?: UnknownRecord;
   approved?: UnknownRecord;
+  dashboardEdits?: UnknownRecord;
   research?: UnknownRecord;
   meta?: UnknownRecord;
 }
@@ -103,6 +105,10 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
   'whistler|canada': { lat: 50.1163, lng: -122.9574 },
 };
 
+const LEGACY_COORDS = new Map(
+  (eventsData as TradeshowEvent[]).map((event) => [event.id.toUpperCase(), { lat: event.lat, lng: event.lng }]),
+);
+
 function text(value: unknown): string {
   return typeof value === 'string' ? value.trim() : '';
 }
@@ -123,6 +129,20 @@ function nested(record: unknown, path: string[]): unknown {
     current = (current as UnknownRecord)[key];
   }
   return current;
+}
+
+function eventField(event: MasterEventRecord, field: string): unknown {
+  const dashboardEdit = event.dashboardEdits?.[field];
+  if (dashboardEdit && typeof dashboardEdit === 'object' && 'value' in dashboardEdit) {
+    return (dashboardEdit as UnknownRecord).value;
+  }
+
+  const approved = event.approved?.[field];
+  if (approved && typeof approved === 'object' && 'value' in approved) {
+    return (approved as UnknownRecord).value;
+  }
+
+  return event.sharepoint?.[field];
 }
 
 function parseSharepointDate(value: string): string {
@@ -164,7 +184,7 @@ function mapRegion(event: MasterEventRecord, country: string): Region {
   return 'US';
 }
 
-function coordinatesFor(event: MasterEventRecord, city: string, country: string, region: Region): { lat: number; lng: number } {
+function coordinatesFor(event: MasterEventRecord, code: string, city: string, country: string, region: Region): { lat: number; lng: number; hasPin: boolean } {
   const lat =
     number(nested(event.approved, ['dates', 'gpsLat'])) ??
     number(nested(event.research, ['dates', 'gpsLat'])) ??
@@ -176,13 +196,17 @@ function coordinatesFor(event: MasterEventRecord, city: string, country: string,
     number(event.approved?.['dates.gpsLng']) ??
     number(event.research?.['dates.gpsLng']);
 
-  if (lat !== null && lng !== null) return { lat, lng };
+  if (lat !== null && lng !== null) return { lat, lng, hasPin: true };
+
+  const legacyCoords = LEGACY_COORDS.get(code.toUpperCase());
+  if (legacyCoords) return { ...legacyCoords, hasPin: true };
 
   const cKey = countryKey(country);
   const byCity = CITY_COORDS[`${city.toLowerCase()}|${cKey}`];
-  if (byCity) return byCity;
+  if (city && byCity) return { ...byCity, hasPin: true };
 
-  return COUNTRY_COORDS[cKey] ?? REGION_FALLBACK_COORDS[region];
+  const fallback = COUNTRY_COORDS[cKey] ?? REGION_FALLBACK_COORDS[region];
+  return { ...fallback, hasPin: false };
 }
 
 function descriptionFor(event: MasterEventRecord): string {
@@ -196,19 +220,18 @@ function descriptionFor(event: MasterEventRecord): string {
 }
 
 function normalizeEvent(event: MasterEventRecord): TradeshowEvent | null {
-  const sharepoint = event.sharepoint ?? {};
-  const code = text(event.code) || text(sharepoint['Event Code']);
-  const name = text(sharepoint.Title).replace(/^NEW:\s*/i, '') || code;
-  const startDate = parseSharepointDate(text(sharepoint['Start Date']));
-  const endDate = parseSharepointDate(text(sharepoint['End Date'])) || startDate;
+  const code = text(event.code) || text(eventField(event, 'Event Code'));
+  const name = text(eventField(event, 'Title')).replace(/^NEW:\s*/i, '') || code;
+  const startDate = parseSharepointDate(text(eventField(event, 'Start Date')));
+  const endDate = parseSharepointDate(text(eventField(event, 'End Date'))) || startDate;
 
   if (!code || !name) return null;
 
-  const city = text(sharepoint['Event Location: City']);
-  const stateProvince = text(sharepoint['Event Location: State']);
-  const country = normalizeCountry(text(sharepoint['Event Location: Country/Region']) || text(sharepoint.Region));
+  const city = text(eventField(event, 'Event Location: City'));
+  const stateProvince = text(eventField(event, 'Event Location: State'));
+  const country = normalizeCountry(text(eventField(event, 'Event Location: Country/Region')) || text(eventField(event, 'Region')));
   const region = mapRegion(event, country);
-  const coords = coordinatesFor(event, city, country, region);
+  const coords = coordinatesFor(event, code, city, country, region);
 
   return {
     id: `${code}-${startDate || 'date-tbc'}`,
@@ -219,11 +242,12 @@ function normalizeEvent(event: MasterEventRecord): TradeshowEvent | null {
     country,
     lat: coords.lat,
     lng: coords.lng,
+    hasPin: coords.hasPin,
     startDate,
     endDate,
     description: descriptionFor(event),
-    attendanceType: parseEventType(text(sharepoint['Event Type'])),
-    eventUrl: text(sharepoint['Event Website']) || undefined,
+    attendanceType: parseEventType(text(eventField(event, 'Event Type'))),
+    eventUrl: text(eventField(event, 'Event Website')) || undefined,
   };
 }
 

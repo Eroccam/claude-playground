@@ -38,12 +38,13 @@ function computeOffsets(events: { lat: number; lng: number; id: string }[]): Map
 
 export function EventPins() {
   const { events, selectedRegion, selectedEventId, selectEventFromPin } = useGlobe();
+  const pinnedEvents = useMemo(() => events.filter((event) => event.hasPin !== false), [events]);
 
-  const offsets = useMemo(() => computeOffsets(events), [events]);
+  const offsets = useMemo(() => computeOffsets(pinnedEvents), [pinnedEvents]);
 
   return (
     <group>
-      {events.map((event) => (
+      {pinnedEvents.map((event) => (
         <EventPin
           key={event.id}
           event={event}

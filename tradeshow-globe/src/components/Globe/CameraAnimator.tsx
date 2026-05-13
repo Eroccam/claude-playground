@@ -37,7 +37,7 @@ export function CameraAnimator({ controlsRef }: CameraAnimatorProps) {
     fromSpherical.current.setFromVector3(camera.position.clone().sub(TARGET));
 
     // Compute target
-    if (selectedEvent) {
+    if (selectedEvent && selectedEvent.hasPin !== false) {
       toSpherical.current = getEventCameraTarget(selectedEvent.lat, selectedEvent.lng);
     } else {
       toSpherical.current = getRegionCameraTarget(selectedRegion);

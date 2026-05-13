@@ -11,6 +11,7 @@ export interface TradeshowEvent {
   country: string;
   lat: number;
   lng: number;
+  hasPin?: boolean;
   startDate: string;
   endDate: string;
   description: string;
