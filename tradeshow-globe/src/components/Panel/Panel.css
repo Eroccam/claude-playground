@@ -30,6 +30,18 @@
   border-bottom-color: var(--tab-color, #e63946);
 }
 
+.searched-header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(230, 230, 245, 0.92);
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 .side-panel__content {
   flex: 1;
   min-height: 0;
@@ -140,6 +152,10 @@
 .event-list-item__right {
   flex-shrink: 0;
   padding-top: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
 }
 
 .event-list-item__name {
@@ -177,6 +193,11 @@
 .event-list-item__badge--walking {
   background: rgba(255, 255, 255, 0.05);
   color: rgba(160, 165, 195, 0.6);
+}
+
+.event-list-item__badge--region {
+  background: rgba(21, 45, 92, 0.42);
+  color: rgba(185, 210, 255, 0.82);
 }
 
 /* Event Detail */

@@ -4,6 +4,7 @@ import { formatEventDateRange, isPastEvent } from '../../utils/dates.ts';
 interface EventListItemProps {
   event: TradeshowEvent;
   isSelected: boolean;
+  showRegionBadge?: boolean;
   onClick: () => void;
 }
 
@@ -14,7 +15,7 @@ function formatLocation(event: TradeshowEvent): string {
   return parts.join(', ');
 }
 
-export function EventListItem({ event, isSelected, onClick }: EventListItemProps) {
+export function EventListItem({ event, isSelected, showRegionBadge = false, onClick }: EventListItemProps) {
   const past = isPastEvent(event.endDate);
   const classes = [
     'event-list-item',
@@ -35,6 +36,11 @@ export function EventListItem({ event, isSelected, onClick }: EventListItemProps
           </div>
         </div>
         <div className="event-list-item__right">
+          {showRegionBadge && (
+            <span className="event-list-item__badge event-list-item__badge--region">
+              {event.region}
+            </span>
+          )}
           <span className={`event-list-item__badge event-list-item__badge--${event.attendanceType.toLowerCase()}`}>
             {event.attendanceType}
           </span>

@@ -22,6 +22,8 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
   const [selectedRegion, setSelectedRegionRaw] = useState<Region>(detectRegionFromTimezone);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [selectionNonce, setSelectionNonce] = useState(0);
+  const [isSearchMode, setIsSearchMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const controller = new AbortController();
@@ -47,10 +49,17 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
     setSelectedEventId(null);
   }, []);
 
+  const setSearchMode = useCallback((active: boolean) => {
+    setIsSearchMode(active);
+    if (!active) setSearchQuery('');
+  }, []);
+
   const selectEvent = useCallback((eventId: string | null) => {
     setSelectedEventId(eventId);
+    const event = events.find((item) => item.id === eventId);
+    if (event) setSelectedRegionRaw(event.region);
     if (eventId) setSelectionNonce((value) => value + 1);
-  }, []);
+  }, [events]);
 
   const clearSelectedEvent = useCallback(() => {
     setSelectedEventId(null);
@@ -74,6 +83,25 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
     [events, selectedRegion],
   );
 
+  const searchResults = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    const matches = query
+      ? events.filter((event) => {
+          const location = [event.city, event.stateProvince, event.country]
+            .filter(Boolean)
+            .join(' ')
+            .toLowerCase();
+          return event.name.toLowerCase().includes(query) || location.includes(query);
+        })
+      : events;
+
+    return [...matches].sort((a, b) => {
+      const dateCompare = (a.startDate || '9999-12-31').localeCompare(b.startDate || '9999-12-31');
+      if (dateCompare !== 0) return dateCompare;
+      return a.name.localeCompare(b.name);
+    });
+  }, [events, searchQuery]);
+
   const selectedEvent = useMemo(
     () => events.find((e) => e.id === selectedEventId) ?? null,
     [events, selectedEventId],
@@ -88,12 +116,17 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
       selectedEventId,
       selectedEvent,
       selectionNonce,
-      filteredEvents,
+      filteredEvents: isSearchMode ? searchResults : filteredEvents,
+      isSearchMode,
+      searchQuery,
+      searchResults,
       setSelectedRegion,
       setSelectedEventId: (id) => (id ? selectEvent(id) : clearSelectedEvent()),
       selectEventFromPin,
+      setSearchMode,
+      setSearchQuery,
     }),
-    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, selectionNonce, filteredEvents, setSelectedRegion, selectEvent, clearSelectedEvent, selectEventFromPin],
+    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, selectionNonce, isSearchMode, searchQuery, searchResults, filteredEvents, setSelectedRegion, selectEvent, clearSelectedEvent, selectEventFromPin, setSearchMode],
   );
 
   return <GlobeContext value={value}>{children}</GlobeContext>;

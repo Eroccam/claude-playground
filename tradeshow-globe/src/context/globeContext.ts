@@ -10,9 +10,14 @@ export interface GlobeContextValue {
   selectedEvent: TradeshowEvent | null;
   selectionNonce: number;
   filteredEvents: TradeshowEvent[];
+  isSearchMode: boolean;
+  searchQuery: string;
+  searchResults: TradeshowEvent[];
   setSelectedRegion: (region: Region) => void;
   setSelectedEventId: (id: string | null) => void;
   selectEventFromPin: (eventId: string, eventRegion: Region) => void;
+  setSearchMode: (active: boolean) => void;
+  setSearchQuery: (query: string) => void;
 }
 
 export const GlobeContext = createContext<GlobeContextValue | null>(null);

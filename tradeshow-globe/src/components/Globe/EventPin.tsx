@@ -7,6 +7,7 @@ import { isPastEvent } from '../../utils/dates.ts';
 
 const SAFRAN_BLUE = '#1a6aff';
 const SAFRAN_BLUE_MID = '#0e4fbf';
+const SEARCH_GREEN = '#39d98a';
 const PIN_HEIGHT = 0.06;
 const BASE_RADIUS = 0.005;
 const TOP_RADIUS = 0.002;
@@ -15,11 +16,13 @@ interface EventPinProps {
   event: TradeshowEvent;
   isSelected: boolean;
   isInSelectedRegion: boolean;
+  isSearchMode: boolean;
+  isSearchMatch: boolean;
   offset: THREE.Vector3;
   onClick: () => void;
 }
 
-export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClick }: EventPinProps) {
+export function EventPin({ event, isSelected, isInSelectedRegion, isSearchMode, isSearchMatch, offset, onClick }: EventPinProps) {
   const groupRef = useRef<THREE.Group>(null);
   const visibleRef = useRef(true);
   const [hovered, setHovered] = useState(false);
@@ -29,7 +32,17 @@ export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClic
 
   // Region-aware brightness (CR-014 + CR-021/022: beacon look)
   const regionOpacity = isInSelectedRegion ? baseOpacity : baseOpacity * 0.6;
-  const pinColor = isSelected ? '#55aaff' : hovered ? '#55aaff' : isInSelectedRegion ? SAFRAN_BLUE : SAFRAN_BLUE_MID;
+  const searchOpacity = isSearchMatch ? 0.92 : 0.18;
+  const pinOpacity = isSelected ? 0.95 : isSearchMode ? searchOpacity : regionOpacity;
+  const pinColor = isSelected
+    ? '#55aaff'
+    : hovered
+      ? '#55aaff'
+      : isSearchMode && isSearchMatch
+        ? SEARCH_GREEN
+        : isInSelectedRegion
+          ? SAFRAN_BLUE
+          : SAFRAN_BLUE_MID;
 
   // Position and orientation
   const surfacePos = latLngToVector3(event.lat, event.lng, 1.006);
@@ -84,7 +97,7 @@ export function EventPin({ event, isSelected, isInSelectedRegion, offset, onClic
         <meshBasicMaterial
           color={pinColor}
           transparent
-          opacity={isSelected ? 0.95 : regionOpacity}
+          opacity={pinOpacity}
         />
       </mesh>
     </group>

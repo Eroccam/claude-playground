@@ -6,6 +6,7 @@ import { MobileDrawer } from './components/Panel/MobileDrawer.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { GlobeProvider } from './context/GlobeContext.tsx';
 import { ShowInfoWindow } from './components/ShowInfoWindow/ShowInfoWindow.tsx';
+import { SearchModeControls } from './components/SearchMode/SearchModeControls.tsx';
 
 function App() {
   const [sidePanelMinimized, setSidePanelMinimized] = useState(false);
@@ -35,6 +36,7 @@ function App() {
               onExpand={() => setSidePanelMinimized(false)}
             />
           </div>
+          <SearchModeControls />
           <ShowInfoWindow />
           <MobileDrawer />
         </div>

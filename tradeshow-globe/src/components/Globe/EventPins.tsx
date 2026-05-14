@@ -37,8 +37,9 @@ function computeOffsets(events: { lat: number; lng: number; id: string }[]): Map
 }
 
 export function EventPins() {
-  const { events, selectedRegion, selectedEventId, selectEventFromPin } = useGlobe();
+  const { events, selectedRegion, selectedEventId, selectEventFromPin, isSearchMode, searchResults } = useGlobe();
   const pinnedEvents = useMemo(() => events.filter((event) => event.hasPin !== false), [events]);
+  const searchMatchIds = useMemo(() => new Set(searchResults.map((event) => event.id)), [searchResults]);
 
   const offsets = useMemo(() => computeOffsets(pinnedEvents), [pinnedEvents]);
 
@@ -50,6 +51,8 @@ export function EventPins() {
           event={event}
           isSelected={event.id === selectedEventId}
           isInSelectedRegion={event.region === selectedRegion}
+          isSearchMode={isSearchMode}
+          isSearchMatch={searchMatchIds.has(event.id)}
           offset={offsets.get(event.id) ?? new THREE.Vector3()}
           onClick={() => {
             if (event.id !== selectedEventId) selectEventFromPin(event.id, event.region);

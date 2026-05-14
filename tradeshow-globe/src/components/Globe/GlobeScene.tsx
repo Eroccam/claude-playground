@@ -18,14 +18,15 @@ import { useGlobe } from '../../context/globeContext.ts';
 import { GLOBE_Y_OFFSET } from '../../utils/cameraTargets.ts';
 
 function Scene() {
-  const { selectedRegion } = useGlobe();
+  const { selectedRegion, selectedEvent, isSearchMode } = useGlobe();
   const controlsRef = useRef<GlobeControlsHandle>(null);
+  const showRegionFill = !isSearchMode || Boolean(selectedEvent);
 
   return (
     <>
       <OceanSphere />
       <Atmosphere />
-      <LandGlow highlightedRegion={selectedRegion} />
+      {showRegionFill && <LandGlow highlightedRegion={selectedRegion} />}
       <CountryBorders />
       <Coastlines />
       <Starfield />

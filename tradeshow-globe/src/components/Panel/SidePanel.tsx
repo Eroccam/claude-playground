@@ -1,6 +1,7 @@
 import { RegionTabs } from './RegionTabs.tsx';
 import { EventList } from './EventList.tsx';
 import './Panel.css';
+import { useGlobe } from '../../context/globeContext.ts';
 
 interface SidePanelProps {
   isMinimized: boolean;
@@ -9,9 +10,15 @@ interface SidePanelProps {
 }
 
 export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps) {
+  const { isSearchMode } = useGlobe();
+
   return (
     <>
-      <RegionTabs onTabSelect={onExpand} />
+      {isSearchMode ? (
+        <div className="searched-header">Searched</div>
+      ) : (
+        <RegionTabs onTabSelect={onExpand} />
+      )}
       <div className="side-panel__content" aria-hidden={isMinimized}>
         <div className="side-panel__body">
           <EventList />
