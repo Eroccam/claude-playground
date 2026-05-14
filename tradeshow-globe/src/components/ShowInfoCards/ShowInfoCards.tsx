@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, useCallback, CSSProperties } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import type { TradeshowEvent } from '../../types.ts';
 import { formatEventDateRange } from '../../utils/dates.ts';
