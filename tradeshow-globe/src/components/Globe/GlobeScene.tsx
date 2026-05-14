@@ -10,6 +10,7 @@ import { LandGlow } from './LandGlow.tsx';
 import { Atmosphere } from './Atmosphere.tsx';
 import { EventPins } from './EventPins.tsx';
 import { BeaconGlow } from './BeaconGlow.tsx';
+import { OrbitingSatellite } from './OrbitingSatellite.tsx';
 import { CameraAnimator } from './CameraAnimator.tsx';
 import { WebGLFallback } from '../WebGLFallback.tsx';
 import { useGlobe } from '../../context/globeContext.ts';
@@ -27,6 +28,7 @@ function Scene() {
       <CountryBorders />
       <Coastlines />
       <Starfield />
+      <OrbitingSatellite />
       <EventPins />
       <BeaconGlow />
       <GlobeControls ref={controlsRef} />
