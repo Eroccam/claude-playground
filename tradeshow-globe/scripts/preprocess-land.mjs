@@ -44,6 +44,24 @@ const ENABLE_GRID_SPLIT = true;
 // pushSubdivided handles any chord size safely.
 const DEBUG_TRIANGULATION = process.env.NODE_ENV !== 'production';
 
+// The bundled low-resolution Natural Earth country data contains a small
+// self-intersecting lobe at the southwest Sudan border. Earcut drops that lobe,
+// leaving a visible ocean-colored wedge inside EMEA. Add it back explicitly as
+// land while preserving the existing continent-based region assignment.
+const TOPOLOGY_REPAIR_POLYGONS = [
+  {
+    region: 'EMEA',
+    polygon: [[
+      [24.567369, 8.229188],
+      [23.805813, 8.666319],
+      [23.459013, 8.954286],
+      [24.194068, 8.728696],
+      [24.537415, 8.917538],
+      [24.567369, 8.229188],
+    ]],
+  },
+];
+
 function latLngToVector3(lat, lng, radius) {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lng + 180) * (Math.PI / 180);
@@ -786,6 +804,10 @@ for (const feature of geojson.features) {
     }
     continue;
   }
+}
+
+for (const repair of TOPOLOGY_REPAIR_POLYGONS) {
+  triangulateSinglePolygon(repair);
 }
 
 // Build summary stats before writing (included in _meta for diffability).
