@@ -17,8 +17,8 @@ const GEOJSON_PATH = resolve(__dirname, '../src/data/ne_110m_admin_0_countries.j
 const OUTPUT_PATH = resolve(__dirname, '../public/land/land-triangles.json');
 
 const RADIUS = 1.002;
-const MIN_TRI_AREA = 1e-8;
-const MIN_TRI_AREA_3D = 1e-8;
+const MIN_TRI_AREA = 1e-12;
+const MIN_TRI_AREA_3D = 1e-12;
 const POINT_EPS = 1e-7;
 // Antarctica detection: skip any polygon whose outer-ring centroid latitude < this.
 const ANTARCTICA_LAT = -60;
@@ -35,9 +35,9 @@ const DENSIFY_MAX_DEG = 2.0;
 // Reduce to 5 for finer mesh; increase to 15 if preprocessing is slow.
 const BAND_STEP_LON = 10;
 const BAND_STEP_LAT = 10;
-// Admin-country polygons are already small enough to triangulate directly. Grid
-// clipping creates artificial seams and skinny clipped remnants across countries.
-const ENABLE_GRID_SPLIT = false;
+// Bound triangulation locally so earcut cannot span concave coastlines with long
+// straight fill triangles at high latitudes.
+const ENABLE_GRID_SPLIT = true;
 
 // No chord-based seam discard: normalizeRing prevents antimeridian jumps.
 // Large polygons can produce legitimate earcut triangles with long chords.

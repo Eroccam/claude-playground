@@ -108,7 +108,7 @@ export function LandGlow({ highlightedRegion }: LandGlowProps) {
             wireframe={proofMode}
             depthTest
             depthWrite
-            side={THREE.DoubleSide}
+            side={THREE.FrontSide}
             polygonOffset
             polygonOffsetFactor={-1}
             polygonOffsetUnits={-1}
