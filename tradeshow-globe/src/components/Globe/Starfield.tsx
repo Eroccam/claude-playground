@@ -3,9 +3,10 @@ import { Stars } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
+const STARFIELD_RADIUS = 100;
 const MIN_INTERVAL_SECONDS = 15;
 const MAX_INTERVAL_SECONDS = 25;
-const TRAIL_DURATION_SECONDS = 1.25;
+const TRAIL_DURATION_SECONDS = 1.05;
 
 function randomRange(min: number, max: number) {
   return min + Math.random() * (max - min);
@@ -13,22 +14,25 @@ function randomRange(min: number, max: number) {
 
 function ShootingStar() {
   const groupRef = useRef<THREE.Group>(null);
+  const headMeshRef = useRef<THREE.Mesh>(null);
+  const tailMeshRef = useRef<THREE.Mesh>(null);
   const headRef = useRef<THREE.MeshBasicMaterial>(null);
   const tailRef = useRef<THREE.MeshBasicMaterial>(null);
   const nextLaunchRef = useRef(randomRange(MIN_INTERVAL_SECONDS, MAX_INTERVAL_SECONDS));
   const activeSinceRef = useRef<number | null>(null);
   const startRef = useRef(new THREE.Vector3());
   const endRef = useRef(new THREE.Vector3());
-  const trailLengthRef = useRef(0.42);
+  const trailLengthRef = useRef(5.2);
+  const headSizeRef = useRef(0.22);
   const speedRef = useRef(1);
   const angleRef = useRef(0);
-  const { camera } = useThree();
+  const { camera, size } = useThree();
 
   const geometry = useMemo(() => {
     const shape = new THREE.Shape();
     shape.moveTo(0, 0);
-    shape.lineTo(-1, 0.018);
-    shape.lineTo(-1, -0.018);
+    shape.lineTo(-1, 0.045);
+    shape.lineTo(-1, -0.045);
     shape.closePath();
     return new THREE.ShapeGeometry(shape);
   }, []);
@@ -39,12 +43,22 @@ function ShootingStar() {
     if (groupRef.current) groupRef.current.visible = false;
   };
 
+  const projectToStarfield = (point: THREE.Vector3) => {
+    return point
+      .sub(camera.position)
+      .normalize()
+      .multiplyScalar(STARFIELD_RADIUS)
+      .add(camera.position);
+  };
+
   const launch = (now: number) => {
-    const depth = randomRange(3.8, 5.2);
-    const startX = randomRange(-1.5, 1.15);
-    const startY = randomRange(0.35, 1.15);
-    const angle = THREE.MathUtils.degToRad(randomRange(-18, -42));
-    const distance = randomRange(1.35, 2.1);
+    const fov = THREE.MathUtils.degToRad((camera as THREE.PerspectiveCamera).fov ?? 50);
+    const viewportHeight = 2 * Math.tan(fov / 2) * STARFIELD_RADIUS;
+    const viewportWidth = viewportHeight * (size.width / size.height);
+    const startX = randomRange(-0.62, 0.62) * viewportWidth;
+    const startY = randomRange(0.18, 0.58) * viewportHeight;
+    const angle = THREE.MathUtils.degToRad(randomRange(-15, -34));
+    const distance = randomRange(0.24, 0.36) * viewportWidth;
     const direction = new THREE.Vector2(Math.cos(angle), Math.sin(angle));
     const forward = new THREE.Vector3();
     const right = new THREE.Vector3();
@@ -56,15 +70,20 @@ function ShootingStar() {
 
     startRef.current
       .copy(camera.position)
-      .addScaledVector(forward, depth)
+      .addScaledVector(forward, STARFIELD_RADIUS)
       .addScaledVector(right, startX)
       .addScaledVector(up, startY);
+    projectToStarfield(startRef.current);
+
     endRef.current
       .copy(startRef.current)
       .addScaledVector(right, direction.x * distance)
       .addScaledVector(up, direction.y * distance);
-    trailLengthRef.current = randomRange(0.34, 0.56);
-    speedRef.current = randomRange(0.85, 1.15);
+    projectToStarfield(endRef.current);
+
+    trailLengthRef.current = randomRange(4.2, 6.4);
+    headSizeRef.current = randomRange(0.18, 0.26);
+    speedRef.current = randomRange(0.9, 1.2);
     angleRef.current = angle;
     activeSinceRef.current = now;
 
@@ -95,16 +114,19 @@ function ShootingStar() {
       groupRef.current.position.copy(position);
       groupRef.current.quaternion.copy(camera.quaternion);
       groupRef.current.rotateZ(angleRef.current);
-      groupRef.current.scale.set(trailLengthRef.current, 1, 1);
     }
 
-    if (headRef.current) headRef.current.opacity = opacity * 0.95;
-    if (tailRef.current) tailRef.current.opacity = opacity * 0.35;
+    if (tailMeshRef.current) tailMeshRef.current.scale.set(trailLengthRef.current, 1, 1);
+    if (headMeshRef.current) {
+      headMeshRef.current.scale.setScalar(headSizeRef.current);
+    }
+    if (headRef.current) headRef.current.opacity = opacity * 0.9;
+    if (tailRef.current) tailRef.current.opacity = opacity * 0.55;
   });
 
   return (
     <group ref={groupRef} visible={false} renderOrder={1}>
-      <mesh geometry={geometry}>
+      <mesh ref={tailMeshRef} geometry={geometry}>
         <meshBasicMaterial
           ref={tailRef}
           color="#b8d6ff"
@@ -112,11 +134,12 @@ function ShootingStar() {
           opacity={0}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
+          depthTest
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh position={[0.015, 0, 0.001]}>
-        <sphereGeometry args={[0.018, 12, 12]} />
+      <mesh ref={headMeshRef} position={[0.05, 0, 0.001]}>
+        <sphereGeometry args={[1, 12, 12]} />
         <meshBasicMaterial
           ref={headRef}
           color="#ffffff"
@@ -124,6 +147,7 @@ function ShootingStar() {
           opacity={0}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
+          depthTest
         />
       </mesh>
     </group>
