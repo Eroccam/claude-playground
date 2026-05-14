@@ -23,7 +23,7 @@ function Scene() {
       <OceanSphere />
       <Atmosphere />
       <LandGlow highlightedRegion={selectedRegion} />
-      <Coastlines highlightedRegion={selectedRegion} />
+      <Coastlines />
       <Starfield />
       <EventPins />
       <BeaconGlow />
