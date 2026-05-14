@@ -5,12 +5,14 @@ import * as THREE from 'three';
 const ORBIT_RADIUS = 1.17;
 const ORBIT_INCLINATION = THREE.MathUtils.degToRad(24);
 const ORBIT_SPEED = 0.18;
-const SATELLITE_SCALE = 0.42;
+const SATELLITE_SCALE = 0.21;
+const BEACON_DELAY_SECONDS = 3;
 const SUN_DIRECTION = new THREE.Vector3(-0.35, 0.2, 1).normalize();
 
 export function OrbitingSatellite() {
   const groupRef = useRef<THREE.Group>(null);
   const glowRef = useRef<THREE.MeshBasicMaterial>(null);
+  const beaconRef = useRef<THREE.MeshBasicMaterial>(null);
 
   const orbitTilt = useMemo(
     () => new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), ORBIT_INCLINATION),
@@ -62,6 +64,12 @@ export function OrbitingSatellite() {
     if (glowRef.current) {
       glowRef.current.opacity = distanceFade * (0.01 + darkSideGlow * 0.055 + glint);
     }
+
+    if (beaconRef.current) {
+      const beaconTime = clock.elapsedTime - BEACON_DELAY_SECONDS;
+      const pulse = beaconTime > 0 ? Math.pow(Math.max(0, Math.sin(beaconTime * 4.4)), 3) : 0;
+      beaconRef.current.opacity = distanceFade * pulse * 0.9;
+    }
   });
 
   return (
@@ -80,6 +88,17 @@ export function OrbitingSatellite() {
 
       <mesh material={materials.body}>
         <boxGeometry args={[0.045, 0.028, 0.028]} />
+      </mesh>
+      <mesh position={[0.018, 0.017, 0.014]}>
+        <sphereGeometry args={[0.014, 8, 8]} />
+        <meshBasicMaterial
+          ref={beaconRef}
+          color="#ff4d5e"
+          transparent
+          opacity={0}
+          blending={THREE.AdditiveBlending}
+          depthWrite={false}
+        />
       </mesh>
 
       <mesh position={[-0.061, 0, 0]} material={materials.panel}>
