@@ -1,7 +1,5 @@
-import { useGlobe } from '../../context/globeContext.ts';
 import { RegionTabs } from './RegionTabs.tsx';
 import { EventList } from './EventList.tsx';
-import { EventDetail } from './EventDetail.tsx';
 import './Panel.css';
 
 interface SidePanelProps {
@@ -11,14 +9,12 @@ interface SidePanelProps {
 }
 
 export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps) {
-  const { selectedEvent } = useGlobe();
-
   return (
     <>
       <RegionTabs onTabSelect={onExpand} />
       <div className="side-panel__content" aria-hidden={isMinimized}>
         <div className="side-panel__body">
-          {selectedEvent ? <EventDetail /> : <EventList />}
+          <EventList />
         </div>
         <div className="side-panel__footer">
           <button

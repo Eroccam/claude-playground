@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { RegionTabs } from './RegionTabs.tsx';
 import { EventList } from './EventList.tsx';
-import { EventDetail } from './EventDetail.tsx';
-import { useGlobe } from '../../context/globeContext.ts';
 import './MobileDrawer.css';
 
 export function MobileDrawer() {
   const [open, setOpen] = useState(false);
-  const { selectedEvent } = useGlobe();
 
   return (
     <div className="mobile-drawer-overlay">
@@ -23,7 +20,7 @@ export function MobileDrawer() {
         </div>
         <div className="mobile-drawer__content">
           <RegionTabs />
-          {selectedEvent ? <EventDetail /> : <EventList />}
+          <EventList />
         </div>
       </div>
     </div>

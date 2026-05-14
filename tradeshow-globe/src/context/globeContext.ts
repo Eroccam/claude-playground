@@ -8,6 +8,7 @@ export interface GlobeContextValue {
   selectedRegion: Region;
   selectedEventId: string | null;
   selectedEvent: TradeshowEvent | null;
+  selectionNonce: number;
   filteredEvents: TradeshowEvent[];
   setSelectedRegion: (region: Region) => void;
   setSelectedEventId: (id: string | null) => void;

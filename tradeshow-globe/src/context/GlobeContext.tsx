@@ -21,6 +21,7 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [selectedRegion, setSelectedRegionRaw] = useState<Region>(detectRegionFromTimezone);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
+  const [selectionNonce, setSelectionNonce] = useState(0);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -46,11 +47,20 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
     setSelectedEventId(null);
   }, []);
 
+  const selectEvent = useCallback((eventId: string | null) => {
+    setSelectedEventId(eventId);
+    if (eventId) setSelectionNonce((value) => value + 1);
+  }, []);
+
+  const clearSelectedEvent = useCallback(() => {
+    setSelectedEventId(null);
+  }, []);
+
   const selectEventFromPin = useCallback((eventId: string, eventRegion: Region) => {
     // Switch region without clearing selection — batched by React
     setSelectedRegionRaw(eventRegion);
-    setSelectedEventId(eventId);
-  }, []);
+    selectEvent(eventId);
+  }, [selectEvent]);
 
   const filteredEvents = useMemo(
     () =>
@@ -77,12 +87,13 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
       selectedRegion,
       selectedEventId,
       selectedEvent,
+      selectionNonce,
       filteredEvents,
       setSelectedRegion,
-      setSelectedEventId,
+      setSelectedEventId: (id) => (id ? selectEvent(id) : clearSelectedEvent()),
       selectEventFromPin,
     }),
-    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, filteredEvents, setSelectedRegion, selectEventFromPin],
+    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, selectionNonce, filteredEvents, setSelectedRegion, selectEvent, clearSelectedEvent, selectEventFromPin],
   );
 
   return <GlobeContext value={value}>{children}</GlobeContext>;

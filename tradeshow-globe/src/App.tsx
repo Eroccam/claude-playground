@@ -5,6 +5,7 @@ import { SidePanel } from './components/Panel/SidePanel.tsx';
 import { MobileDrawer } from './components/Panel/MobileDrawer.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { GlobeProvider } from './context/GlobeContext.tsx';
+import { ShowInfoWindow } from './components/ShowInfoWindow/ShowInfoWindow.tsx';
 
 function App() {
   const [sidePanelMinimized, setSidePanelMinimized] = useState(false);
@@ -34,6 +35,7 @@ function App() {
               onExpand={() => setSidePanelMinimized(false)}
             />
           </div>
+          <ShowInfoWindow />
           <MobileDrawer />
         </div>
       </GlobeProvider>

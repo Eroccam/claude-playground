@@ -12,6 +12,7 @@ import { EventPins } from './EventPins.tsx';
 import { BeaconGlow } from './BeaconGlow.tsx';
 import { OrbitingSatellite } from './OrbitingSatellite.tsx';
 import { CameraAnimator } from './CameraAnimator.tsx';
+import { SelectedPinTracker } from './SelectedPinTracker.tsx';
 import { WebGLFallback } from '../WebGLFallback.tsx';
 import { useGlobe } from '../../context/globeContext.ts';
 import { GLOBE_Y_OFFSET } from '../../utils/cameraTargets.ts';
@@ -33,6 +34,7 @@ function Scene() {
       <BeaconGlow />
       <GlobeControls ref={controlsRef} />
       <CameraAnimator controlsRef={controlsRef} />
+      <SelectedPinTracker />
     </>
   );
 }
