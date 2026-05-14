@@ -5,7 +5,7 @@ import { SidePanel } from './components/Panel/SidePanel.tsx';
 import { MobileDrawer } from './components/Panel/MobileDrawer.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { GlobeProvider } from './context/GlobeContext.tsx';
-import { ShowInfoWindow } from './components/ShowInfoWindow/ShowInfoWindow.tsx';
+import { ShowInfoCards } from './components/ShowInfoCards/ShowInfoCards.tsx';
 import { SearchModeControls } from './components/SearchMode/SearchModeControls.tsx';
 
 function App() {
@@ -36,8 +36,8 @@ function App() {
               onExpand={() => setSidePanelMinimized(false)}
             />
           </div>
-          <SearchModeControls />
-          <ShowInfoWindow />
+          <SearchModeControls onExpandPanel={() => setSidePanelMinimized(false)} />
+          <ShowInfoCards />
           <MobileDrawer />
         </div>
       </GlobeProvider>

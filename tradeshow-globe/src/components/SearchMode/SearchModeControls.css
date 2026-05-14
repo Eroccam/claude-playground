@@ -6,6 +6,7 @@
   width: 104px;
   height: 42px;
   display: flex;
+  align-items: center;
   padding: 4px;
   border-radius: 999px;
   background: rgba(8, 8, 24, 0.62);
@@ -15,10 +16,18 @@
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.36),
     0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  overflow: hidden;
+  transition: width 0.24s ease;
 }
 
-.search-mode-pill__half {
-  flex: 1;
+.search-mode-pill--expanded {
+  width: 380px;
+}
+
+.search-mode-pill__icon-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 34px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -33,15 +42,14 @@
     box-shadow 0.16s ease;
 }
 
-.search-mode-pill__half:hover,
-.search-mode-pill__half.active {
+.search-mode-pill__icon-btn:hover,
+.search-mode-pill__icon-btn.active {
   color: rgba(232, 237, 255, 0.95);
   background: rgba(1, 68, 145, 0.34);
   box-shadow: 0 0 14px rgba(49, 124, 220, 0.2) inset;
 }
 
-.search-mode-pill svg,
-.search-mode-input-wrap svg {
+.search-mode-pill svg {
   width: 18px;
   height: 18px;
   fill: none;
@@ -51,39 +59,7 @@
   stroke-linejoin: round;
 }
 
-.search-mode-input-wrap {
-  position: absolute;
-  top: calc(25% - 54px);
-  right: 16px;
-  z-index: 15;
-  width: 400px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 14px;
-  border-radius: 10px;
-  background: rgba(1, 28, 70, 0.82);
-  border: 1px solid rgba(75, 142, 230, 0.16);
-  box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.32),
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
-  color: rgba(185, 210, 255, 0.72);
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition:
-    opacity 0.18s ease,
-    transform 0.22s ease;
-}
-
-.search-mode-input-wrap.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.search-mode-input-wrap input {
+.search-mode-pill__input {
   flex: 1;
   min-width: 0;
   border: 0;
@@ -93,15 +69,29 @@
   font-family: inherit;
   font-size: 13px;
   font-weight: 500;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, padding 0.22s ease;
 }
 
-.search-mode-input-wrap input::placeholder {
+.search-mode-pill--expanded .search-mode-pill__input {
+  padding: 0 8px 0 4px;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.18s 0.1s ease;
+}
+
+.search-mode-pill__input::placeholder {
   color: rgba(170, 190, 230, 0.54);
 }
 
+.search-mode-pill__input::-webkit-search-cancel-button {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .search-mode-pill,
-  .search-mode-input-wrap {
+  .search-mode-pill {
     display: none;
   }
 }

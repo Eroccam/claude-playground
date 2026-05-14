@@ -13,9 +13,11 @@ export interface GlobeContextValue {
   isSearchMode: boolean;
   searchQuery: string;
   searchResults: TradeshowEvent[];
+  openCardIds: string[];
   setSelectedRegion: (region: Region) => void;
   setSelectedEventId: (id: string | null) => void;
   selectEventFromPin: (eventId: string, eventRegion: Region) => void;
+  closeCard: (eventId: string) => void;
   setSearchMode: (active: boolean) => void;
   setSearchQuery: (query: string) => void;
 }

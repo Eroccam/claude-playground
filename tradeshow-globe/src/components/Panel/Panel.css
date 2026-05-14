@@ -40,6 +40,7 @@
   font-size: 14px;
   font-weight: 700;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .side-panel__content {

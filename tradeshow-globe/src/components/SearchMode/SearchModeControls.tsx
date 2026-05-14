@@ -1,6 +1,10 @@
 import { useGlobe } from '../../context/globeContext.ts';
 import './SearchModeControls.css';
 
+interface SearchModeControlsProps {
+  onExpandPanel?: () => void;
+}
+
 function SearchIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -19,41 +23,48 @@ function CalendarIcon() {
   );
 }
 
-export function SearchModeControls() {
+export function SearchModeControls({ onExpandPanel }: SearchModeControlsProps) {
   const { isSearchMode, searchQuery, setSearchMode, setSearchQuery } = useGlobe();
 
-  return (
-    <>
-      <div className="search-mode-pill" aria-label="Search and calendar controls">
-        <button
-          className={`search-mode-pill__half ${isSearchMode ? 'active' : ''}`}
-          type="button"
-          onClick={() => setSearchMode(!isSearchMode)}
-          aria-label={isSearchMode ? 'Exit search mode' : 'Enter search mode'}
-          aria-pressed={isSearchMode}
-        >
-          <SearchIcon />
-        </button>
-        <button
-          className={`search-mode-pill__half ${!isSearchMode ? 'active' : ''}`}
-          type="button"
-          onClick={() => setSearchMode(false)}
-          aria-label="Calendar view unavailable"
-        >
-          <CalendarIcon />
-        </button>
-      </div>
+  const handleSearchIconClick = () => {
+    if (!isSearchMode) {
+      setSearchMode(true);
+    }
+    onExpandPanel?.();
+  };
 
-      <div className={`search-mode-input-wrap ${isSearchMode ? 'active' : ''}`}>
+  return (
+    <div
+      className={`search-mode-pill ${isSearchMode ? 'search-mode-pill--expanded' : ''}`}
+      aria-label="Search and calendar controls"
+    >
+      <button
+        className={`search-mode-pill__icon-btn ${isSearchMode ? 'active' : ''}`}
+        type="button"
+        onClick={handleSearchIconClick}
+        aria-label={isSearchMode ? 'Expand search panel' : 'Enter search mode'}
+        aria-pressed={isSearchMode}
+      >
         <SearchIcon />
-        <input
-          type="search"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
-          placeholder="Search shows by title or location"
-          aria-label="Search shows"
-        />
-      </div>
-    </>
+      </button>
+      <input
+        className="search-mode-pill__input"
+        type="search"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onClick={() => onExpandPanel?.()}
+        placeholder="Search shows by title or location"
+        aria-label="Search shows"
+        tabIndex={isSearchMode ? 0 : -1}
+      />
+      <button
+        className={`search-mode-pill__icon-btn ${!isSearchMode ? 'active' : ''}`}
+        type="button"
+        onClick={() => setSearchMode(false)}
+        aria-label="Exit search mode"
+      >
+        <CalendarIcon />
+      </button>
+    </div>
   );
 }

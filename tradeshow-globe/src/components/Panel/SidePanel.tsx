@@ -15,7 +15,7 @@ export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps)
   return (
     <>
       {isSearchMode ? (
-        <div className="searched-header">Searched</div>
+        <div className="searched-header" onClick={onExpand}>Searched</div>
       ) : (
         <RegionTabs onTabSelect={onExpand} />
       )}
