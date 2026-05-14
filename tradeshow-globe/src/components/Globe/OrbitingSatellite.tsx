@@ -2,10 +2,10 @@ import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const ORBIT_RADIUS = 1.42;
+const ORBIT_RADIUS = 1.17;
 const ORBIT_INCLINATION = THREE.MathUtils.degToRad(24);
 const ORBIT_SPEED = 0.18;
-const SATELLITE_SCALE = 0.82;
+const SATELLITE_SCALE = 0.42;
 const SUN_DIRECTION = new THREE.Vector3(-0.35, 0.2, 1).normalize();
 
 export function OrbitingSatellite() {
@@ -19,10 +19,10 @@ export function OrbitingSatellite() {
 
   const materials = useMemo(
     () => ({
-      body: new THREE.MeshBasicMaterial({ color: '#b7c1cf' }),
-      panel: new THREE.MeshBasicMaterial({ color: '#224f86' }),
-      panelEdge: new THREE.MeshBasicMaterial({ color: '#8aa6c9' }),
-      antenna: new THREE.MeshBasicMaterial({ color: '#d7dde6' }),
+      body: new THREE.MeshBasicMaterial({ color: '#7f8792' }),
+      panel: new THREE.MeshBasicMaterial({ color: '#17375f' }),
+      panelEdge: new THREE.MeshBasicMaterial({ color: '#52677f' }),
+      antenna: new THREE.MeshBasicMaterial({ color: '#8f96a1' }),
     }),
     [],
   );
@@ -53,24 +53,24 @@ export function OrbitingSatellite() {
 
     const distanceFade = 1 - THREE.MathUtils.smoothstep(camera.position.distanceTo(orbitPosition), 1.4, 3.4);
     const darkSideGlow = THREE.MathUtils.smoothstep(-outward.dot(SUN_DIRECTION), 0.05, 0.75);
-    const glint = Math.max(0, Math.sin(elapsed * 3.2)) * 0.08;
-    const scale = SATELLITE_SCALE * (0.94 + darkSideGlow * 0.08);
+    const glint = Math.max(0, Math.sin(elapsed * 3.2)) * 0.025;
+    const scale = SATELLITE_SCALE * (0.96 + darkSideGlow * 0.04);
 
     groupRef.current.scale.setScalar(scale);
     groupRef.current.visible = distanceFade > 0.04;
 
     if (glowRef.current) {
-      glowRef.current.opacity = distanceFade * (0.03 + darkSideGlow * 0.18 + glint);
+      glowRef.current.opacity = distanceFade * (0.01 + darkSideGlow * 0.055 + glint);
     }
   });
 
   return (
     <group ref={groupRef} renderOrder={4}>
       <mesh>
-        <sphereGeometry args={[0.11, 16, 16]} />
+        <sphereGeometry args={[0.075, 16, 16]} />
         <meshBasicMaterial
           ref={glowRef}
-          color="#8fb7ff"
+          color="#5f8fd8"
           transparent
           opacity={0}
           blending={THREE.AdditiveBlending}
