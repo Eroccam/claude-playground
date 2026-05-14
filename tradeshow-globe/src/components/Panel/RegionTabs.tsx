@@ -4,7 +4,11 @@ import type { Region } from '../../types.ts';
 
 const REGIONS: Region[] = ['US', 'EMEA', 'APAC'];
 
-export function RegionTabs() {
+interface RegionTabsProps {
+  onTabSelect?: (region: Region) => void;
+}
+
+export function RegionTabs({ onTabSelect }: RegionTabsProps) {
   const { selectedRegion, setSelectedRegion } = useGlobe();
 
   return (
@@ -14,7 +18,10 @@ export function RegionTabs() {
           key={region}
           className={`region-tab ${region === selectedRegion ? 'active' : ''}`}
           style={{ '--tab-color': REGION_COLORS[region] } as React.CSSProperties}
-          onClick={() => setSelectedRegion(region)}
+          onClick={() => {
+            setSelectedRegion(region);
+            onTabSelect?.(region);
+          }}
         >
           {region}
         </button>

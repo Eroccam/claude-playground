@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import './App.css';
 import { GlobeScene } from './components/Globe/GlobeScene.tsx';
 import { SidePanel } from './components/Panel/SidePanel.tsx';
@@ -7,6 +7,8 @@ import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { GlobeProvider } from './context/GlobeContext.tsx';
 
 function App() {
+  const [sidePanelMinimized, setSidePanelMinimized] = useState(false);
+
   return (
     <ErrorBoundary>
       <GlobeProvider>
@@ -25,8 +27,12 @@ function App() {
               <GlobeScene />
             </Suspense>
           </div>
-          <div className="side-panel">
-            <SidePanel />
+          <div className={`side-panel ${sidePanelMinimized ? 'side-panel--minimized' : ''}`}>
+            <SidePanel
+              isMinimized={sidePanelMinimized}
+              onMinimize={() => setSidePanelMinimized(true)}
+              onExpand={() => setSidePanelMinimized(false)}
+            />
           </div>
           <MobileDrawer />
         </div>
