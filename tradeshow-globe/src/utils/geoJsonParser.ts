@@ -20,6 +20,13 @@ export interface ParsedCoastlines {
   regions: Region[];
 }
 
+interface EdgeRec {
+  raw1: number[];
+  raw2: number[];
+  regions: Set<Region>;
+  count: number;
+}
+
 function continentToRegion(continent: string): Region {
   switch (continent) {
     case 'North America':
@@ -111,13 +118,7 @@ function canonicalEdgeKey(p1: number[], p2: number[]): string {
  * Only outer rings (polygon[0]) are processed — holes are inland water /
  * enclaves and do not contribute to country-level borders.
  */
-export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines {
-  interface EdgeRec {
-    raw1: number[];    // canonical-first raw [lng, lat]
-    raw2: number[];    // canonical-second raw [lng, lat]
-    regions: Set<Region>;
-    count: number;
-  }
+function collectOuterRingEdges(geojson: GeoJSON): Map<string, EdgeRec> {
   const edgeMap = new Map<string, EdgeRec>();
 
   // --- Pass 1: catalogue every outer-ring edge ------------------------------
@@ -156,6 +157,23 @@ export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines
     }
   }
 
+  return edgeMap;
+}
+
+function lineSegmentForEdge(raw1: number[], raw2: number[], radius: number): number[] | null {
+  // Skip antimeridian-crossing segments: adjacent ring points that jump more
+  // than SEAM_LON_JUMP degrees in raw longitude are seam artifacts that would
+  // project as lines spanning most of the globe.
+  if (Math.abs(raw2[0] - raw1[0]) > SEAM_LON_JUMP) return null;
+
+  const a = latLngToVector3(raw1[1], raw1[0], radius);
+  const b = latLngToVector3(raw2[1], raw2[0], radius);
+  return [a.x, a.y, a.z, b.x, b.y, b.z];
+}
+
+export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines {
+  const edgeMap = collectOuterRingEdges(geojson);
+
   // --- Pass 2: emit coastlines and region borders only ---------------------
   const allPositions: number[] = [];
   const allRegions:   Region[] = [];
@@ -166,18 +184,14 @@ export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines
     const isRegionBorder = count >= 2 && regions.size >= 2;
     if (!isCoastline && !isRegionBorder) continue;
 
-    // Skip antimeridian-crossing segments: adjacent ring points that jump more
-    // than SEAM_LON_JUMP degrees in raw longitude are seam artifacts that would
-    // project as lines spanning most of the globe.
-    if (Math.abs(raw2[0] - raw1[0]) > SEAM_LON_JUMP) {
+    const segment = lineSegmentForEdge(raw1, raw2, radius);
+    if (!segment) {
       seamSegmentsSkipped++;
       continue;
     }
 
     const emitRegion = Array.from(regions)[0];
-    const a = latLngToVector3(raw1[1], raw1[0], radius);
-    const b = latLngToVector3(raw2[1], raw2[0], radius);
-    allPositions.push(a.x, a.y, a.z, b.x, b.y, b.z);
+    allPositions.push(...segment);
     allRegions.push(emitRegion, emitRegion);
   }
 
@@ -189,4 +203,28 @@ export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines
     positions: new Float32Array(allPositions),
     regions: allRegions,
   };
+}
+
+export function parseCountryBorders(geojson: GeoJSON, radius: number): Float32Array {
+  const edgeMap = collectOuterRingEdges(geojson);
+  const positions: number[] = [];
+  let seamSegmentsSkipped = 0;
+
+  for (const { raw1, raw2, regions, count } of edgeMap.values()) {
+    const isCountryBorder = count >= 2 && regions.size === 1;
+    if (!isCountryBorder) continue;
+
+    const segment = lineSegmentForEdge(raw1, raw2, radius);
+    if (!segment) {
+      seamSegmentsSkipped++;
+      continue;
+    }
+    positions.push(...segment);
+  }
+
+  if (seamSegmentsSkipped > 0) {
+    console.debug(`[parseCountryBorders] skipped ${seamSegmentsSkipped} seam-crossing country border segments (lon jump > ${SEAM_LON_JUMP}Â°)`);
+  }
+
+  return new Float32Array(positions);
 }

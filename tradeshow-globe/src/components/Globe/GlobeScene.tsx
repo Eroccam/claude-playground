@@ -5,6 +5,7 @@ import { Starfield } from './Starfield.tsx';
 import { GlobeControls } from './GlobeControls.tsx';
 import type { GlobeControlsHandle } from './GlobeControls.tsx';
 import { Coastlines } from './Coastlines.tsx';
+import { CountryBorders } from './CountryBorders.tsx';
 import { LandGlow } from './LandGlow.tsx';
 import { Atmosphere } from './Atmosphere.tsx';
 import { EventPins } from './EventPins.tsx';
@@ -23,6 +24,7 @@ function Scene() {
       <OceanSphere />
       <Atmosphere />
       <LandGlow highlightedRegion={selectedRegion} />
+      <CountryBorders />
       <Coastlines />
       <Starfield />
       <EventPins />
