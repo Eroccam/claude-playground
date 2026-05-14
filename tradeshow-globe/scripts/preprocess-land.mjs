@@ -719,7 +719,11 @@ function triangulateSinglePolygon({ polygon, region }) {
   // Split outer ring into BAND_STEP_LON × BAND_STEP_LAT degree grid cells.
   // Max earcut diagonal within a cell ≈ sqrt(LON²+LAT²) ≈ 14.1° → chord ≈ 0.25.
   // Bounds diagonal length in BOTH horizontal and vertical directions.
-  const cells = ENABLE_GRID_SPLIT ? splitRingIntoCells(outerWound) : [outerWound];
+  // Split only high-latitude polygons. The grid split fixes long polar earcut
+  // spans, but on lower-latitude countries it can create visible clipped-cell
+  // seams through otherwise clean land fill.
+  const shouldGridSplit = ENABLE_GRID_SPLIT && (outerBBoxFull.maxLat > 60 || outerBBoxFull.minLat < -60);
+  const cells = shouldGridSplit ? splitRingIntoCells(outerWound) : [outerWound];
 
   for (const bandOuter of cells) {
     const bandBBox = ringBBox(bandOuter);
@@ -727,7 +731,7 @@ function triangulateSinglePolygon({ polygon, region }) {
     // Clip each validated hole to this cell (lon + lat bounds), then densify.
     const bandHoles = [];
     for (const hole of holesWound) {
-      if (!ENABLE_GRID_SPLIT) {
+      if (!shouldGridSplit) {
         bandHoles.push(densifyRing(hole));
         continue;
       }

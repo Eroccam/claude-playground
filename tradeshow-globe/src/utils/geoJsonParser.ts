@@ -25,6 +25,7 @@ interface EdgeRec {
   raw2: number[];
   regions: Set<Region>;
   count: number;
+  hasOuter: boolean;
 }
 
 function continentToRegion(continent: string): Region {
@@ -115,13 +116,36 @@ function canonicalEdgeKey(p1: number[], p2: number[]): string {
  *   count >= 2, regions.size >= 2   → region border (emit)
  *   count >= 2, regions.size === 1  → internal country border (suppress)
  *
- * Only outer rings (polygon[0]) are processed — holes are inland water /
- * enclaves and do not contribute to country-level borders.
+ * Outer rings provide coastlines and region perimeters. Hole rings are also
+ * catalogued so enclaves such as Lesotho can match their own outer ring and
+ * render as country borders instead of light region perimeters.
  */
 function collectOuterRingEdges(geojson: GeoJSON): Map<string, EdgeRec> {
   const edgeMap = new Map<string, EdgeRec>();
 
-  // --- Pass 1: catalogue every outer-ring edge ------------------------------
+  function addRingEdge(p1: number[], p2: number[], region: Region, isOuter: boolean) {
+    const key = canonicalEdgeKey(p1, p2);
+    const x1 = rnd(p1[0]), y1 = rnd(p1[1]);
+    const x2 = rnd(p2[0]), y2 = rnd(p2[1]);
+    const inOrder = x1 < x2 || (x1 === x2 && y1 <= y2);
+
+    if (edgeMap.has(key)) {
+      const rec = edgeMap.get(key)!;
+      rec.regions.add(region);
+      rec.count++;
+      rec.hasOuter ||= isOuter;
+    } else {
+      edgeMap.set(key, {
+        raw1: inOrder ? p1 : p2,
+        raw2: inOrder ? p2 : p1,
+        regions: new Set([region]),
+        count: 1,
+        hasOuter: isOuter,
+      });
+    }
+  }
+
+  // --- Pass 1: catalogue every country edge --------------------------------
   for (const feature of geojson.features) {
     const { type, coordinates } = feature.geometry;
     const polygons: number[][][][] =
@@ -133,25 +157,11 @@ function collectOuterRingEdges(geojson: GeoJSON): Map<string, EdgeRec> {
       const outer  = polygon[0];
       const region = getPolygonRegion(feature.properties.CONTINENT, outer);
 
-      for (let i = 0; i < outer.length - 1; i++) {
-        const p1 = outer[i];
-        const p2 = outer[i + 1];
-        const key  = canonicalEdgeKey(p1, p2);
-        const x1 = rnd(p1[0]), y1 = rnd(p1[1]);
-        const x2 = rnd(p2[0]), y2 = rnd(p2[1]);
-        const inOrder = x1 < x2 || (x1 === x2 && y1 <= y2);
-
-        if (edgeMap.has(key)) {
-          const rec = edgeMap.get(key)!;
-          rec.regions.add(region);
-          rec.count++;
-        } else {
-          edgeMap.set(key, {
-            raw1: inOrder ? p1 : p2,
-            raw2: inOrder ? p2 : p1,
-            regions: new Set([region]),
-            count: 1,
-          });
+      for (let i = 0; i < polygon.length; i++) {
+        const ring = polygon[i];
+        const isOuter = i === 0;
+        for (let j = 0; j < ring.length - 1; j++) {
+          addRingEdge(ring[j], ring[j + 1], region, isOuter);
         }
       }
     }
@@ -179,8 +189,8 @@ export function parseGeoJson(geojson: GeoJSON, radius: number): ParsedCoastlines
   const allRegions:   Region[] = [];
   let seamSegmentsSkipped = 0;
 
-  for (const { raw1, raw2, regions, count } of edgeMap.values()) {
-    const isCoastline    = count === 1;
+  for (const { raw1, raw2, regions, count, hasOuter } of edgeMap.values()) {
+    const isCoastline    = count === 1 && hasOuter;
     const isRegionBorder = count >= 2 && regions.size >= 2;
     if (!isCoastline && !isRegionBorder) continue;
 
