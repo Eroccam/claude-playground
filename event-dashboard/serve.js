@@ -15,7 +15,7 @@ const http   = require('http');
 const fs     = require('fs');
 const path   = require('path');
 const { spawn } = require('child_process');
-const { connectToDatabase, getMasterData, saveMasterData } = require('./db');
+const { connectToDatabase, getMasterData, saveMasterData, WordleResult, WordleStreak } = require('./db');
 
 const PORT        = process.env.PORT || 3000;
 const HOST        = '0.0.0.0';
@@ -31,6 +31,7 @@ const MIME = {
   '.png':  'image/png',
   '.svg':  'image/svg+xml',
   '.txt':  'text/plain',
+  '.ico':  'image/x-icon',
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -54,6 +55,16 @@ function readBody(req) {
 function getQueryParam(url, key) {
   const u = new URL('http://localhost' + url);
   return u.searchParams.get(key);
+}
+
+function normalizePlayerKey(name) {
+  return String(name || '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function previousDayKey(dayKey) {
+  const date = new Date(`${dayKey}T00:00:00Z`);
+  date.setUTCDate(date.getUTCDate() - 1);
+  return date.toISOString().slice(0, 10);
 }
 
 // ─── API: GET /api/deadline-alerts ───────────────────────────────────────────
@@ -302,6 +313,119 @@ async function handleGetMasterEvents(req, res) {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
     res.end(JSON.stringify(masterData));
   } catch (err) {
+    json(res, 500, { error: err.message });
+  }
+}
+
+async function handleWordleLeaderboards(req, res) {
+  try {
+    const dayKey = getQueryParam(req.url, 'dayKey') || new Date().toISOString().slice(0, 10);
+    const activeStreakDays = [dayKey, previousDayKey(dayKey)];
+    const [dailySolved, streaks] = await Promise.all([
+      WordleResult.find({ dayKey, solved: true }).lean(),
+      WordleStreak.find({ currentStreak: { $gt: 0 }, lastSolvedDay: { $in: activeStreakDays } })
+        .sort({ currentStreak: -1, lastSolvedDay: -1, updatedAt: 1 })
+        .limit(5)
+        .lean(),
+    ]);
+
+    const fastest = [...dailySolved]
+      .sort((a, b) =>
+        (a.durationMs ?? Infinity) - (b.durationMs ?? Infinity)
+        || a.guessesUsed - b.guessesUsed
+        || new Date(a.submittedAt) - new Date(b.submittedAt)
+      )
+      .slice(0, 5);
+
+    const fewest = [...dailySolved]
+      .sort((a, b) =>
+        a.guessesUsed - b.guessesUsed
+        || (a.durationMs ?? Infinity) - (b.durationMs ?? Infinity)
+        || new Date(a.submittedAt) - new Date(b.submittedAt)
+      )
+      .slice(0, 5);
+
+    json(res, 200, { dayKey, fastest, fewest, streaks });
+  } catch (err) {
+    console.error('[serve] wordle leaderboard error:', err.message);
+    json(res, 500, { error: err.message });
+  }
+}
+
+async function handleWordleResult(req, res) {
+  try {
+    const body = await readBody(req);
+    const playerName = String(body.playerName || '').trim().slice(0, 60);
+    const playerKey = normalizePlayerKey(playerName);
+    const dayKey = String(body.dayKey || '').slice(0, 10);
+    const word = String(body.word || '').toUpperCase().replace(/[^A-Z]/g, '');
+    const solved = Boolean(body.solved);
+    const guessesUsed = Math.max(0, Math.min(6, Number(body.guessesUsed) || 0));
+    const durationMs = solved ? Math.max(0, Number(body.durationMs) || 0) : null;
+    const grid = Array.isArray(body.grid) ? body.grid.slice(0, 6).map(String) : [];
+
+    if (!playerName || !playerKey || !/^\d{4}-\d{2}-\d{2}$/.test(dayKey) || !word) {
+      json(res, 400, { error: 'playerName, dayKey, and word are required' });
+      return;
+    }
+
+    const submittedAt = new Date();
+    const existing = await WordleResult.findOne({ dayKey, playerKey });
+    const incomingIsBetter = !existing
+      || (solved && !existing.solved)
+      || (solved === existing.solved && solved && (
+        guessesUsed < existing.guessesUsed
+        || (guessesUsed === existing.guessesUsed && durationMs < (existing.durationMs ?? Infinity))
+      ));
+
+    if (!existing || incomingIsBetter) {
+      await WordleResult.findOneAndUpdate(
+        { dayKey, playerKey },
+        { dayKey, word, playerName, playerKey, solved, guessesUsed, durationMs, grid, submittedAt },
+        { upsert: true, new: true, setDefaultsOnInsert: true },
+      );
+    }
+
+    if (solved) {
+      const previous = previousDayKey(dayKey);
+      const streak = await WordleStreak.findOne({ playerKey });
+      let currentStreak = 1;
+      let bestStreak = 1;
+      if (streak) {
+        if (streak.lastSolvedDay === dayKey) {
+          currentStreak = streak.currentStreak;
+        } else if (streak.lastSolvedDay === previous) {
+          currentStreak = streak.currentStreak + 1;
+        }
+        bestStreak = Math.max(streak.bestStreak || 0, currentStreak);
+      }
+
+      await WordleStreak.findOneAndUpdate(
+        { playerKey },
+        { playerName, playerKey, currentStreak, bestStreak, lastSolvedDay: dayKey, updatedAt: submittedAt },
+        { upsert: true, new: true, setDefaultsOnInsert: true },
+      );
+    }
+
+    const leaderboards = await Promise.all([
+      WordleResult.find({ dayKey, solved: true }).lean(),
+      WordleStreak.find({ currentStreak: { $gt: 0 }, lastSolvedDay: { $in: [dayKey, previousDayKey(dayKey)] } })
+        .sort({ currentStreak: -1, lastSolvedDay: -1, updatedAt: 1 })
+        .limit(5)
+        .lean(),
+    ]);
+
+    const dailySolved = leaderboards[0];
+    json(res, 200, {
+      ok: true,
+      leaderboards: {
+        fastest: [...dailySolved].sort((a, b) => (a.durationMs ?? Infinity) - (b.durationMs ?? Infinity) || a.guessesUsed - b.guessesUsed || new Date(a.submittedAt) - new Date(b.submittedAt)).slice(0, 5),
+        fewest: [...dailySolved].sort((a, b) => a.guessesUsed - b.guessesUsed || (a.durationMs ?? Infinity) - (b.durationMs ?? Infinity) || new Date(a.submittedAt) - new Date(b.submittedAt)).slice(0, 5),
+        streaks: leaderboards[1],
+      },
+    });
+  } catch (err) {
+    console.error('[serve] wordle result error:', err.message);
     json(res, 500, { error: err.message });
   }
 }
@@ -570,6 +694,8 @@ const server = http.createServer((req, res) => {
   if (urlPath === '/api/master-events/edit-field'         && method === 'POST') { handleEditField(req, res);         return; }
   if (urlPath === '/api/master-events/approve-proposal'   && method === 'POST') { handleApproveProposal(req, res);   return; }
   if (urlPath === '/api/master-events/dismiss-proposal'   && method === 'POST') { handleDismissProposal(req, res);   return; }
+  if (urlPath === '/api/wordle/leaderboards'              && method === 'GET')  { handleWordleLeaderboards(req, res); return; }
+  if (urlPath === '/api/wordle/results'                   && method === 'POST') { handleWordleResult(req, res);       return; }
 
   // ── Globe: serve tradeshow-globe/dist under /globe/* ──
   if (urlPath === '/globe' || urlPath === '/globe/') {
@@ -594,6 +720,27 @@ const server = http.createServer((req, res) => {
   }
 
   // ── Static file serving ──
+  if (urlPath === '/wordle' || urlPath === '/wordle/') {
+    const indexPath = path.join(ROOT, 'wordle', 'index.html');
+    fs.readFile(indexPath, (err, data) => {
+      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Wordle not found'); return; }
+      res.writeHead(200, { 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*' });
+      res.end(data);
+    });
+    return;
+  }
+  if (urlPath.startsWith('/wordle/')) {
+    const subPath = urlPath.slice('/wordle'.length);
+    const fullPath = path.join(ROOT, 'wordle', subPath);
+    const ext = path.extname(fullPath);
+    fs.readFile(fullPath, (err, data) => {
+      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found'); return; }
+      res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Access-Control-Allow-Origin': '*' });
+      res.end(data);
+    });
+    return;
+  }
+
   let filePath = url === '/' ? '/home.html' : url.split('?')[0];
   if (filePath.endsWith('/')) filePath += 'index.html';
   const fullPath = path.join(ROOT, filePath);

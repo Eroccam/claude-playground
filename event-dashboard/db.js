@@ -81,8 +81,41 @@ const masterMetaSchema = new Schema({
   versionKey: false,
 });
 
+const wordleResultSchema = new Schema({
+  dayKey: { type: String, required: true, index: true },
+  word: { type: String, required: true },
+  playerName: { type: String, required: true },
+  playerKey: { type: String, required: true, index: true },
+  solved: { type: Boolean, required: true },
+  guessesUsed: { type: Number, required: true },
+  durationMs: { type: Number, default: null },
+  grid: { type: [String], default: [] },
+  submittedAt: { type: Date, default: Date.now },
+}, {
+  collection: 'wordle_results',
+  minimize: false,
+  versionKey: false,
+});
+
+wordleResultSchema.index({ dayKey: 1, playerKey: 1 }, { unique: true });
+
+const wordleStreakSchema = new Schema({
+  playerName: { type: String, required: true },
+  playerKey: { type: String, required: true, unique: true, index: true },
+  currentStreak: { type: Number, default: 0 },
+  bestStreak: { type: Number, default: 0 },
+  lastSolvedDay: { type: String, default: null },
+  updatedAt: { type: Date, default: Date.now },
+}, {
+  collection: 'wordle_streaks',
+  minimize: false,
+  versionKey: false,
+});
+
 const Event = mongoose.models.Event || mongoose.model('Event', eventSchema);
 const MasterMeta = mongoose.models.MasterMeta || mongoose.model('MasterMeta', masterMetaSchema);
+const WordleResult = mongoose.models.WordleResult || mongoose.model('WordleResult', wordleResultSchema);
+const WordleStreak = mongoose.models.WordleStreak || mongoose.model('WordleStreak', wordleStreakSchema);
 
 async function connectToDatabase() {
   if (mongoose.connection.readyState === 1) return mongoose.connection;
@@ -168,4 +201,6 @@ module.exports = {
   updateMasterMeta,
   Event,
   MasterMeta,
+  WordleResult,
+  WordleStreak,
 };

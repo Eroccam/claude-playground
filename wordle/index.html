@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safran Wordle</title>
+  <link rel="stylesheet" href="/wordle/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <img src="/public/safran-logo.png" alt="Safran">
+      <div>
+        <h1>Safran Wordle</h1>
+        <p>Daily aerospace, defense and PNT challenge</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="game-card">
+        <div class="game-meta">
+          <span id="dayLabel"></span>
+          <span id="lengthLabel"></span>
+        </div>
+        <div id="grid" class="grid" aria-label="Wordle board"></div>
+        <div id="message" class="message"></div>
+        <div id="keyboard" class="keyboard"></div>
+      </section>
+
+      <aside class="side">
+        <section id="resultPanel" class="panel result-panel hidden"></section>
+        <section class="panel">
+          <h2>Leaderboards</h2>
+          <div class="boards">
+            <div>
+              <h3>Fastest Solve</h3>
+              <ol id="fastest"></ol>
+            </div>
+            <div>
+              <h3>Fewest Guesses</h3>
+              <ol id="fewest"></ol>
+            </div>
+            <div>
+              <h3>Current Streaks</h3>
+              <ol id="streaks"></ol>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <div id="nameModal" class="modal">
+    <form id="nameForm" class="modal-card">
+      <img src="/public/safran-logo.png" alt="Safran">
+      <h2>Enter your name</h2>
+      <p>Your name is used for today's Safran Wordle leaderboards.</p>
+      <input id="playerName" autocomplete="name" maxlength="60" required placeholder="First Last">
+      <button type="submit">Start</button>
+    </form>
+  </div>
+
+  <script src="/wordle/wordle-data.js"></script>
+  <script src="/wordle/app.js"></script>
+</body>
+</html>
