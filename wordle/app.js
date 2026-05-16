@@ -1,4 +1,6 @@
 /* global SAFRAN_WORDLE */
+const DEV_CONFIG = window.SAFRAN_WORDLE_CONFIG || { devMode: false };
+
 const state = {
   playerName: localStorage.getItem('safranWordleName') || '',
   row: 0,
@@ -9,68 +11,151 @@ const state = {
   startedAt: null,
   ended: false,
   resultSent: false,
+  lastDurationMs: 0,
+  shareGrid: [],
 };
 
 const statusRank = { absent: 1, present: 2, correct: 3 };
-const emoji = { correct: '🟩', present: '🟨', absent: '⬜' };
-const todayKey = new Date().toISOString().slice(0, 10);
+const emoji = { correct: '\uD83D\uDFE9', present: '\uD83D\uDFE8', absent: '\u2B1C' };
 const startDate = new Date(`${SAFRAN_WORDLE.startDate}T00:00:00Z`);
-const today = new Date(`${todayKey}T00:00:00Z`);
-const dayIndex = Math.max(0, Math.floor((today - startDate) / 86400000));
-const entry = SAFRAN_WORDLE.words[dayIndex % SAFRAN_WORDLE.words.length];
-const answer = entry.word.toUpperCase();
-const length = answer.length;
+
+let devOffset = Number(sessionStorage.getItem('safranWordleDevOffset') || 0);
+let todayKey = '';
+let dayIndex = 0;
+let entry = null;
+let answer = '';
+let length = 0;
+let activeScreen = '';
 
 const els = {
+  screens: document.querySelectorAll('[data-screen]'),
   grid: document.getElementById('grid'),
   keyboard: document.getElementById('keyboard'),
   message: document.getElementById('message'),
-  nameModal: document.getElementById('nameModal'),
   nameForm: document.getElementById('nameForm'),
   playerName: document.getElementById('playerName'),
-  dayLabel: document.getElementById('dayLabel'),
-  lengthLabel: document.getElementById('lengthLabel'),
-  resultPanel: document.getElementById('resultPanel'),
+  resultWord: document.getElementById('resultWord'),
+  definition: document.getElementById('definition'),
+  safranLink: document.getElementById('safranLink'),
+  completionTime: document.getElementById('completionTime'),
+  shareGrid: document.getElementById('shareGrid'),
+  copyShare: document.getElementById('copyShare'),
   fastest: document.getElementById('fastest'),
   fewest: document.getElementById('fewest'),
   streaks: document.getElementById('streaks'),
+  nextDay: null,
 };
 
-function setMessage(text) { els.message.textContent = text; }
+function setMessage(text) {
+  els.message.textContent = text;
+}
+
+function computeDailyContext() {
+  const effectiveDate = new Date();
+  effectiveDate.setDate(effectiveDate.getDate() + devOffset);
+  todayKey = effectiveDate.toISOString().slice(0, 10);
+
+  const today = new Date(`${todayKey}T00:00:00Z`);
+  dayIndex = Math.max(0, Math.floor((today - startDate) / 86400000));
+  entry = SAFRAN_WORDLE.words[dayIndex % SAFRAN_WORDLE.words.length];
+  answer = entry.word.toUpperCase();
+  length = answer.length;
+}
 
 function init() {
-  els.dayLabel.textContent = `Daily word ${dayIndex + 1}`;
-  els.lengthLabel.textContent = `${length} letters`;
-  els.grid.style.gridTemplateRows = 'repeat(6, auto)';
+  computeDailyContext();
+  resetBoard();
   renderGrid();
   renderKeyboard();
-  loadLeaderboards();
+  wireEvents();
 
-  if (state.playerName) {
-    els.nameModal.classList.add('hidden');
-  } else {
-    els.playerName.focus();
+  if (DEV_CONFIG.devMode) {
+    createDevControls();
   }
 
+  showScreen(state.playerName ? 'game' : 'identity');
+}
+
+function wireEvents() {
   els.nameForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = els.playerName.value.trim();
     if (!name) return;
     state.playerName = name;
     localStorage.setItem('safranWordleName', name);
-    els.nameModal.classList.add('hidden');
+    showScreen('game');
+  });
+
+  els.copyShare.addEventListener('click', async () => {
+    const text = buildShareText();
+    try {
+      await navigator.clipboard.writeText(text);
+      els.copyShare.textContent = 'Copied';
+      window.setTimeout(() => { els.copyShare.textContent = 'Share / Copy'; }, 1500);
+    } catch {
+      setMessage('Copy unavailable.');
+    }
   });
 
   document.addEventListener('keydown', (event) => {
-    if (!els.nameModal.classList.contains('hidden')) return;
+    if (activeScreen !== 'game' || !state.playerName) return;
     if (event.key === 'Enter') submitGuess();
     else if (event.key === 'Backspace') backspace();
     else if (/^[a-z]$/i.test(event.key)) addLetter(event.key.toUpperCase());
   });
 }
 
+function createDevControls() {
+  els.nextDay = document.createElement('button');
+  els.nextDay.id = 'nextDay';
+  els.nextDay.className = 'dev-next';
+  els.nextDay.type = 'button';
+  els.nextDay.textContent = 'Next Day';
+  els.nextDay.addEventListener('click', goToNextDevDay);
+  document.body.appendChild(els.nextDay);
+}
+
+function goToNextDevDay() {
+  localStorage.removeItem(`safranWordleComplete:${todayKey}`);
+  devOffset += 1;
+  sessionStorage.setItem('safranWordleDevOffset', String(devOffset));
+  computeDailyContext();
+  localStorage.removeItem(`safranWordleComplete:${todayKey}`);
+  resetBoard();
+  renderGrid();
+  renderKeyboard();
+  clearLeaderboards();
+  showScreen(state.playerName ? 'game' : 'identity');
+}
+
+function showScreen(name) {
+  activeScreen = name;
+  els.screens.forEach((screen) => {
+    screen.classList.toggle('hidden', screen.dataset.screen !== name);
+  });
+
+  if (name === 'identity') {
+    els.playerName.focus();
+  }
+}
+
+function resetBoard() {
+  state.row = 0;
+  state.col = 0;
+  state.guesses = Array.from({ length: 6 }, () => []);
+  state.statuses = Array.from({ length: 6 }, () => []);
+  state.keyStatus = {};
+  state.startedAt = null;
+  state.ended = false;
+  state.resultSent = false;
+  state.lastDurationMs = 0;
+  state.shareGrid = [];
+  setMessage('');
+}
+
 function renderGrid() {
   els.grid.innerHTML = '';
+  els.grid.style.gridTemplateRows = 'repeat(6, auto)';
   for (let r = 0; r < 6; r++) {
     const row = document.createElement('div');
     row.className = 'row';
@@ -177,7 +262,11 @@ async function finishGame(solved) {
     .filter((row) => row.length)
     .map((row) => row.map((status) => emoji[status]).join(''));
 
-  renderResult(solved, grid);
+  state.lastDurationMs = durationMs;
+  state.shareGrid = grid;
+  renderResult(grid, durationMs);
+  showScreen('results');
+
   if (state.resultSent) return;
   state.resultSent = true;
 
@@ -206,16 +295,22 @@ async function finishGame(solved) {
   }
 }
 
-function renderResult(solved, grid) {
-  els.resultPanel.classList.remove('hidden');
-  els.resultPanel.innerHTML = `
-    <h2>${solved ? 'Solved' : 'Today’s Word'}</h2>
-    <div class="word">${answer}</div>
-    <p class="definition">${entry.definition}</p>
-    <a class="link" href="${entry.link}" target="_blank" rel="noopener noreferrer">Safran context</a>
-    <h3>Your Grid</h3>
-    <div class="share-grid">${grid.join('\n')}</div>
-  `;
+function renderResult(grid, durationMs) {
+  els.resultWord.textContent = answer;
+  els.definition.textContent = entry.definition;
+  els.safranLink.href = entry.link;
+  els.completionTime.textContent = formatTime(durationMs);
+  els.shareGrid.textContent = grid.join('\n');
+}
+
+function buildShareText() {
+  const guesses = state.ended ? state.row + 1 : 0;
+  const score = state.shareGrid.length && state.guesses[state.row].join('') === answer ? guesses : 'X';
+  return [
+    `Safran Wordle ${todayKey} ${score}/6`,
+    '',
+    state.shareGrid.join('\n'),
+  ].join('\n');
 }
 
 async function loadLeaderboards() {
@@ -230,9 +325,9 @@ async function loadLeaderboards() {
 }
 
 function renderLeaderboards(data) {
-  renderBoard(els.fastest, data.fastest || [], (row) => `${row.playerName} · ${formatTime(row.durationMs)} · ${row.guessesUsed}/6`);
-  renderBoard(els.fewest, data.fewest || [], (row) => `${row.playerName} · ${row.guessesUsed}/6 · ${formatTime(row.durationMs)}`);
-  renderBoard(els.streaks, data.streaks || [], (row) => `${row.playerName} · ${row.currentStreak} days`);
+  renderBoard(els.fastest, data.fastest || [], (row) => `${row.playerName} - ${formatTime(row.durationMs)} - ${row.guessesUsed}/6`);
+  renderBoard(els.fewest, data.fewest || [], (row) => `${row.playerName} - ${row.guessesUsed}/6 - ${formatTime(row.durationMs)}`);
+  renderBoard(els.streaks, data.streaks || [], (row) => `${row.playerName} - ${row.currentStreak} days`);
 }
 
 function renderBoard(el, rows, label) {
@@ -250,8 +345,12 @@ function renderBoard(el, rows, label) {
   });
 }
 
+function clearLeaderboards() {
+  [els.fastest, els.fewest, els.streaks].forEach((el) => { el.innerHTML = ''; });
+}
+
 function formatTime(ms) {
-  if (ms === null || ms === undefined) return '—';
+  if (ms === null || ms === undefined) return '-';
   const seconds = Math.round(ms / 1000);
   const min = Math.floor(seconds / 60);
   const sec = String(seconds % 60).padStart(2, '0');

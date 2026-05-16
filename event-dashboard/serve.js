@@ -729,6 +729,11 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
+  if (urlPath === '/wordle/config.js') {
+    res.writeHead(200, { 'Content-Type': 'text/javascript', 'Access-Control-Allow-Origin': '*' });
+    res.end(`window.SAFRAN_WORDLE_CONFIG = ${JSON.stringify({ devMode: process.env.DEV_MODE === 'true' })};`);
+    return;
+  }
   if (urlPath.startsWith('/wordle/')) {
     const subPath = urlPath.slice('/wordle'.length);
     const fullPath = path.join(ROOT, 'wordle', subPath);

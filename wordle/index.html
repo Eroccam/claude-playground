@@ -7,59 +7,69 @@
   <link rel="stylesheet" href="/wordle/styles.css">
 </head>
 <body>
-  <div class="app">
-    <header class="topbar">
-      <img src="/public/safran-logo.png" alt="Safran">
-      <div>
-        <h1>Safran Wordle</h1>
-        <p>Daily aerospace, defense and PNT challenge</p>
-      </div>
-    </header>
+  <main class="screen screen-identity hidden" data-screen="identity">
+    <section class="identity-card">
+      <h1>Safran Wordle</h1>
+      <form id="nameForm" class="name-form">
+        <input id="playerName" autocomplete="name" maxlength="60" required placeholder="Enter your name">
+      </form>
+    </section>
+  </main>
 
-    <main class="layout">
-      <section class="game-card">
-        <div class="game-meta">
-          <span id="dayLabel"></span>
-          <span id="lengthLabel"></span>
+  <main class="screen screen-game hidden" data-screen="game">
+    <section class="game-shell">
+      <h1>Safran Wordle</h1>
+      <div id="grid" class="grid" aria-label="Wordle board"></div>
+      <div id="message" class="message"></div>
+      <div id="keyboard" class="keyboard"></div>
+    </section>
+  </main>
+
+  <main class="screen screen-results hidden" data-screen="results">
+    <section class="results-shell">
+      <header class="results-header">
+        <h1>Safran Wordle</h1>
+        <div>
+          <div class="result-label">Correct Word</div>
+          <div id="resultWord" class="word"></div>
         </div>
-        <div id="grid" class="grid" aria-label="Wordle board"></div>
-        <div id="message" class="message"></div>
-        <div id="keyboard" class="keyboard"></div>
+      </header>
+
+      <section class="result-card">
+        <p id="definition" class="definition"></p>
+        <a id="safranLink" class="link" target="_blank" rel="noopener noreferrer">Safran context</a>
+        <div class="result-stats">
+          <span>Completion time</span>
+          <strong id="completionTime"></strong>
+        </div>
+        <div class="share-header">
+          <h2>Your Grid</h2>
+          <button id="copyShare" type="button">Share / Copy</button>
+        </div>
+        <div id="shareGrid" class="share-grid"></div>
       </section>
 
-      <aside class="side">
-        <section id="resultPanel" class="panel result-panel hidden"></section>
-        <section class="panel">
-          <h2>Leaderboards</h2>
-          <div class="boards">
-            <div>
-              <h3>Fastest Solve</h3>
-              <ol id="fastest"></ol>
-            </div>
-            <div>
-              <h3>Fewest Guesses</h3>
-              <ol id="fewest"></ol>
-            </div>
-            <div>
-              <h3>Current Streaks</h3>
-              <ol id="streaks"></ol>
-            </div>
+      <section class="leaderboard-panel">
+        <h2>Leaderboards</h2>
+        <div class="boards">
+          <div>
+            <h3>Fastest Solve</h3>
+            <ol id="fastest"></ol>
           </div>
-        </section>
-      </aside>
-    </main>
-  </div>
+          <div>
+            <h3>Fewest Guesses</h3>
+            <ol id="fewest"></ol>
+          </div>
+          <div>
+            <h3>Current Streaks</h3>
+            <ol id="streaks"></ol>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
 
-  <div id="nameModal" class="modal">
-    <form id="nameForm" class="modal-card">
-      <img src="/public/safran-logo.png" alt="Safran">
-      <h2>Enter your name</h2>
-      <p>Your name is used for today's Safran Wordle leaderboards.</p>
-      <input id="playerName" autocomplete="name" maxlength="60" required placeholder="First Last">
-      <button type="submit">Start</button>
-    </form>
-  </div>
-
+  <script src="/wordle/config.js"></script>
   <script src="/wordle/wordle-data.js"></script>
   <script src="/wordle/app.js"></script>
 </body>
