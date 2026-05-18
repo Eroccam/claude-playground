@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react';
 import type { TradeshowEvent } from '../../types.ts';
 import { formatEventDateRange, isPastEvent } from '../../utils/dates.ts';
+import { REGION_COLORS } from '../../utils/regions.ts';
 
 interface EventListItemProps {
   event: TradeshowEvent;
@@ -37,7 +39,10 @@ export function EventListItem({ event, isSelected, showRegionBadge = false, onCl
         </div>
         <div className="event-list-item__right">
           {showRegionBadge && (
-            <span className="event-list-item__badge event-list-item__badge--region">
+            <span
+              className="event-list-item__badge event-list-item__badge--region"
+              style={{ '--region-color': REGION_COLORS[event.region] } as CSSProperties}
+            >
               {event.region}
             </span>
           )}

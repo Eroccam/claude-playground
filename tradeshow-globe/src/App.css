@@ -62,7 +62,7 @@
 }
 
 .app-layout:has(.search-mode-pill--calendar) .side-panel {
-  top: 356px;
+  top: var(--calendar-results-top, 372px);
 }
 
 .side-panel.side-panel--minimized {

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import { REGION_COLORS } from '../../utils/regions.ts';
@@ -26,6 +26,7 @@ const MONTH_NAMES = [
   'December',
 ];
 const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const CALENDAR_RESULTS_GAP = 16;
 
 function SearchIcon() {
   return (
@@ -115,12 +116,6 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
     return Array.from({ length: 42 }, (_, index) => addDays(gridStart, index));
   }, [monthStart]);
 
-  const multiDayEvents = useMemo(
-    () => monthEvents.filter((event) => event.startDate !== (event.endDate || event.startDate)),
-    [monthEvents],
-  );
-  const lineRows = useMemo(() => new Map(multiDayEvents.map((event, index) => [event.id, index % 4])), [multiDayEvents]);
-
   return (
     <div className="calendar-panel" aria-label={`${MONTH_NAMES[calendarMonth]} calendar`}>
       <div className="calendar-panel__weekdays">
@@ -136,11 +131,14 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
           const dayEvents = monthEvents.filter((event) => inMonth && eventSpansDay(event, day));
           const rangeEvents = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
           const singleDayEvents = dayEvents.filter((event) => event.startDate === (event.endDate || event.startDate));
+          const indicators = [...rangeEvents, ...singleDayEvents];
+          const minHeight = Math.max(42, 28 + indicators.length * 9);
 
           return (
             <button
               key={key}
               className={`calendar-day ${inMonth ? '' : 'calendar-day--muted'} ${isSelected ? 'calendar-day--selected' : ''}`}
+              style={{ minHeight } as CSSProperties}
               type="button"
               onClick={() => {
                 if (!inMonth) return;
@@ -152,7 +150,7 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
               aria-label={`${MONTH_NAMES[day.getMonth()]} ${day.getDate()}`}
             >
               <span className="calendar-day__number">{day.getDate()}</span>
-              <span className="calendar-day__lines" aria-hidden="true">
+              <span className="calendar-day__indicators" aria-hidden="true">
                 {rangeEvents.map((event) => {
                   const start = parseEventDate(event.startDate);
                   const end = parseEventDate(event.endDate || event.startDate);
@@ -164,14 +162,11 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
                       className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''}`}
                       style={{
                         '--event-color': REGION_COLORS[event.region],
-                        '--line-row': lineRows.get(event.id) ?? 0,
                       } as CSSProperties}
                     />
                   );
                 })}
-              </span>
-              <span className="calendar-day__dots" aria-hidden="true">
-                {singleDayEvents.slice(0, 5).map((event) => (
+                {singleDayEvents.map((event) => (
                   <span
                     key={`${event.id}-${key}`}
                     className="calendar-day__dot"
@@ -188,6 +183,7 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
 }
 
 export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchModeControlsProps) {
+  const shellRef = useRef<HTMLDivElement>(null);
   const {
     isSearchMode,
     isCalendarMode,
@@ -200,6 +196,33 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
     setCalendarDay,
     setSelectedEventId,
   } = useGlobe();
+
+  useEffect(() => {
+    const shell = shellRef.current;
+    if (!shell || !isCalendarMode) {
+      document.documentElement.style.removeProperty('--calendar-results-top');
+      return;
+    }
+
+    const updateResultsTop = () => {
+      const rect = shell.getBoundingClientRect();
+      document.documentElement.style.setProperty(
+        '--calendar-results-top',
+        `${Math.ceil(rect.bottom + CALENDAR_RESULTS_GAP)}px`,
+      );
+    };
+
+    updateResultsTop();
+    const observer = new ResizeObserver(updateResultsTop);
+    observer.observe(shell);
+    window.addEventListener('resize', updateResultsTop);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateResultsTop);
+      document.documentElement.style.removeProperty('--calendar-results-top');
+    };
+  }, [isCalendarMode, calendarMonth]);
 
   const handleSearchIconClick = () => {
     const nextActive = !isSearchMode;
@@ -223,7 +246,7 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
   };
 
   return (
-    <div className="search-mode-shell">
+    <div className="search-mode-shell" ref={shellRef}>
       <div
         className={`search-mode-pill ${isSearchMode ? 'search-mode-pill--expanded' : ''} ${isCalendarMode ? 'search-mode-pill--calendar' : ''}`}
         aria-label="Search and calendar controls"
