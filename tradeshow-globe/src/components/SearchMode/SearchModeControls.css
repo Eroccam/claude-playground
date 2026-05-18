@@ -203,7 +203,7 @@
   font-family: inherit;
   cursor: pointer;
   overflow: hidden;
-  padding: 19px 5px 6px;
+  padding: 0;
   transition:
     background 0.15s ease,
     border-color 0.15s ease;
@@ -235,42 +235,40 @@
 }
 
 .calendar-day__indicators {
-  min-height: 12px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .calendar-day__line {
-  display: block;
-  width: calc(100% + 12px);
-  margin-left: -6px;
+  position: absolute;
+  top: calc(6px + var(--indicator-slot, 0) * 9px + 1.5px);
+  left: -1px;
+  right: -1px;
   height: 3px;
-  flex: 0 0 3px;
   background: var(--event-color);
   opacity: 0.72;
 }
 
 .calendar-day__line--start {
-  width: calc(50% + 6px);
-  margin-left: 50%;
+  left: 50%;
   border-radius: 999px 0 0 999px;
 }
 
 .calendar-day__line--end {
-  width: calc(50% + 6px);
-  margin-left: -6px;
+  right: 50%;
   border-radius: 0 999px 999px 0;
 }
 
 .calendar-day__dot {
-  display: block;
-  flex: 0 0 6px;
-  align-self: center;
+  position: absolute;
+  top: calc(6px + var(--indicator-slot, 0) * 9px);
+  left: 50%;
   width: 6px;
   height: 6px;
+  transform: translateX(-50%);
   border-radius: 999px;
   background: var(--event-color);
   box-shadow: 0 0 8px color-mix(in srgb, var(--event-color), transparent 35%);

@@ -27,6 +27,13 @@ const MONTH_NAMES = [
 ];
 const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const CALENDAR_RESULTS_GAP = 16;
+const DAY_CELL_DEFAULT_HEIGHT = 42;
+const DAY_DATE_AREA_HEIGHT = 18;
+const INDICATOR_SLOT_HEIGHT = 6;
+const INDICATOR_GAP = 3;
+const INDICATOR_EDGE_PADDING = 6;
+const WEEK_COUNT = 6;
+const DAYS_PER_WEEK = 7;
 
 function SearchIcon() {
   return (
@@ -86,6 +93,21 @@ function eventSpansDay(event: TradeshowEvent, day: Date): boolean {
   return start <= day && end >= day;
 }
 
+function eventSortKey(event: TradeshowEvent): string {
+  return `${event.startDate}|${event.endDate || event.startDate}|${event.name}`;
+}
+
+function minimumCellHeight(indicatorCount: number): number {
+  if (indicatorCount <= 1) return DAY_CELL_DEFAULT_HEIGHT;
+  return Math.max(
+    DAY_CELL_DEFAULT_HEIGHT,
+    DAY_DATE_AREA_HEIGHT
+      + INDICATOR_EDGE_PADDING * 2
+      + indicatorCount * INDICATOR_SLOT_HEIGHT
+      + (indicatorCount - 1) * INDICATOR_GAP,
+  );
+}
+
 interface CalendarGridProps {
   onExpandPanel?: () => void;
 }
@@ -116,6 +138,62 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
     return Array.from({ length: 42 }, (_, index) => addDays(gridStart, index));
   }, [monthStart]);
 
+  const rowLayouts = useMemo(() => {
+    const carriedRangeSlots = new Map<string, number>();
+
+    return Array.from({ length: WEEK_COUNT }, (_, rowIndex) => {
+      const rowCells = cells.slice(rowIndex * DAYS_PER_WEEK, rowIndex * DAYS_PER_WEEK + DAYS_PER_WEEK);
+      const rowStart = rowCells[0];
+      const rowEnd = rowCells[rowCells.length - 1];
+      const rowEvents = monthEvents
+        .filter((event) => {
+          const start = parseEventDate(event.startDate);
+          const end = parseEventDate(event.endDate || event.startDate);
+          if (!start || !end) return false;
+          return start <= rowEnd && end >= rowStart && rowCells.some((day) => (
+            day.getMonth() === calendarMonth && eventSpansDay(event, day)
+          ));
+        })
+        .sort((a, b) => eventSortKey(a).localeCompare(eventSortKey(b)));
+      const slots = new Map<string, number>();
+      const usedSlots = new Set<number>();
+      const continuingRanges = rowEvents.filter((event) => {
+        const start = parseEventDate(event.startDate);
+        return start ? start < rowStart && carriedRangeSlots.has(event.id) : false;
+      });
+
+      for (const event of continuingRanges) {
+        const slot = carriedRangeSlots.get(event.id);
+        if (slot === undefined) continue;
+        slots.set(event.id, slot);
+        usedSlots.add(slot);
+      }
+
+      for (const event of rowEvents) {
+        if (slots.has(event.id)) continue;
+        let slot = 0;
+        while (usedSlots.has(slot)) slot += 1;
+        slots.set(event.id, slot);
+        usedSlots.add(slot);
+      }
+
+      for (const event of rowEvents) {
+        const end = parseEventDate(event.endDate || event.startDate);
+        if (event.startDate !== (event.endDate || event.startDate) && end && end > rowEnd) {
+          carriedRangeSlots.set(event.id, slots.get(event.id) ?? 0);
+        } else {
+          carriedRangeSlots.delete(event.id);
+        }
+      }
+
+      const slotCount = usedSlots.size > 0 ? Math.max(...usedSlots) + 1 : 0;
+      return {
+        height: minimumCellHeight(slotCount),
+        slots,
+      };
+    });
+  }, [calendarMonth, cells, monthEvents]);
+
   return (
     <div className="calendar-panel" aria-label={`${MONTH_NAMES[calendarMonth]} calendar`}>
       <div className="calendar-panel__weekdays">
@@ -124,21 +202,20 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
         ))}
       </div>
       <div className="calendar-panel__grid">
-        {cells.map((day) => {
+        {cells.map((day, index) => {
+          const rowLayout = rowLayouts[Math.floor(index / DAYS_PER_WEEK)];
           const key = dateKey(day);
           const inMonth = day.getMonth() === calendarMonth;
           const isSelected = calendarDay === key;
           const dayEvents = monthEvents.filter((event) => inMonth && eventSpansDay(event, day));
           const rangeEvents = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
           const singleDayEvents = dayEvents.filter((event) => event.startDate === (event.endDate || event.startDate));
-          const indicators = [...rangeEvents, ...singleDayEvents];
-          const minHeight = Math.max(42, 28 + indicators.length * 9);
 
           return (
             <button
               key={key}
               className={`calendar-day ${inMonth ? '' : 'calendar-day--muted'} ${isSelected ? 'calendar-day--selected' : ''}`}
-              style={{ minHeight } as CSSProperties}
+              style={{ minHeight: rowLayout.height } as CSSProperties}
               type="button"
               onClick={() => {
                 if (!inMonth) return;
@@ -162,6 +239,7 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
                       className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''}`}
                       style={{
                         '--event-color': REGION_COLORS[event.region],
+                        '--indicator-slot': rowLayout.slots.get(event.id) ?? 0,
                       } as CSSProperties}
                     />
                   );
@@ -170,7 +248,10 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
                   <span
                     key={`${event.id}-${key}`}
                     className="calendar-day__dot"
-                    style={{ '--event-color': REGION_COLORS[event.region] } as CSSProperties}
+                    style={{
+                      '--event-color': REGION_COLORS[event.region],
+                      '--indicator-slot': rowLayout.slots.get(event.id) ?? 0,
+                    } as CSSProperties}
                   />
                 ))}
               </span>
