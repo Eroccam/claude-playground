@@ -57,10 +57,23 @@
     border-color 0.22s ease;
 }
 
+.app-layout:has(.search-mode-pill--expanded) .side-panel {
+  top: 58px;
+}
+
+.app-layout:has(.search-mode-pill--calendar) .side-panel {
+  top: 356px;
+}
+
 .side-panel.side-panel--minimized {
   top: calc(100% - 65px);
   background: rgba(8, 8, 24, 0.68);
   border-color: rgba(255, 255, 255, 0.09);
+}
+
+.app-layout:has(.search-mode-pill--expanded) .side-panel.side-panel--minimized,
+.app-layout:has(.search-mode-pill--calendar) .side-panel.side-panel--minimized {
+  top: calc(100% - 65px);
 }
 
 @media (max-width: 768px) {

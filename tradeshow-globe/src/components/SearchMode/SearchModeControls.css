@@ -3,10 +3,11 @@
   top: 16px;
   right: 16px;
   z-index: 16;
+  width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+  align-items: stretch;
+  gap: 0;
 }
 
 .search-mode-pill {
@@ -28,11 +29,16 @@
 }
 
 .search-mode-pill--expanded {
-  width: 380px;
+  width: 400px;
 }
 
 .search-mode-pill--calendar {
-  width: 304px;
+  width: 400px;
+  border-radius: 8px 8px 0 0;
+  border-bottom-color: transparent;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
 }
 
 .search-mode-pill__icon-btn {
@@ -142,13 +148,14 @@
 }
 
 .calendar-panel {
-  width: 360px;
+  width: 400px;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   background: rgba(8, 8, 24, 0.72);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.04);
   box-shadow:
     0 14px 34px rgba(0, 0, 0, 0.38),
     0 0 0 1px rgba(255, 255, 255, 0.03) inset;
@@ -209,12 +216,12 @@
 
 .calendar-day__lines {
   position: absolute;
-  inset: 16px 0 12px;
+  inset: 0;
 }
 
 .calendar-day__line {
   position: absolute;
-  top: calc(var(--line-row, 0) * 4px);
+  top: calc(39px - var(--line-row, 0) * 4px);
   left: -1px;
   right: -1px;
   height: 3px;
@@ -247,7 +254,7 @@
   flex-wrap: wrap;
   gap: 3px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .calendar-day__dot {
