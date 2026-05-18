@@ -28,10 +28,10 @@ const MONTH_NAMES = [
 const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const CALENDAR_RESULTS_GAP = 16;
 const DAY_CELL_DEFAULT_HEIGHT = 42;
+const DAY_NUMBER_CLEARANCE = 20;
 const INDICATOR_SLOT_HEIGHT = 6;
 const INDICATOR_GAP = 0;
 const INDICATOR_EDGE_PADDING = 6;
-const WEEK_COUNT = 6;
 const DAYS_PER_WEEK = 7;
 
 function SearchIcon() {
@@ -100,7 +100,8 @@ function minimumCellHeight(indicatorCount: number): number {
   if (indicatorCount <= 1) return DAY_CELL_DEFAULT_HEIGHT;
   return Math.max(
     DAY_CELL_DEFAULT_HEIGHT,
-    INDICATOR_EDGE_PADDING * 2
+    DAY_NUMBER_CLEARANCE
+      + INDICATOR_EDGE_PADDING
       + indicatorCount * INDICATOR_SLOT_HEIGHT
       + (indicatorCount - 1) * INDICATOR_GAP,
   );
@@ -133,13 +134,14 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
 
   const cells = useMemo(() => {
     const gridStart = addDays(monthStart, -monthStart.getDay());
-    return Array.from({ length: 42 }, (_, index) => addDays(gridStart, index));
-  }, [monthStart]);
+    const gridEnd = addDays(monthEnd, 6 - monthEnd.getDay());
+    const dayCount = Math.round((gridEnd.getTime() - gridStart.getTime()) / 86400000) + 1;
+    return Array.from({ length: dayCount }, (_, index) => addDays(gridStart, index));
+  }, [monthEnd, monthStart]);
 
   const rowLayouts = useMemo(() => {
-    const carriedRangeSlots = new Map<string, number>();
-
-    return Array.from({ length: WEEK_COUNT }, (_, rowIndex) => {
+    const weekCount = Math.ceil(cells.length / DAYS_PER_WEEK);
+    return Array.from({ length: weekCount }, (_, rowIndex) => {
       const rowCells = cells.slice(rowIndex * DAYS_PER_WEEK, rowIndex * DAYS_PER_WEEK + DAYS_PER_WEEK);
       const rowStart = rowCells[0];
       const rowEnd = rowCells[rowCells.length - 1];
@@ -155,33 +157,12 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
         .sort((a, b) => eventSortKey(a).localeCompare(eventSortKey(b)));
       const slots = new Map<string, number>();
       const usedSlots = new Set<number>();
-      const continuingRanges = rowEvents.filter((event) => {
-        const start = parseEventDate(event.startDate);
-        return start ? start < rowStart && carriedRangeSlots.has(event.id) : false;
-      });
-
-      for (const event of continuingRanges) {
-        const slot = carriedRangeSlots.get(event.id);
-        if (slot === undefined) continue;
-        slots.set(event.id, slot);
-        usedSlots.add(slot);
-      }
 
       for (const event of rowEvents) {
-        if (slots.has(event.id)) continue;
         let slot = 0;
         while (usedSlots.has(slot)) slot += 1;
         slots.set(event.id, slot);
         usedSlots.add(slot);
-      }
-
-      for (const event of rowEvents) {
-        const end = parseEventDate(event.endDate || event.startDate);
-        if (event.startDate !== (event.endDate || event.startDate) && end && end > rowEnd) {
-          carriedRangeSlots.set(event.id, slots.get(event.id) ?? 0);
-        } else {
-          carriedRangeSlots.delete(event.id);
-        }
       }
 
       const slotCount = usedSlots.size > 0 ? Math.max(...usedSlots) + 1 : 0;
