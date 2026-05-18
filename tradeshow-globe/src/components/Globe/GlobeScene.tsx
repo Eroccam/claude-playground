@@ -26,7 +26,7 @@ function Scene() {
     <>
       <OceanSphere />
       <Atmosphere />
-      {showRegionFill && <LandGlow highlightedRegion={selectedRegion} />}
+      <LandGlow highlightedRegion={selectedRegion} visible={showRegionFill} />
       <CountryBorders />
       <Coastlines />
       <Starfield />

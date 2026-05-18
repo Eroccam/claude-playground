@@ -18,7 +18,11 @@ export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps)
       {showResults ? (
         <div className="searched-header" onClick={onExpand}>Results</div>
       ) : (
-        <RegionTabs onTabSelect={onExpand} />
+        <RegionTabs
+          isPaneOpen={!isMinimized}
+          onPaneOpen={onExpand}
+          onPaneClose={onMinimize}
+        />
       )}
       <div className="side-panel__content" aria-hidden={isMinimized}>
         <div className="side-panel__body">

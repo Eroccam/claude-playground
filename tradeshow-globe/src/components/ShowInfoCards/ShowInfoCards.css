@@ -200,17 +200,62 @@
   pointer-events: none;
 }
 
-.show-info-tails line {
-  stroke: rgba(210, 214, 230, 0.64);
-  stroke-width: 2;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 5px rgba(180, 200, 255, 0.25));
+.show-info-stream {
   opacity: 0;
   transition: opacity 0.18s ease;
 }
 
-.show-info-tails line.tail-visible {
+.show-info-stream--visible {
   opacity: 1;
+}
+
+.show-info-stream path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.show-info-stream__glow {
+  stroke: var(--stream-color, rgba(210, 214, 230, 0.64));
+  stroke-width: 5;
+  stroke-dasharray: 1 12;
+  opacity: 0.16;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--stream-color, #5b9bd5), transparent 18%));
+  animation: stream-flow 4.8s linear infinite;
+}
+
+.show-info-stream__arc {
+  stroke: var(--stream-color, rgba(210, 214, 230, 0.64));
+  stroke-width: 3;
+  stroke-dasharray: 7 7;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--stream-color, #5b9bd5), transparent 24%));
+  animation: stream-flow 5.6s linear infinite;
+}
+
+.show-info-stream__arc--slow {
+  opacity: 0.5;
+  stroke-dasharray: 6 8;
+  animation-duration: 6.8s;
+}
+
+.show-info-stream__arc--mid {
+  opacity: 0.72;
+  stroke-dasharray: 8 7;
+  stroke-dashoffset: -7;
+  animation-duration: 5.4s;
+}
+
+.show-info-stream__arc--fast {
+  opacity: 0.45;
+  stroke-dasharray: 5 9;
+  stroke-dashoffset: -14;
+  animation-duration: 4.4s;
+}
+
+@keyframes stream-flow {
+  to {
+    stroke-dashoffset: -56;
+  }
 }
 
 @media (max-width: 768px) {

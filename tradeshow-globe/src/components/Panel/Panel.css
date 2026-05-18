@@ -7,27 +7,78 @@
 }
 
 .region-tab {
+  position: relative;
   flex: 1;
-  padding: 12px 16px;
+  min-width: 0;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.region-tab__select {
+  width: 100%;
+  height: 100%;
+  padding: 12px 30px 12px 16px;
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
   color: rgba(180, 180, 210, 0.5);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s, background 0.2s;
   font-family: inherit;
 }
 
-.region-tab:hover {
+.region-tab:hover .region-tab__select {
   color: rgba(200, 200, 230, 0.75);
   background: rgba(255, 255, 255, 0.03);
 }
 
-.region-tab.active {
+.region-tab.active .region-tab__select {
   color: #e0e0e0;
+}
+
+.region-tab.active {
   border-bottom-color: var(--tab-color, #e63946);
+}
+
+.region-tab__expand {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--tab-color, #3388ff), transparent 56%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.18s ease;
+}
+
+.region-tab__expand::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid var(--tab-color, #3388ff);
+  border-bottom: 2px solid var(--tab-color, #3388ff);
+  transform: rotate(45deg);
+}
+
+.region-tab__expand:hover {
+  background: color-mix(in srgb, var(--tab-color, #3388ff), transparent 82%);
+  border-color: color-mix(in srgb, var(--tab-color, #3388ff), transparent 25%);
+}
+
+.region-tab__expand--open {
+  transform: rotate(180deg);
+  background: color-mix(in srgb, var(--tab-color, #3388ff), transparent 84%);
 }
 
 .searched-header {

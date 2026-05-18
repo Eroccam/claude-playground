@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import type { TradeshowEvent } from '../../types.ts';
 import { formatEventDateRange } from '../../utils/dates.ts';
+import { REGION_COLORS } from '../../utils/regions.ts';
 import type { SelectedPinScreenEventDetail } from '../Globe/SelectedPinTracker.tsx';
 import './ShowInfoCards.css';
 
@@ -37,6 +38,10 @@ function getFreeSlot(slots: Map<string, number>): number {
     if (!occupied.has(i)) return i;
   }
   return 0;
+}
+
+function streamPath(pinX: number, pinY: number, cardX: number, cardY: number): string {
+  return `M ${pinX} ${pinY} L ${cardX} ${cardY}`;
 }
 
 // ── Card content ─────────────────────────────────────────────────────────────
@@ -432,24 +437,34 @@ export function ShowInfoCards() {
         })}
       </div>
 
-      {/* Tails overlay */}
+      {/* Signal stream overlay */}
       <svg className="show-info-tails" aria-hidden="true">
         {cardOrder.map((eventId) => {
           const phase = cardPhases[eventId] ?? 'open';
           if (phase === 'leaving' || phase === 'entering') return null;
+          const event = events.find((item) => item.id === eventId);
+          if (!event) return null;
           const data = pinData.get(eventId);
           if (!data) return null;
           const isReady = tailReadyIds.has(eventId);
           const tailVisible = isReady && data.pinVisible && data.tailOriginX > 0;
+          const path = streamPath(
+            data.pinX,
+            data.pinY,
+            tailVisible ? data.tailOriginX : data.pinX,
+            tailVisible ? data.tailOriginY : data.pinY,
+          );
           return (
-            <line
+            <g
               key={eventId}
-              className={tailVisible ? 'tail-visible' : ''}
-              x1={data.tailOriginX}
-              y1={data.tailOriginY}
-              x2={tailVisible ? data.pinX : data.tailOriginX}
-              y2={tailVisible ? data.pinY : data.tailOriginY}
-            />
+              className={`show-info-stream ${tailVisible ? 'show-info-stream--visible' : ''}`}
+              style={{ '--stream-color': REGION_COLORS[event.region] } as CSSProperties}
+            >
+              <path className="show-info-stream__glow" d={path} />
+              <path className="show-info-stream__arc show-info-stream__arc--slow" d={path} />
+              <path className="show-info-stream__arc show-info-stream__arc--mid" d={path} />
+              <path className="show-info-stream__arc show-info-stream__arc--fast" d={path} />
+            </g>
           );
         })}
       </svg>

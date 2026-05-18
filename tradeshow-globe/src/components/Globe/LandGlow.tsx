@@ -1,10 +1,12 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { REGION_BASE_COLORS, REGION_COLORS } from '../../utils/regions.ts';
 import type { Region } from '../../types.ts';
 
 interface LandGlowProps {
   highlightedRegion: Region;
+  visible: boolean;
 }
 
 const REGIONS: Region[] = ['US', 'EMEA', 'APAC'];
@@ -28,11 +30,13 @@ function extractRegionArrays(json: unknown): RegionArrays | null {
   return result;
 }
 
-export function LandGlow({ highlightedRegion }: LandGlowProps) {
+export function LandGlow({ highlightedRegion, visible }: LandGlowProps) {
   const proofMode = typeof window !== 'undefined'
     && new URLSearchParams(window.location.search).get('fillProof') === '1';
 
   const [regionArrays, setRegionArrays] = useState<RegionArrays | null>(null);
+  const materialsRef = useRef(new Map<Region, THREE.MeshBasicMaterial>());
+  const opacityRef = useRef(visible ? 1 : 0);
 
   useEffect(() => {
     // BASE_URL ensures the path is correct whether the app is served from /
@@ -92,6 +96,19 @@ export function LandGlow({ highlightedRegion }: LandGlowProps) {
     return result;
   }, [regionArrays]);
 
+  useFrame((_, delta) => {
+    const targetOpacity = visible ? 1 : 0;
+    const nextOpacity = THREE.MathUtils.damp(opacityRef.current, targetOpacity, 7, delta);
+    opacityRef.current = Math.abs(nextOpacity - targetOpacity) < 0.01 ? targetOpacity : nextOpacity;
+
+    for (const material of materialsRef.current.values()) {
+      material.visible = opacityRef.current > 0.01;
+      material.opacity = opacityRef.current;
+      material.depthWrite = opacityRef.current > 0.98;
+      material.needsUpdate = true;
+    }
+  });
+
   if (!geometries) return null;
 
   return (
@@ -104,10 +121,16 @@ export function LandGlow({ highlightedRegion }: LandGlowProps) {
               - depthTest={true}: land behind the globe is correctly occluded by ocean.
               - polygonOffset(-1,-1): additional forward bias in the depth buffer. */}
           <meshBasicMaterial
+            ref={(material) => {
+              if (material) materialsRef.current.set(region, material);
+              else materialsRef.current.delete(region);
+            }}
             color={proofMode ? '#ff1493' : (region === highlightedRegion ? REGION_COLORS[region] : REGION_BASE_COLORS[region])}
             wireframe={proofMode}
+            transparent
+            opacity={opacityRef.current}
             depthTest
-            depthWrite
+            depthWrite={opacityRef.current > 0.98}
             side={THREE.FrontSide}
             polygonOffset
             polygonOffsetFactor={-1}
