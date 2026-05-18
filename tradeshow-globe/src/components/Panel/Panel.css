@@ -49,36 +49,35 @@
   width: 18px;
   height: 18px;
   padding: 0;
-  border: 1px solid color-mix(in srgb, var(--tab-color, #3388ff), transparent 56%);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.035);
+  border: 0;
+  background: transparent;
+  color: #e0e0e0;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
+    opacity 0.15s ease,
     transform 0.18s ease;
 }
 
-.region-tab__expand::before {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 4px;
-  width: 5px;
-  height: 5px;
-  border-right: 2px solid var(--tab-color, #3388ff);
-  border-bottom: 2px solid var(--tab-color, #3388ff);
-  transform: rotate(45deg);
+.region-tab__expand svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.region-tab__expand path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
 .region-tab__expand:hover {
-  background: color-mix(in srgb, var(--tab-color, #3388ff), transparent 82%);
-  border-color: color-mix(in srgb, var(--tab-color, #3388ff), transparent 25%);
+  opacity: 0.82;
 }
 
 .region-tab__expand--open {
   transform: rotate(180deg);
-  background: color-mix(in srgb, var(--tab-color, #3388ff), transparent 84%);
 }
 
 .searched-header {

@@ -216,19 +216,19 @@
 }
 
 .show-info-stream__glow {
-  stroke: var(--stream-color, rgba(210, 214, 230, 0.64));
+  stroke: rgba(210, 214, 230, 0.64);
   stroke-width: 5;
   stroke-dasharray: 1 12;
   opacity: 0.16;
-  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--stream-color, #5b9bd5), transparent 18%));
+  filter: drop-shadow(0 0 7px rgba(180, 200, 255, 0.25));
   animation: stream-flow 4.8s linear infinite;
 }
 
 .show-info-stream__arc {
-  stroke: var(--stream-color, rgba(210, 214, 230, 0.64));
+  stroke: rgba(210, 214, 230, 0.64);
   stroke-width: 3;
   stroke-dasharray: 7 7;
-  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--stream-color, #5b9bd5), transparent 24%));
+  filter: drop-shadow(0 0 5px rgba(180, 200, 255, 0.25));
   animation: stream-flow 5.6s linear infinite;
 }
 
