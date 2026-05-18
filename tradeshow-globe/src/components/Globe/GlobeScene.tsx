@@ -18,9 +18,9 @@ import { useGlobe } from '../../context/globeContext.ts';
 import { GLOBE_Y_OFFSET } from '../../utils/cameraTargets.ts';
 
 function Scene() {
-  const { selectedRegion, selectedEvent, isSearchMode } = useGlobe();
+  const { selectedRegion, selectedEvent, isSearchMode, isCalendarMode } = useGlobe();
   const controlsRef = useRef<GlobeControlsHandle>(null);
-  const showRegionFill = !isSearchMode || Boolean(selectedEvent);
+  const showRegionFill = !isCalendarMode && (!isSearchMode || Boolean(selectedEvent));
 
   return (
     <>

@@ -2,7 +2,7 @@ import { useGlobe } from '../../context/globeContext.ts';
 import { EventListItem } from './EventListItem.tsx';
 
 export function EventList() {
-  const { filteredEvents, selectedEventId, setSelectedEventId, isLoading, error, isSearchMode } = useGlobe();
+  const { filteredEvents, selectedEventId, setSelectedEventId, isLoading, error, isSearchMode, isCalendarMode } = useGlobe();
 
   if (isLoading) {
     return (
@@ -35,7 +35,7 @@ export function EventList() {
           key={event.id}
           event={event}
           isSelected={event.id === selectedEventId}
-          showRegionBadge={isSearchMode}
+          showRegionBadge={isSearchMode || isCalendarMode}
           onClick={() => setSelectedEventId(event.id)}
         />
       ))}

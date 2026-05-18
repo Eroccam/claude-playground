@@ -36,7 +36,10 @@ function App() {
               onExpand={() => setSidePanelMinimized(false)}
             />
           </div>
-          <SearchModeControls onExpandPanel={() => setSidePanelMinimized(false)} />
+          <SearchModeControls
+            onExpandPanel={() => setSidePanelMinimized(false)}
+            onCollapsePanel={() => setSidePanelMinimized(true)}
+          />
           <ShowInfoCards />
           <MobileDrawer />
         </div>

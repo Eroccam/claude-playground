@@ -11,8 +11,13 @@ export interface GlobeContextValue {
   selectionNonce: number;
   filteredEvents: TradeshowEvent[];
   isSearchMode: boolean;
+  isCalendarMode: boolean;
   searchQuery: string;
   searchResults: TradeshowEvent[];
+  calendarMonth: number;
+  calendarDay: string | null;
+  calendarResults: TradeshowEvent[];
+  highlightedEvents: TradeshowEvent[];
   openCardIds: string[];
   setSelectedRegion: (region: Region) => void;
   setSelectedEventId: (id: string | null) => void;
@@ -20,6 +25,9 @@ export interface GlobeContextValue {
   closeCard: (eventId: string) => void;
   setSearchMode: (active: boolean) => void;
   setSearchQuery: (query: string) => void;
+  setCalendarMode: (active: boolean) => void;
+  setCalendarMonth: (month: number) => void;
+  setCalendarDay: (day: string | null) => void;
 }
 
 export const GlobeContext = createContext<GlobeContextValue | null>(null);

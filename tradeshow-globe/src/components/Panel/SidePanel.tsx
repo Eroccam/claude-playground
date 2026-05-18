@@ -10,12 +10,13 @@ interface SidePanelProps {
 }
 
 export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps) {
-  const { isSearchMode } = useGlobe();
+  const { isSearchMode, isCalendarMode } = useGlobe();
+  const showResults = isSearchMode || isCalendarMode;
 
   return (
     <>
-      {isSearchMode ? (
-        <div className="searched-header" onClick={onExpand}>Searched</div>
+      {showResults ? (
+        <div className="searched-header" onClick={onExpand}>Results</div>
       ) : (
         <RegionTabs onTabSelect={onExpand} />
       )}

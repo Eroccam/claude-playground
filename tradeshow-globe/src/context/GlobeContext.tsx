@@ -7,6 +7,9 @@ import type { GlobeContextValue } from './globeContext.ts';
 import { detectRegionFromTimezone } from '../utils/regions.ts';
 import devEvents from '../data/devEvents.ts';
 
+const MONTH_COUNT = 12;
+const CURRENT_MONTH = new Date().getMonth();
+
 function isValidEvent(e: TradeshowEvent): boolean {
   return (
     typeof e.lat === 'number' &&
@@ -26,6 +29,9 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
   const [openCardIds, setOpenCardIds] = useState<string[]>([]);
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isCalendarMode, setIsCalendarMode] = useState(false);
+  const [calendarMonth, setCalendarMonthRaw] = useState(CURRENT_MONTH);
+  const [calendarDay, setCalendarDay] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -60,7 +66,29 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
 
   const setSearchMode = useCallback((active: boolean) => {
     setIsSearchMode(active);
+    if (active) {
+      setIsCalendarMode(false);
+      setCalendarDay(null);
+    }
     if (!active) setSearchQuery('');
+  }, []);
+
+  const setCalendarMode = useCallback((active: boolean) => {
+    setIsCalendarMode(active);
+    setSelectedEventId(null);
+    if (active) {
+      setIsSearchMode(false);
+      setSearchQuery('');
+    } else {
+      setCalendarDay(null);
+      setOpenCardIds([]);
+    }
+  }, []);
+
+  const setCalendarMonth = useCallback((month: number) => {
+    const nextMonth = ((month % MONTH_COUNT) + MONTH_COUNT) % MONTH_COUNT;
+    setCalendarMonthRaw(nextMonth);
+    setCalendarDay(null);
   }, []);
 
   const closeCard = useCallback((eventId: string) => {
@@ -122,6 +150,34 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
     });
   }, [events, searchQuery]);
 
+  const calendarMonthResults = useMemo(() => {
+    const monthStart = new Date(2026, calendarMonth, 1);
+    const monthEnd = new Date(2026, calendarMonth + 1, 0);
+
+    return events
+      .filter((event) => {
+        const start = new Date(`${event.startDate}T00:00:00`);
+        const end = new Date(`${(event.endDate || event.startDate)}T00:00:00`);
+        if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return false;
+        return start <= monthEnd && end >= monthStart;
+      })
+      .sort((a, b) => {
+        const dateCompare = (a.startDate || '9999-12-31').localeCompare(b.startDate || '9999-12-31');
+        if (dateCompare !== 0) return dateCompare;
+        return a.name.localeCompare(b.name);
+      });
+  }, [events, calendarMonth]);
+
+  const calendarResults = useMemo(() => {
+    if (!calendarDay) return calendarMonthResults;
+    const selectedDay = new Date(`${calendarDay}T00:00:00`);
+    return calendarMonthResults.filter((event) => {
+      const start = new Date(`${event.startDate}T00:00:00`);
+      const end = new Date(`${(event.endDate || event.startDate)}T00:00:00`);
+      return start <= selectedDay && end >= selectedDay;
+    });
+  }, [calendarDay, calendarMonthResults]);
+
   const selectedEvent = useMemo(
     () => events.find((e) => e.id === selectedEventId) ?? null,
     [events, selectedEventId],
@@ -136,10 +192,15 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
       selectedEventId,
       selectedEvent,
       selectionNonce,
-      filteredEvents: isSearchMode ? searchResults : filteredEvents,
+      filteredEvents: isCalendarMode ? calendarResults : isSearchMode ? searchResults : filteredEvents,
       isSearchMode,
+      isCalendarMode,
       searchQuery,
       searchResults,
+      calendarMonth,
+      calendarDay,
+      calendarResults,
+      highlightedEvents: isCalendarMode ? calendarMonthResults : searchResults,
       openCardIds,
       setSelectedRegion,
       setSelectedEventId: (id) => (id ? selectEvent(id) : clearSelectedEvent()),
@@ -147,8 +208,11 @@ export function GlobeProvider({ children }: { children: ReactNode }) {
       closeCard,
       setSearchMode,
       setSearchQuery,
+      setCalendarMode,
+      setCalendarMonth,
+      setCalendarDay,
     }),
-    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, selectionNonce, isSearchMode, searchQuery, searchResults, filteredEvents, openCardIds, setSelectedRegion, selectEvent, clearSelectedEvent, selectEventFromPin, closeCard, setSearchMode],
+    [events, isLoading, error, selectedRegion, selectedEventId, selectedEvent, selectionNonce, isSearchMode, isCalendarMode, searchQuery, searchResults, calendarMonth, calendarDay, calendarResults, calendarMonthResults, filteredEvents, openCardIds, setSelectedRegion, selectEvent, clearSelectedEvent, selectEventFromPin, closeCard, setSearchMode, setCalendarMode, setCalendarMonth],
   );
 
   return <GlobeContext value={value}>{children}</GlobeContext>;

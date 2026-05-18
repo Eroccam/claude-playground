@@ -51,6 +51,6 @@ export const REGION_COASTLINE_COLORS: Record<Region, string> = {
 /** Base colors: always visible, but intentionally understated */
 export const REGION_BASE_COLORS: Record<Region, string> = {
   US: '#722230',
-  EMEA: '#2b1a45',
+  EMEA: '#39215c',
   APAC: '#0b2a22',
 };
