@@ -28,9 +28,8 @@ const MONTH_NAMES = [
 const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const CALENDAR_RESULTS_GAP = 16;
 const DAY_CELL_DEFAULT_HEIGHT = 42;
-const DAY_DATE_AREA_HEIGHT = 18;
 const INDICATOR_SLOT_HEIGHT = 6;
-const INDICATOR_GAP = 3;
+const INDICATOR_GAP = 0;
 const INDICATOR_EDGE_PADDING = 6;
 const WEEK_COUNT = 6;
 const DAYS_PER_WEEK = 7;
@@ -101,8 +100,7 @@ function minimumCellHeight(indicatorCount: number): number {
   if (indicatorCount <= 1) return DAY_CELL_DEFAULT_HEIGHT;
   return Math.max(
     DAY_CELL_DEFAULT_HEIGHT,
-    DAY_DATE_AREA_HEIGHT
-      + INDICATOR_EDGE_PADDING * 2
+    INDICATOR_EDGE_PADDING * 2
       + indicatorCount * INDICATOR_SLOT_HEIGHT
       + (indicatorCount - 1) * INDICATOR_GAP,
   );
