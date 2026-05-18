@@ -25,6 +25,7 @@
     0 8px 24px rgba(0, 0, 0, 0.36),
     0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   overflow: hidden;
+  margin-left: auto;
   transition: width 0.24s ease;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .search-mode-pill--calendar {
-  width: 400px;
+  width: 360px;
   border-radius: 8px 8px 0 0;
   border-bottom-color: transparent;
   box-shadow:
@@ -110,6 +111,23 @@
   color: rgba(235, 240, 255, 0.96);
 }
 
+.search-mode-pill__month-label {
+  min-width: 0;
+  height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(235, 240, 255, 0.96);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-mode-pill__month-label:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .search-mode-pill__input {
   flex: 1;
   min-width: 0;
@@ -148,7 +166,8 @@
 }
 
 .calendar-panel {
-  width: 400px;
+  width: 360px;
+  align-self: flex-end;
   padding: 12px;
   border-radius: 0 0 8px 8px;
   background: rgba(8, 8, 24, 0.72);
@@ -239,11 +258,6 @@
   border-radius: 0 999px 999px 0;
 }
 
-.calendar-day__line--selected {
-  opacity: 1;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.96);
-}
-
 .calendar-day__dots {
   position: absolute;
   left: 5px;
@@ -263,10 +277,4 @@
   border-radius: 999px;
   background: var(--event-color);
   box-shadow: 0 0 8px color-mix(in srgb, var(--event-color), transparent 35%);
-}
-
-.calendar-day__dot--selected {
-  border: 1px solid rgba(255, 255, 255, 0.96);
-  width: 8px;
-  height: 8px;
 }

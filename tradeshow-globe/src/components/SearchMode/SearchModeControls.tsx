@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import { REGION_COLORS } from '../../utils/regions.ts';
-import type { Region, TradeshowEvent } from '../../types.ts';
+import type { TradeshowEvent } from '../../types.ts';
 import './SearchModeControls.css';
 
 interface SearchModeControlsProps {
@@ -94,7 +94,6 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
     events,
     calendarMonth,
     calendarDay,
-    selectedEventId,
     setCalendarDay,
   } = useGlobe();
 
@@ -135,11 +134,8 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
           const inMonth = day.getMonth() === calendarMonth;
           const isSelected = calendarDay === key;
           const dayEvents = monthEvents.filter((event) => inMonth && eventSpansDay(event, day));
-          const multiSegments = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
-          const dots = dayEvents.filter((event) => {
-            const singleDay = event.startDate === (event.endDate || event.startDate);
-            return singleDay || event.startDate === key || (event.endDate || event.startDate) === key;
-          });
+          const rangeEvents = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
+          const singleDayEvents = dayEvents.filter((event) => event.startDate === (event.endDate || event.startDate));
 
           return (
             <button
@@ -157,16 +153,15 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
             >
               <span className="calendar-day__number">{day.getDate()}</span>
               <span className="calendar-day__lines" aria-hidden="true">
-                {multiSegments.map((event) => {
+                {rangeEvents.map((event) => {
                   const start = parseEventDate(event.startDate);
                   const end = parseEventDate(event.endDate || event.startDate);
                   const startsHere = start ? dateKey(start) === key : false;
                   const endsHere = end ? dateKey(end) === key : false;
-                  const selected = event.id === selectedEventId;
                   return (
                     <span
                       key={event.id}
-                      className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''} ${selected ? 'calendar-day__line--selected' : ''}`}
+                      className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''}`}
                       style={{
                         '--event-color': REGION_COLORS[event.region],
                         '--line-row': lineRows.get(event.id) ?? 0,
@@ -176,11 +171,11 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
                 })}
               </span>
               <span className="calendar-day__dots" aria-hidden="true">
-                {dots.slice(0, 5).map((event) => (
+                {singleDayEvents.slice(0, 5).map((event) => (
                   <span
                     key={`${event.id}-${key}`}
-                    className={`calendar-day__dot ${event.id === selectedEventId ? 'calendar-day__dot--selected' : ''}`}
-                    style={{ '--event-color': REGION_COLORS[event.region as Region] } as CSSProperties}
+                    className="calendar-day__dot"
+                    style={{ '--event-color': REGION_COLORS[event.region] } as CSSProperties}
                   />
                 ))}
               </span>
@@ -202,13 +197,19 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
     setSearchQuery,
     setCalendarMode,
     setCalendarMonth,
+    setCalendarDay,
+    setSelectedEventId,
   } = useGlobe();
 
   const handleSearchIconClick = () => {
-    if (!isSearchMode) {
-      setSearchMode(true);
+    const nextActive = !isSearchMode;
+    setSearchMode(nextActive);
+    if (nextActive) {
+      onExpandPanel?.();
+    } else {
+      setSelectedEventId(null);
+      onCollapsePanel?.();
     }
-    onExpandPanel?.();
   };
 
   const handleCalendarIconClick = () => {
@@ -231,7 +232,7 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
           className={`search-mode-pill__icon-btn ${isSearchMode ? 'active' : ''}`}
           type="button"
           onClick={handleSearchIconClick}
-          aria-label={isSearchMode ? 'Expand search panel' : 'Enter search mode'}
+          aria-label={isSearchMode ? 'Exit search mode' : 'Enter search mode'}
           aria-pressed={isSearchMode}
         >
           <SearchIcon />
@@ -246,7 +247,14 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
             >
               <ChevronLeftIcon />
             </button>
-            <span>{MONTH_NAMES[calendarMonth]}</span>
+            <button
+              className="search-mode-pill__month-label"
+              type="button"
+              onClick={() => setCalendarDay(null)}
+              aria-label="Clear day selection"
+            >
+              {MONTH_NAMES[calendarMonth]}
+            </button>
             <button
               className="search-mode-pill__month-btn"
               type="button"
