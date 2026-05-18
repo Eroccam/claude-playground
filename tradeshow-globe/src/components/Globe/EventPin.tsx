@@ -5,8 +5,8 @@ import type { TradeshowEvent } from '../../types.ts';
 import { latLngToVector3 } from '../../utils/coordinates.ts';
 import { isPastEvent } from '../../utils/dates.ts';
 
-const SAFRAN_BLUE = '#1a6aff';
-const SAFRAN_BLUE_MID = '#0e4fbf';
+const PIN_WHITE = '#ffffff';
+const PIN_WHITE_MID = '#d8deec';
 const SEARCH_GREEN = '#39d98a';
 const PIN_HEIGHT = 0.06;
 const BASE_RADIUS = 0.005;
@@ -35,14 +35,14 @@ export function EventPin({ event, isSelected, isInSelectedRegion, isSearchMode, 
   const searchOpacity = isSearchMatch ? 0.92 : 0.18;
   const pinOpacity = isSelected ? 0.95 : isSearchMode ? searchOpacity : regionOpacity;
   const pinColor = isSelected
-    ? '#55aaff'
+    ? PIN_WHITE
     : hovered
-      ? '#55aaff'
+      ? PIN_WHITE
       : isSearchMode && isSearchMatch
         ? SEARCH_GREEN
         : isInSelectedRegion
-          ? SAFRAN_BLUE
-          : SAFRAN_BLUE_MID;
+          ? PIN_WHITE
+          : PIN_WHITE_MID;
 
   // Position and orientation
   const surfacePos = latLngToVector3(event.lat, event.lng, 1.006);
