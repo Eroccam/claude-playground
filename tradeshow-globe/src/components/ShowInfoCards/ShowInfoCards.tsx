@@ -73,7 +73,7 @@ function CardBody({ event }: { event: TradeshowEvent }) {
 // ── Main component ────────────────────────────────────────────────────────────
 
 export function ShowInfoCards() {
-  const { events, openCardIds, selectedEventId, selectionNonce, closeCard } = useGlobe();
+  const { events, openCardIds, selectedEventId, selectedEvent, selectionNonce, closeCard, setSelectedEventId } = useGlobe();
 
   // Insertion order (for eviction tracking)
   const [cardOrder, setCardOrder] = useState<string[]>([]);
@@ -355,6 +355,10 @@ export function ShowInfoCards() {
     return Math.max(0, Math.min((MAX_CARDS - 1) * (slotHeight + CARD_GAP), raw));
   };
 
+  const mobileLocation = selectedEvent
+    ? [selectedEvent.city, selectedEvent.stateProvince, selectedEvent.country].filter(Boolean).join(', ')
+    : '';
+
   return (
     <>
       <div ref={columnRef} className="show-info-column">
@@ -464,6 +468,35 @@ export function ShowInfoCards() {
           );
         })}
       </svg>
+
+      {selectedEvent && (
+        <div className="mobile-show-info-sheet" role="dialog" aria-label="Show information">
+          <div className="mobile-show-info-sheet__header">
+            <div className="show-info-card__eyebrow">Show Information</div>
+            <button
+              className="show-info-card__close"
+              type="button"
+              onClick={() => {
+                setSelectedEventId(null);
+                closeCard(selectedEvent.id);
+              }}
+              aria-label="Close show information"
+            >
+              &times;
+            </button>
+          </div>
+          <div className="show-info-card__static">
+            <div className="show-info-card__title">{selectedEvent.name}</div>
+            <div className="show-info-card__dates">
+              {formatEventDateRange(selectedEvent.startDate, selectedEvent.endDate)}
+            </div>
+            <div className="show-info-card__location">{mobileLocation}</div>
+          </div>
+          <div className="show-info-card__body">
+            <CardBody event={selectedEvent} />
+          </div>
+        </div>
+      )}
     </>
   );
 }

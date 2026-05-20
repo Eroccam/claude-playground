@@ -1,27 +1,34 @@
 import { useState } from 'react';
 import { RegionTabs } from './RegionTabs.tsx';
 import { EventList } from './EventList.tsx';
+import { useGlobe } from '../../context/globeContext.ts';
 import './MobileDrawer.css';
 
 export function MobileDrawer() {
-  const [open, setOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const { isSearchMode } = useGlobe();
+
+  if (isSearchMode) return null;
 
   return (
-    <div className="mobile-drawer-overlay">
-      <div className={`mobile-drawer ${open ? 'open' : 'closed'}`}>
-        <div
-          className="mobile-drawer__handle-area"
-          onClick={() => setOpen(!open)}
+    <div className={`mobile-nav-panel ${isMinimized ? 'mobile-nav-panel--minimized' : ''}`}>
+      <RegionTabs
+        isPaneOpen={!isMinimized}
+        onPaneOpen={() => setIsMinimized(false)}
+        onPaneClose={() => setIsMinimized(true)}
+      />
+      <div className="mobile-nav-panel__content" aria-hidden={isMinimized}>
+        <EventList />
+      </div>
+      <div className="mobile-nav-panel__footer">
+        <button
+          className="mobile-nav-panel__toggle"
+          type="button"
+          onClick={() => setIsMinimized((value) => !value)}
+          aria-label={isMinimized ? 'Expand show list panel' : 'Minimize show list panel'}
         >
-          <div className="mobile-drawer__handle" />
-          <span className="mobile-drawer__label">
-            {open ? 'Close' : 'View Events'}
-          </span>
-        </div>
-        <div className="mobile-drawer__content">
-          <RegionTabs />
-          <EventList />
-        </div>
+          {isMinimized ? 'Expand' : 'Minimize'}
+        </button>
       </div>
     </div>
   );

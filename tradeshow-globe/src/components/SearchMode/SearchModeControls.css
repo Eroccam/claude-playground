@@ -159,9 +159,107 @@
   display: none;
 }
 
+.mobile-search-shell {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .search-mode-shell {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 110;
+    width: auto;
+    display: block;
+    pointer-events: none;
+  }
+
+  .search-mode-pill,
+  .calendar-panel-shell {
     display: none;
+  }
+
+  .mobile-search-shell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px;
+    pointer-events: none;
+  }
+
+  .mobile-search-shell--open {
+    align-items: stretch;
+  }
+
+  .mobile-search-button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(8, 8, 24, 0.68);
+    color: rgba(232, 237, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .mobile-search-button.active {
+    background: rgba(1, 68, 145, 0.48);
+  }
+
+  .mobile-search-button svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .mobile-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  .mobile-search-bar__input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    outline: 0;
+    background: rgba(8, 8, 24, 0.78);
+    color: rgba(235, 240, 255, 0.96);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .mobile-search-results {
+    width: 100%;
+    max-height: 46vh;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: rgba(8, 8, 24, 0.86);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    pointer-events: auto;
   }
 }
 

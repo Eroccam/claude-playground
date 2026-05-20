@@ -77,6 +77,17 @@
 }
 
 @media (max-width: 768px) {
+  .app-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .globe-container {
+    position: relative;
+    flex: 0 0 48vh;
+    min-height: 280px;
+  }
+
   .side-panel {
     display: none;
   }

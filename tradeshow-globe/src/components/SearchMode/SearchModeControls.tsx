@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import { REGION_COLORS } from '../../utils/regions.ts';
 import type { Region, TradeshowEvent } from '../../types.ts';
+import { EventList } from '../Panel/EventList.tsx';
 import './SearchModeControls.css';
 
 interface SearchModeControlsProps {
@@ -385,6 +386,45 @@ export function SearchModeControls({ onExpandPanel, onCollapsePanel }: SearchMod
         </button>
       </div>
       {isCalendarMode && <CalendarGrid onExpandPanel={onExpandPanel} />}
+      <div className={`mobile-search-shell ${isSearchMode ? 'mobile-search-shell--open' : ''}`}>
+        {isSearchMode ? (
+          <div className="mobile-search-bar">
+            <input
+              className="mobile-search-bar__input"
+              type="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search shows by title or location"
+              aria-label="Search shows"
+              autoFocus
+            />
+            <button
+              className="mobile-search-button active"
+              type="button"
+              onClick={handleSearchIconClick}
+              aria-label="Exit search mode"
+              aria-pressed={isSearchMode}
+            >
+              <SearchIcon />
+            </button>
+          </div>
+        ) : (
+          <button
+            className="mobile-search-button"
+            type="button"
+            onClick={handleSearchIconClick}
+            aria-label="Enter search mode"
+            aria-pressed={isSearchMode}
+          >
+            <SearchIcon />
+          </button>
+        )}
+        {isSearchMode && (
+          <div className="mobile-search-results">
+            <EventList />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
