@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import { useGlobe } from '../../context/globeContext.ts';
 import { REGION_COLORS } from '../../utils/regions.ts';
-import type { TradeshowEvent } from '../../types.ts';
+import type { Region, TradeshowEvent } from '../../types.ts';
 import './SearchModeControls.css';
 
 interface SearchModeControlsProps {
@@ -26,6 +26,7 @@ const MONTH_NAMES = [
   'December',
 ];
 const WEEKDAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const REGION_KEY_ORDER: Region[] = ['US', 'EMEA', 'APAC'];
 const CALENDAR_RESULTS_GAP = 16;
 const DAY_CELL_DEFAULT_HEIGHT = 42;
 const DAY_NUMBER_CLEARANCE = 20;
@@ -174,69 +175,83 @@ function CalendarGrid({ onExpandPanel }: CalendarGridProps) {
   }, [calendarMonth, cells, monthEvents]);
 
   return (
-    <div className="calendar-panel" aria-label={`${MONTH_NAMES[calendarMonth]} calendar`}>
-      <div className="calendar-panel__weekdays">
-        {WEEKDAY_LABELS.map((label) => (
-          <div key={label}>{label}</div>
+    <div className="calendar-panel-shell">
+      <div className="calendar-region-key" aria-label="Region color key">
+        {REGION_KEY_ORDER.map((region) => (
+          <div key={region} className="calendar-region-key__item">
+            <span
+              className="calendar-region-key__dot"
+              style={{ '--region-key-color': REGION_COLORS[region] } as CSSProperties}
+              aria-hidden="true"
+            />
+            <span>{region}</span>
+          </div>
         ))}
       </div>
-      <div className="calendar-panel__grid">
-        {cells.map((day, index) => {
-          const rowLayout = rowLayouts[Math.floor(index / DAYS_PER_WEEK)];
-          const key = dateKey(day);
-          const inMonth = day.getMonth() === calendarMonth;
-          const isSelected = calendarDay === key;
-          const dayEvents = monthEvents.filter((event) => inMonth && eventSpansDay(event, day));
-          const rangeEvents = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
-          const singleDayEvents = dayEvents.filter((event) => event.startDate === (event.endDate || event.startDate));
+      <div className="calendar-panel" aria-label={`${MONTH_NAMES[calendarMonth]} calendar`}>
+        <div className="calendar-panel__weekdays">
+          {WEEKDAY_LABELS.map((label) => (
+            <div key={label}>{label}</div>
+          ))}
+        </div>
+        <div className="calendar-panel__grid">
+          {cells.map((day, index) => {
+            const rowLayout = rowLayouts[Math.floor(index / DAYS_PER_WEEK)];
+            const key = dateKey(day);
+            const inMonth = day.getMonth() === calendarMonth;
+            const isSelected = calendarDay === key;
+            const dayEvents = monthEvents.filter((event) => inMonth && eventSpansDay(event, day));
+            const rangeEvents = dayEvents.filter((event) => event.startDate !== (event.endDate || event.startDate));
+            const singleDayEvents = dayEvents.filter((event) => event.startDate === (event.endDate || event.startDate));
 
-          return (
-            <button
-              key={key}
-              className={`calendar-day ${inMonth ? '' : 'calendar-day--muted'} ${isSelected ? 'calendar-day--selected' : ''}`}
-              style={{ minHeight: rowLayout.height } as CSSProperties}
-              type="button"
-              onClick={() => {
-                if (!inMonth) return;
-                setCalendarDay(isSelected ? null : key);
-                onExpandPanel?.();
-              }}
-              tabIndex={inMonth ? 0 : -1}
-              aria-pressed={isSelected}
-              aria-label={`${MONTH_NAMES[day.getMonth()]} ${day.getDate()}`}
-            >
-              <span className="calendar-day__number">{day.getDate()}</span>
-              <span className="calendar-day__indicators" aria-hidden="true">
-                {rangeEvents.map((event) => {
-                  const start = parseEventDate(event.startDate);
-                  const end = parseEventDate(event.endDate || event.startDate);
-                  const startsHere = start ? dateKey(start) === key : false;
-                  const endsHere = end ? dateKey(end) === key : false;
-                  return (
+            return (
+              <button
+                key={key}
+                className={`calendar-day ${inMonth ? '' : 'calendar-day--muted'} ${isSelected ? 'calendar-day--selected' : ''}`}
+                style={{ minHeight: rowLayout.height } as CSSProperties}
+                type="button"
+                onClick={() => {
+                  if (!inMonth) return;
+                  setCalendarDay(isSelected ? null : key);
+                  onExpandPanel?.();
+                }}
+                tabIndex={inMonth ? 0 : -1}
+                aria-pressed={isSelected}
+                aria-label={`${MONTH_NAMES[day.getMonth()]} ${day.getDate()}`}
+              >
+                <span className="calendar-day__number">{day.getDate()}</span>
+                <span className="calendar-day__indicators" aria-hidden="true">
+                  {rangeEvents.map((event) => {
+                    const start = parseEventDate(event.startDate);
+                    const end = parseEventDate(event.endDate || event.startDate);
+                    const startsHere = start ? dateKey(start) === key : false;
+                    const endsHere = end ? dateKey(end) === key : false;
+                    return (
+                      <span
+                        key={event.id}
+                        className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''}`}
+                        style={{
+                          '--event-color': REGION_COLORS[event.region],
+                          '--indicator-slot': rowLayout.slots.get(event.id) ?? 0,
+                        } as CSSProperties}
+                      />
+                    );
+                  })}
+                  {singleDayEvents.map((event) => (
                     <span
-                      key={event.id}
-                      className={`calendar-day__line ${startsHere ? 'calendar-day__line--start' : ''} ${endsHere ? 'calendar-day__line--end' : ''}`}
+                      key={`${event.id}-${key}`}
+                      className="calendar-day__dot"
                       style={{
                         '--event-color': REGION_COLORS[event.region],
                         '--indicator-slot': rowLayout.slots.get(event.id) ?? 0,
                       } as CSSProperties}
                     />
-                  );
-                })}
-                {singleDayEvents.map((event) => (
-                  <span
-                    key={`${event.id}-${key}`}
-                    className="calendar-day__dot"
-                    style={{
-                      '--event-color': REGION_COLORS[event.region],
-                      '--indicator-slot': rowLayout.slots.get(event.id) ?? 0,
-                    } as CSSProperties}
-                  />
-                ))}
-              </span>
-            </button>
-          );
-        })}
+                  ))}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -165,9 +165,40 @@
   }
 }
 
+.calendar-panel-shell {
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.calendar-region-key {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  color: rgba(235, 240, 255, 0.88);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.calendar-region-key__item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.calendar-region-key__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--region-key-color);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--region-key-color), transparent 35%);
+}
+
 .calendar-panel {
   width: 360px;
-  align-self: flex-end;
   padding: 12px;
   border-radius: 0 0 8px 8px;
   background: rgba(8, 8, 24, 0.72);
