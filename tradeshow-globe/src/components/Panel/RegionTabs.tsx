@@ -39,20 +39,18 @@ export function RegionTabs({ isPaneOpen = true, onPaneOpen, onPaneClose }: Regio
           >
             {region}
           </button>
-          {region === selectedRegion && (
-            <button
-              className={`region-tab__expand ${isPaneOpen ? 'region-tab__expand--open' : ''}`}
-              type="button"
-              onClick={() => handleExpandClick(region)}
-              aria-label={`${isPaneOpen ? 'Close' : 'Open'} ${region} shows`}
-            >
-              <svg viewBox="0 0 18 18" aria-hidden="true">
-                <path d="M4 11.5C4.8 7 7.4 4.5 12 4" />
-              </svg>
-            </button>
-          )}
         </div>
       ))}
+      <button
+        className="region-tab__expand"
+        type="button"
+        onClick={() => handleExpandClick(selectedRegion)}
+        aria-label={`${isPaneOpen ? 'Close' : 'Open'} ${selectedRegion} shows`}
+      >
+        <svg viewBox="0 0 18 18" aria-hidden="true">
+          <path d="M9 2A7 7 0 0 1 16 9" />
+        </svg>
+      </button>
     </div>
   );
 }

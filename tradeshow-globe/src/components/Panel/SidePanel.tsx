@@ -28,16 +28,6 @@ export function SidePanel({ isMinimized, onMinimize, onExpand }: SidePanelProps)
         <div className="side-panel__body">
           <EventList />
         </div>
-        <div className="side-panel__footer">
-          <button
-            className="side-panel__minimize"
-            type="button"
-            onClick={onMinimize}
-            aria-label="Minimize show list panel"
-          >
-            Minimize
-          </button>
-        </div>
       </div>
     </>
   );

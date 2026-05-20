@@ -1,5 +1,6 @@
 /* Region Tabs */
 .region-tabs {
+  position: relative;
   display: flex;
   gap: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -53,9 +54,8 @@
   background: transparent;
   color: #e0e0e0;
   cursor: pointer;
-  transition:
-    opacity 0.15s ease,
-    transform 0.18s ease;
+  transition: opacity 0.15s ease;
+  z-index: 2;
 }
 
 .region-tab__expand svg {
@@ -74,10 +74,6 @@
 
 .region-tab__expand:hover {
   opacity: 0.82;
-}
-
-.region-tab__expand--open {
-  transform: rotate(180deg);
 }
 
 .searched-header {
@@ -116,36 +112,6 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-}
-
-.side-panel__footer {
-  flex-shrink: 0;
-  padding: 10px 14px 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(4, 6, 18, 0.18);
-}
-
-.side-panel__minimize {
-  width: 100%;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(190, 195, 220, 0.7);
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.side-panel__minimize:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: rgba(235, 238, 250, 0.92);
 }
 
 /* Event List */
